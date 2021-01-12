@@ -5,25 +5,30 @@
          </keep-alive>
          <div class="bottom-bar">
             <div class="box-flex">
-                <div class="flex">
-                  <i class="image-icon icon-home"></i>
-                  <span>首页</span>
+                <div class="flex" @click="bottomBarClick('firsttab')">
+                  <img v-if="componentName=='firsttab'" src="../assets/01.png" alt="">
+                  <img v-else src="../assets/02.png" alt="">
+                  <div class="bottom-title" :class="{active:componentName=='firsttab'}">首页</div>
                 </div>
-                <div class="flex">
-                  <i class="image-icon"></i>
-                  <span>首页</span>
+                <div class="flex" @click="bottomBarClick('secondtab')">
+                  <img v-if="componentName=='secondtab'" src="../assets/03.png" alt="">
+                  <img v-else src="../assets/04.png" alt="">
+                  <div class="bottom-title" :class="{active:componentName=='secondtab'}">分类</div>
                 </div>
-                <div class="flex">
-                  <i class="image-icon"></i>
-                  <span>首页</span>
+                <div class="flex" @click="bottomBarClick('thirdtab')">
+                  <img v-if="componentName=='thirdtab'" src="../assets/05.png" alt="">
+                  <img v-else src="../assets/06.png" alt="">
+                  <div class="bottom-title" :class="{active:componentName=='thirdtab'}">星球</div>
                 </div>
-                <div class="flex">
-                  <i class="image-icon"></i>
-                  <span>首页</span>
+                <div class="flex" @click="bottomBarClick('fourthtab')">
+                  <img v-if="componentName=='fourthtab'" src="../assets/07.png" alt="">
+                  <img v-else src="../assets/08.png" alt="">
+                  <div class="bottom-title" :class="{active:componentName=='fourthtab'}">购物车</div>
                 </div>
-                <div class="flex">
-                  <i class="image-icon"></i>
-                  <span>首页</span>
+                <div class="flex" @click="bottomBarClick('metab')">
+                  <img v-if="componentName=='metab'" src="../assets/09.png" alt="">
+                  <img v-else src="../assets/10.png" alt="">
+                  <div class="bottom-title" :class="{active:componentName=='metab'}">我的</div>
                 </div>
             </div>
          </div>
@@ -32,6 +37,10 @@
 
 <script>
 import FirstTab from "../components/FirstTab.vue"
+import SecondTab from "../components/SecondTab.vue"
+import ThirdTab from "../components/ThirdTab.vue"
+import FourthTab from "../components/FourthTab.vue"
+import MeTab from "../components/MeTab.vue"
 export default {
   data(){
       return{
@@ -39,11 +48,20 @@ export default {
       }
   },
   components:{
-    "firsttab":FirstTab
+    "firsttab":FirstTab,
+    "secondtab":SecondTab,
+    "thirdtab":ThirdTab,
+    "fourthtab":FourthTab,
+    "metab":MeTab,
+  },
+  methods:{
+    bottomBarClick(componentName){
+      this.componentName=componentName;
+    }
   }
 }
 </script>
-<style scoped>
+<style >
   .bottom-bar{
     position: fixed;
     bottom: 0;
@@ -54,5 +72,22 @@ export default {
   .box-flex{
     height: 52px;
     display: flex;
+    justify-content: space-around;
+  }
+  .flex{
+    text-align: center;
+    display: block;
+    position: relative;
+    margin: auto 0;
+  }
+  .flex>img{
+   width: 28%;
+  }
+  .bottom-title{
+    font-size: 10px;
+    color: #333;
+  }
+  .active{
+    color: #ff6700;
   }
 </style>
