@@ -36,24 +36,33 @@
 </template>
 
 <script>
-import FirstTab from "../components/FirstTab.vue";
-import Classify from "../components/Classify.vue";
+import FirstTab from "../components/FirstTab.vue"
+import SecondTab from "../components/Classify.vue"
+import ThirdTab from "../components/ThirdTab.vue"
+import FourthTab from "../components/FourthTab.vue"
+import MeTab from "../components/MeTab.vue"
 export default {
-    data() {
-        return {
-            // componentName:"firsttab"
-            componentName: "classify",
-        };
-    },
-    components: {
-        firsttab: FirstTab,
-        classify: Classify,
-    },
-};
+  data(){
+      return{
+        componentName:"firsttab"
+      }
+  },
+  components:{
+    "firsttab":FirstTab,
+    "secondtab":SecondTab,
+    "thirdtab":ThirdTab,
+    "fourthtab":FourthTab,
+    "metab":MeTab,
+  },
+  methods:{
+    bottomBarClick(componentName){
+      this.componentName=componentName;
+    }
+  }
+}
 </script>
-
-<style scoped>
-.bottom-bar {
+<style >
+  .bottom-bar{
     position: fixed;
     bottom: 0;
     left: 0;
@@ -66,21 +75,18 @@ export default {
     justify-content: space-around;
   }
   .flex{
-    font-size: .22rem;
     text-align: center;
     display: block;
     position: relative;
-    height: 52px;
-
+    margin: auto 0;
+    font-size: .22rem;
   }
   .flex>img{
-    width: .4rem;
-    height: .4rem;
+   width: 28%;
   }
   .bottom-title{
     font-size: 10px;
     color: #333;
-
   }
   .active{
     color: #ff6700;
