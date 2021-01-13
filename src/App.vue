@@ -5,15 +5,18 @@
 </template>
 
 <style>
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html,body,.app{
-      height: 100%;
-    }
-    a{
-      text-decoration: none;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body,
+.page {
+    height: 100%;
+    font-size:52px;
+}
+a{
+    text-decoration: none;
+}
 </style>

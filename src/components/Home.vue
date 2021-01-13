@@ -1,58 +1,62 @@
 <template>
     <div class="page home-container">
-         <keep-alive>
+        <keep-alive>
             <component :is="componentName"></component>
-         </keep-alive>
-         <div class="bottom-bar">
+        </keep-alive>
+        <div class="bottom-bar">
             <div class="box-flex">
                 <div class="flex">
-                  <i class="image-icon icon-home"></i>
-                  <span>首页</span>
+                    <i class="image-icon icon-home"></i>
+                    <span>首页</span>
                 </div>
                 <div class="flex">
-                  <i class="image-icon"></i>
-                  <span>首页</span>
+                    <i class="image-icon"></i>
+                    <span>首页</span>
                 </div>
                 <div class="flex">
-                  <i class="image-icon"></i>
-                  <span>首页</span>
+                    <i class="image-icon"></i>
+                    <span>首页</span>
                 </div>
                 <div class="flex">
-                  <i class="image-icon"></i>
-                  <span>首页</span>
+                    <i class="image-icon"></i>
+                    <span>首页</span>
                 </div>
                 <div class="flex">
-                  <i class="image-icon"></i>
-                  <span>首页</span>
+                    <i class="image-icon"></i>
+                    <span>首页</span>
                 </div>
             </div>
-         </div>
+        </div>
     </div>
 </template>
 
 <script>
-import FirstTab from "../components/FirstTab.vue"
+import FirstTab from "../components/FirstTab.vue";
+import Classify from "../components/Classify.vue";
 export default {
-  data(){
-      return{
-        componentName:"firsttab"
-      }
-  },
-  components:{
-    "firsttab":FirstTab
-  }
-}
+    data() {
+        return {
+            // componentName:"firsttab"
+            componentName: "classify",
+        };
+    },
+    components: {
+        firsttab: FirstTab,
+        classify: Classify,
+    },
+};
 </script>
+
 <style scoped>
-  .bottom-bar{
+.bottom-bar {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     background: #fff;
-  }
-  .box-flex{
+}
+.box-flex {
     height: 52px;
     display: flex;
-  }
+}
 </style>
