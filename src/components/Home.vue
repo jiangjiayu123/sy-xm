@@ -1,9 +1,9 @@
 <template>
     <div class="page home-container">
-         <keep-alive>
+        <keep-alive>
             <component :is="componentName"></component>
-         </keep-alive>
-         <div class="bottom-bar">
+        </keep-alive>
+        <div class="bottom-bar">
             <div class="box-flex">
                 <div class="flex" @click="bottomBarClick('firsttab')">
                   <img v-if="componentName=='firsttab'" src="../assets/01.png" alt="">
@@ -31,45 +31,36 @@
                   <div class="bottom-title" :class="{active:componentName=='metab'}">我的</div>
                 </div>
             </div>
-         </div>
+        </div>
     </div>
 </template>
 
 <script>
-import FirstTab from "../components/FirstTab.vue"
-import SecondTab from "../components/SecondTab.vue"
-import ThirdTab from "../components/ThirdTab.vue"
-import FourthTab from "../components/FourthTab.vue"
-import MeTab from "../components/MeTab.vue"
+import FirstTab from "../components/FirstTab.vue";
+import Classify from "../components/Classify.vue";
 export default {
-  data(){
-      return{
-        componentName:"firsttab"
-      }
-  },
-  components:{
-    "firsttab":FirstTab,
-    "secondtab":SecondTab,
-    "thirdtab":ThirdTab,
-    "fourthtab":FourthTab,
-    "metab":MeTab,
-  },
-  methods:{
-    bottomBarClick(componentName){
-      this.componentName=componentName;
-    }
-  }
-}
+    data() {
+        return {
+            // componentName:"firsttab"
+            componentName: "classify",
+        };
+    },
+    components: {
+        firsttab: FirstTab,
+        classify: Classify,
+    },
+};
 </script>
+
 <style scoped>
-  .bottom-bar{
+.bottom-bar {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     background: #fff;
-  }
-  .box-flex{
+}
+.box-flex {
     height: 52px;
     display: flex;
     justify-content: space-around;
