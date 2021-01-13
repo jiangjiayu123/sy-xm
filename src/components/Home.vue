@@ -15,10 +15,12 @@
                   <img v-else src="../assets/04.png" alt="">
                   <div class="bottom-title" :class="{active:componentName=='secondtab'}">分类</div>
                 </div>
-                <div class="flex" @click="bottomBarClick('thirdtab')">
-                  <img v-if="componentName=='thirdtab'" src="../assets/05.png" alt="">
-                  <img v-else src="../assets/06.png" alt="">
-                  <div class="bottom-title" :class="{active:componentName=='thirdtab'}">星球</div>
+                <div class="flex">
+                  <a href="https://m.mi.com/discover">
+                    <img v-if="componentName=='thirdtab'" src="../assets/05.png" alt="">
+                    <img v-else src="../assets/06.png" alt="">
+                    <div class="bottom-title" :class="{active:componentName=='thirdtab'}">星球</div>
+                  </a>                  
                 </div>
                 <div class="flex" @click="bottomBarClick('fourthtab')">
                   <img v-if="componentName=='fourthtab'" src="../assets/07.png" alt="">
@@ -37,18 +39,26 @@
 
 <script>
 import FirstTab from "../components/FirstTab.vue";
-import Classify from "../components/Classify.vue";
+import Secondtab from "../components/SecondTab.vue";
+import FourthTab from "../components/FourthTab.vue";
+import MeTab from "../components/MeTab.vue";
 export default {
     data() {
         return {
-            // componentName:"firsttab"
-            componentName: "classify",
+            componentName:"firsttab"
         };
     },
     components: {
-        firsttab: FirstTab,
-        classify: Classify,
+        "firsttab": FirstTab,
+        "secondtab": Secondtab,
+        "fourthtab":FourthTab,
+        "metab":MeTab
     },
+    methods:{
+      bottomBarClick(componentName){
+        this.componentName=componentName;
+      }
+    }
 };
 </script>
 
@@ -73,7 +83,7 @@ export default {
     height: 52px;
 
   }
-  .flex>img{
+  .flex img{
     width: .4rem;
     height: .4rem;
   }

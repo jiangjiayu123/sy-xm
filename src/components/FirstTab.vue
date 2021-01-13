@@ -430,6 +430,8 @@ export default {
 <style scoped>
 .container {
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .header-bar {
   position: fixed;
@@ -551,8 +553,8 @@ export default {
     height: 1.30rem;
 }
 .cells img{
-    width: 1.3rem;
-    height: 1.30rem;
+    width: 20%;
+    height: 100%;
 }
 .cells-dev{
     height: 4.60rem;
