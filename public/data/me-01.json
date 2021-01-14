@@ -4,32 +4,32 @@
     "list": [
         {
             "id":1,
-            "img1":"../",
+            "img1":"../images/me-05.png",
             "name1":"会员中心",
-            "img2":"../",
+            "img2":"../images/me-06.png",
             "name2":"我的优惠"
         },
         {
             "id":2,
-            "img1":"../",
+            "img1":"../images/me-07.png",
             "name1":"服务中心",
-            "img2":"../",
+            "img2":"../images/me-08.png",
             "name2":"小米之家"
         },
         {
             "id":3,
-            "img1":"../",
+            "img1":"../images/me-09.png",
             "name1":"我的F码",
-            "img2":"../",
+            "img2":"../images/me-10.png",
             "name2":"礼物码兑换"
         }
         ,
         {
             "id":4,
-            "img1":"../",
+            "img1":"../images/me-12.png",
             "name1":"设置",
-            "img2":"../",
-            "name2":"礼物码兑换"
+            "img2":"",
+            "name2":""
         }
     ]
 }

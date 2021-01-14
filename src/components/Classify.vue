@@ -13,7 +13,7 @@
                     <div class="body-left">
                         <ul class="item">
                             <li v-for="(item,index) in list" :key="item.name">
-                                <a :href="'#'+item.id" class="item-a" :class="[isActive?'active':'']" @click="btnColor(index)">
+                                <a :href="'#'+item.id" class="item-a" :class='{active:isActive==index}' @click="btnColor(index)">
                                     <span class="item-name">{{item.name}}</span>
                                 </a>
                             </li>
@@ -335,14 +335,14 @@ export default {
                     name: "Redmi手机贴膜",
                 },
             ],
-            isActive:false,
+            isActive:0,
         };
     },
     methods: {
         btnBack() {},
         btnColor(index){
                 
-                 this.isActive = true; 
+                 this.isActive = index; 
         },
     },
 };
@@ -392,7 +392,7 @@ export default {
     background-image: url(../assets/images/w返回箭头.png);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 30px 30px;
+    background-size: .5rem .5rem;
     width: 30px;
     height: 30px;
     flex-grow: 1;
@@ -400,17 +400,17 @@ export default {
 .Classify-02 {
     text-align: center;
     padding: 15px;
-    font-size: 16px;
+    font-size: .3rem;
     flex-grow: 1;
 }
 .Classify-03 {
-    width: 30px;
-    height: 30px;
+     width: .6rem;
+    height: .6rem;
     flex-grow: 1;
     background-image: url(../assets/images/w搜索.png);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 35px 35px;
+    background-size: .6rem .6rem;
 }
 
 .page-03 {
@@ -448,8 +448,8 @@ export default {
     list-style: none;
 }
 ul > li {
-    font-size: 14px;
-    height: 50px;
+    font-size: 0.3rem;
+    height: 0.9rem;
     text-align: center;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     overflow: hidden;
@@ -528,9 +528,7 @@ ul > li {
 .cells_auto_fill,
 .cells_auto_fill-pi {
     height: 0.8rem;
-    width: 5rem;
-
-    background-size: 5rem 0.8rem;
+    background-size: 100% 0.8rem;
     background-repeat: no-repeat;
 }
 .cells_auto_fill {
@@ -546,8 +544,7 @@ ul > li {
 .list-photo-one,
 .list-photo-two {
     height: 2rem;
-    width: 5rem;
-    background-size: 5rem 2rem;
+    background-size: 100% 2rem;
     background-repeat: no-repeat;
 }
 .list-photo-one {
@@ -557,7 +554,7 @@ ul > li {
     background-image: url(../assets/images/32.webp);
 }
 .active{
-    font-size:0.28rem;
+    font-size:0.4rem;
     font-weight: 600px;
     color: #ff6300;
 }
