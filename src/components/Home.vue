@@ -61,9 +61,8 @@ export default {
     }
 };
 </script>
-
-<style scoped>
-.bottom-bar {
+<style >
+  .bottom-bar{
     position: fixed;
     bottom: 0;
     left: 0;
@@ -76,12 +75,11 @@ export default {
     justify-content: space-around;
   }
   .flex{
-    font-size: .22rem;
     text-align: center;
     display: block;
     position: relative;
-    height: 52px;
-
+    margin: auto 0;
+    font-size: .22rem;
   }
   .flex img{
     width: .4rem;
@@ -90,7 +88,6 @@ export default {
   .bottom-title{
     font-size: 10px;
     color: #333;
-
   }
   .active{
     color: #ff6700;
