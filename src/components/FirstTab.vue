@@ -119,9 +119,9 @@
                                 <div class="name">Redmi K30 4G</div>
                                 <div class="brief">120Hz流速屏，全速热爱</div>
                                 <div class="price">
-                                1299<span>起</span>
+                                ￥1299<span>起</span>
                                     <span class="price-old">
-                                        <del>1699</del>
+                                        <del>￥1699</del>
                                     </span>
                                 </div>
                                 <div class="buybtn mauto" @click="todetail">立即购买</div>                            
@@ -135,9 +135,9 @@
                             <div class="name">Redmi K30 5G</div>
                             <div class="brief">双模5G，120Hz流速屏</div>
                             <div class="price">
-                                1599<span>起</span>
+                                ￥1599<span>起</span>
                                 <span class="price-old">
-                                    <del>2299</del>
+                                    <del>￥2299</del>
                                 </span>
                             </div>
                             <div class="buybtn mauto">立即购买</div>                            
@@ -153,9 +153,9 @@
                                 <div class="name">Note 8 Pro</div>
                                 <div class="brief">6400万全场景四摄</div>
                                 <div class="price">
-                                1099<span>起</span>
+                                ￥1099<span>起</span>
                                     <span class="price-old">
-                                        <del>1399</del>
+                                        <del>￥1399</del>
                                     </span>
                                 </div>
                                 <div class="buybtn mauto">立即购买</div>                            
@@ -169,9 +169,9 @@
                             <div class="name">Redmi Note 8</div>
                             <div class="brief">千元4800万四摄</div>
                             <div class="price">
-                                899<span>起</span>
+                                ￥899<span>起</span>
                                 <span class="price-old">
-                                    <del>999</del>
+                                    <del>￥999</del>
                                 </span>
                             </div>
                             <div class="buybtn mauto">立即购买</div>                            
@@ -201,9 +201,9 @@
                                 <div class="name">小米电视4A 65英寸</div>
                                 <div class="brief">4K HDR，人工智能语音系统</div>
                                 <div class="price">
-                                2899<span>起</span>
+                                ￥2899<span>起</span>
                                     <span class="price-old">
-                                        <del>2999</del>
+                                        <del>￥2999</del>
                                     </span>
                                 </div>
                                 <div class="buybtn mauto">立即购买</div>                            
@@ -217,9 +217,9 @@
                             <div class="name">小米电视4X 43英寸</div>
                             <div class="brief">FHD全高清屏，人工智能语音</div>
                             <div class="price">
-                                1299<span>起</span>
+                                ￥1299<span>起</span>
                                 <span class="price-old">
-                                    <del>1399</del>
+                                    <del>￥1399</del>
                                 </span>
                             </div>
                             <div class="buybtn mauto">立即购买</div>                            
@@ -235,7 +235,7 @@
                                 <div class="name">小米电视4C 50英寸</div>
                                 <div class="brief">4K HDR，钢琴烤漆</div>
                                 <div class="price">
-                                1999
+                                ￥1999
                                 </div>
                                 <div class="buybtn mauto">立即购买</div>                            
                         </div>                    
@@ -248,7 +248,7 @@
                             <div class="name">小米电视4C 55英寸</div>
                             <div class="brief">4K HDR，人工智能系统</div>
                             <div class="price">
-                                2299
+                                ￥2299
                             </div>
                             <div class="buybtn mauto">立即购买</div>                            
                         </div>   
@@ -263,7 +263,7 @@
                                 <div class="name">小米电视4A 32英寸</div>
                                 <div class="brief">人工智能系统，高清液晶屏</div>
                                 <div class="price">
-                                999
+                                ￥999
                                 </div>
                                 <div class="buybtn mauto">立即购买</div>                            
                         </div>                    
@@ -276,7 +276,7 @@
                             <div class="name">小米电视4A 50英寸</div>
                             <div class="brief">4K HDR，人工智能语音系统</div>
                             <div class="price">
-                                1999
+                                ￥1999
                             </div>
                             <div class="buybtn mauto">立即购买</div>                            
                         </div>   
@@ -311,9 +311,9 @@
                                 <div class="name">Air 13.3" 2019款</div>
                                 <div class="brief">新一代独立显卡</div>
                                 <div class="price">
-                                4799<span>起</span>
+                                ￥4799<span>起</span>
                                     <span class="price-old">
-                                        <del>5399</del>
+                                        <del>￥5399</del>
                                     </span>
                                 </div>
                                 <div class="buybtn mauto">立即购买</div>                            
@@ -327,9 +327,9 @@
                             <div class="name">小米笔记本15.6" MX110 独显版</div>
                             <div class="brief">全面均衡的国民轻薄本</div>
                             <div class="price">
-                                3899<span>起</span>
+                                ￥3899<span>起</span>
                                 <span class="price-old">
-                                    <del>4299</del>
+                                    <del>￥4299</del>
                                 </span>
                             </div>
                             <div class="buybtn mauto">立即购买</div>                            
@@ -345,7 +345,7 @@
                                 <div class="name">小米游戏本</div>
                                 <div class="brief">冷酷的性能怪兽</div>
                                 <div class="price">
-                                7999起
+                                ￥7999起
                                 </div>
                                 <div class="buybtn mauto">立即购买</div>                            
                         </div>                    
@@ -358,7 +358,7 @@
                             <div class="name">Pro 15.6" GTX显卡</div>
                             <div class="brief">更强悍的专业笔记本</div>
                             <div class="price">
-                                6299起
+                                ￥6299起
                             </div>
                             <div class="buybtn mauto">立即购买</div>                            
                         </div>   
@@ -566,16 +566,16 @@ export default {
                 img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
                 name:"变频 | 米家互联网空调",
                 brief:"变频节能，高效制冷热",
-                price:"2399",
-                priceold:"2699"
+                price:"￥2399",
+                priceold:"￥2699"
             },
             {
                 id:2,
                 img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
                 name:"变频 | 米家互联网空调",
                 brief:"变频节能，高效制冷热",
-                price:"2399",
-                priceold:"2699"
+                price:"￥2399",
+                priceold:"￥2699"
             },
         ],
         list:[
