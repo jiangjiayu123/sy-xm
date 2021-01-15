@@ -13,13 +13,30 @@
                    <div class="user-id">
                        <p class="user-tishi">+86</p>
                        <p class="user-photo"></p>
-                       <input type="number" placeholder="手机号码" class="name-input">
+                       <input type="number" placeholder="手机号码" class="name-input" v-model="message">
+                       <p class="del-item" v-show="message" @click="delPhoto"></p>
                    </div>
-                   <div class="user-psd">
-                       <input type="number" placeholder="短信验证码" class="psd-input">
+                   <div class="user-psd user-item">
+                       <input type="number" placeholder="短信验证码" class="psd-input" v-model="msg">
                        <p class="huoqu">获取验证码</p>
                    </div>
-                   <div class="btnadpt">
+                   <div class="tip-phone" v-show="seen">
+                           <p class="tip-phone-01"></p>
+                           <p class="tip-phone-02">请输入手机号</p>
+                    </div>
+                    <div class="tip-phone" v-show="see">
+                          <p class="tip-phone-01"></p>
+                          <p class="tip-phone-02">手机号格式不正确</p>
+                    </div>
+                    <div class="tip-phone" v-show="seenlook">
+                          <p class="tip-phone-01"></p>
+                          <p class="tip-phone-02">请输入短信验证码</p>
+                    </div>
+                     <div class="tip-phone" v-show="duanxin">
+                          <p class="tip-phone-01"></p>
+                          <p class="tip-phone-02">短信验证码不正确</p>
+                    </div>
+                   <div class="btnadpt" @click="checkedPsd">
                             立即登录/注册
                    </div>
                    <div class="btnByname">
@@ -75,7 +92,84 @@
 
 <script>
     export default{
+        data(){
+            return {
+                message:"",
+                msg:"",
+                seen:false,//提示请输入手机号
+                see:false,//提示手机号格式不正确
+                seenlook:false,//提示请输入短信
+                chuxian:false, //输入手机号时显示
+                duanxin:false, //提示短信验证
+            }
+        },
+        watch:{
+            message(newVal){
+                if(newVal != ""){
+                     this.chuxian =true
+                }
+                 if((/^1[3456789]\d{9}$/.test(newVal)) && (newVal !="")){
+                    this.seen=false;//提示请输入手机号
+                    this.see=false;
+                }
+                if(newVal ==""){
+                    this.seen=false;//提示请输入手机号
+                    this.see=false;
+                }
+            },
+            msg(newVal){
+                if((this.message == "")  &&newVal == ""){
+                    this.seen=false;
+                    this.seenlook=false
+                }
+                if((/^[0-9]{6}$/.test(this.msg))){
+                    this.duanxin=false
+                }
+            }
+        },
+        methods:{
+            checkedPsd(){
+                console.log(this.message);
+                if(!(/^1[3456789]\d{9}$/.test(this.message)) && (this.message !="")){ 
+                    this.see = true;
+                    this.seen=false;
+                    console.log("手机号格式错误")      
+                }if(this.message==""){
+                   this.seen =true;
+                   this.see=false;
+                }
+                if((/^1[3456789]\d{9}$/.test(this.message)) && (this.msg =="")){
+                    console.log("手机号码验证正确");
+                    this.seenlook=true;
+                }
+                if(this.msg !=""){
+                   this.seenlook=false
+                }
+                if((/^1[3456789]\d{9}$/.test(this.message)) && (this.msg !="")){
+                    // this.$router.go(-1);
+                }
+                if(!(/^[0-9]{6}$/.test(this.msg))&&(this.msg !="") && (/^1[3456789]\d{9}$/.test(this.message))){
+                        this.seen=false,//提示请输入手机号
+                        this.see=false,//提示手机号格式不正确
+                        this.seenlook=false,//提示请输入短信
+                        this.duanxin= true //提示短信验证
+                }if(this.msg == ""){
+                    this.duanxin= false
+                }
+                if((/^1[3456789]\d{9}$/.test(this.message)) &&(/^[0-9]{6}$/.test(this.msg))){
+                    this.seen=false,//提示请输入手机号
+                    this.see=false,//提示手机号格式不正确
+                    this.seenlook=false,//提示请输入短信
+                    this.duanxin= false,//提示短信验证
+                    this.$router.go(-1);
+                    this.$store.commit("checkedPsd");
+                }
 
+            },
+            delPhoto(){
+                this.message="";
+            }
+        }
     }
 </script>
 
@@ -143,7 +237,9 @@ a {
     flex-direction:row;
     align-items: center;
     border-bottom:1px solid #9b9b9b;
-    height: 1rem;
+}
+.user-item{
+    margin-top:.4rem
 }
 .user-tishi{
     margin-right: 2px;
@@ -222,7 +318,7 @@ a {
 }
 .oth_type_links{
     width: 4rem;
-    height: 0.5rem;
+    height: 0.1rem;
     margin: 0.4rem auto;
     display:flex;
     justify-content:space-around;
@@ -264,5 +360,31 @@ a {
 }
 .item1{
     color:#4a4a4a ;
+}
+.tip-phone{
+    margin-top: .3rem;
+    height: .5rem;
+    font-size: .3rem;
+    display: flex;
+    color:#f66;
+    align-items: center;
+}
+.tip-phone-01{
+    background-image: url(../assets/images/感叹号.png);
+    width: .3rem;
+    height: .3rem;
+    border-radius:50%;
+    background-size: cover;
+}
+.tip-phone-02{
+    margin-left:.1rem
+}
+.del-item{
+    background-image: url(../assets/images/删除.png);
+    width: .6rem;
+    height: .4rem;
+    border-radius:50%;
+    background-size: cover;
+    margin-right: 0.2rem;
 }
 </style>

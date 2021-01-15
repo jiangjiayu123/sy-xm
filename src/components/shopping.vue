@@ -5,7 +5,14 @@
                 <a><img src="../assets/return.png" alt=""></a>
             </div>
             <div class="app-header-middle">
-                <div class="app-header-title">购物车</div>
+                <!-- !!!!!  此处的点击事件为测试进入小米购物车的路由!!!!!
+                
+                
+                
+                
+                
+                 -->
+                <div class="app-header-title"  @click="entrymicar">购物车</div>
             </div>
             <div class="app-header-right">
                 <a><img src="../assets/search.png" alt=""></a>
@@ -14,7 +21,7 @@
         <div class="app-view-wrapper">
             <div class="container fluid app-view app-view-with-header app-view-with-footer">
                 <div class="page-wrap">
-                    <div class="nologin">
+                    <div class="nologin" @click="gotodenglu" v-show="appearDe">
                         <a >
                             <span>登录后享受更多优惠</span>
                             <em>去登录<img src="../assets/right.png" alt=""></em>
@@ -26,6 +33,8 @@
                             <em>去逛逛</em>
                         </a>
                     </div>
+
+                    <!-- 猜你喜欢 -->
                     <div class="recommend-box space-top">
                         <div class="recommend-top-img">
                             <img src="https://i8.mifile.cn/b2c-mimall-media/e95ade2750a7fde92369b416c7d3176d.jpg" alt="">
@@ -68,8 +77,24 @@ export default {
                     img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bdeb112cc683ea56dead55806cb78a55.jpg?thumb=1&w=360&h=360",
                     price:"99"
                 },
-            ]
+            ],
+            // appearDe:false
         }
+    },
+    computed:{
+        appearDe(){
+            return this.$store.state.appearDe
+        }
+    },
+    methods:{
+        gotodenglu(){
+             this.$router.push({ path: "denglu" });
+        },
+        // !!!!!测试小米购物车
+        entrymicar(){
+            this.$router.push({ path: "micart" });
+        }
+        
     }
 }
 </script>

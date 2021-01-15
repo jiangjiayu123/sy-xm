@@ -39,7 +39,7 @@
 
 <script>
 import FirstTab from "../components/FirstTab.vue";
-import Secondtab from "../components/SecondTab.vue";
+import Secondtab from "../components/Classify.vue";
 import FourthTab from "../components/shopping.vue";
 import MeTab from "../components/MeTab.vue";
 export default {
