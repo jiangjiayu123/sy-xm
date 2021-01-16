@@ -2,7 +2,7 @@
    <div class="app-view-wrapper">
        <header>
            <div class="fill-height" :style="showicon">
-               <a class="header-btn">
+               <a class="header-btn" @click="goback">
                    <img src="https://m.mi.com/static/img/icon-back3.cee4a42398.png" alt="">
                </a>
                <a class="header-btn">
@@ -10,7 +10,7 @@
                </a>
            </div>
            <div class="fill-height1" :style="show">
-               <a class="header-btn">
+               <a class="header-btn" @click="goback">
                    <img src="https://m.mi.com/static/img/icon-back2.2d09ed8aaf.png" alt="">
                </a>
                <div class="placeholder">
@@ -154,10 +154,89 @@
            </div>
        </div>
        <div class="section section-detail">
+           <div class="line"></div>
+       </div>
+       <div class="section section-detail">
            <div class="package">
-               <div class="card">
-                   <div class="tab-headr"></div>
-               </div>
+              <a class="comments-title">
+                  <div class="comments-title-left">用户评价</div>
+                  <div class="comments-title-right">
+                      <span>好评率99.6%</span>
+                      <i class="right-icon1"></i>
+                  </div>
+              </a>
+              <div class="comments-tags">
+                  <div class="comments-tags-text">外观漂亮</div>
+                  <div class="comments-tags-text">外观漂亮</div>
+                    <div class="comments-tags-text">外观漂亮</div>
+                  <div class="comments-tags-text">外观漂亮</div>
+                  <div class="comments-tags-text">屏幕很大</div>
+              </div>
+                <div class="swiper-wrapper1">
+                    <div class="swiper-box card-box">
+                        <div class="comment-header">
+                            <div class="avatar-img">
+                                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0599f465efe793fee4af47e6de005efd.png" alt="">
+                            </div>
+                            <div class="user-info">
+                                <div class="user-name">960****83</div>
+                                <div class="comment-date">2020-12-15</div>
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            <div class="text">
+                                支持小米，支持国产。给母亲大人买的手机，母亲大人非常喜欢。外型好看，使用起...
+                            </div>
+                            <div class="photos">
+                                <div class="img" v-for="item in photolist" :key="item.id">
+                                    <img :src="item.img" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+       <div class="section section-detail">
+           <div class="line"></div>
+       </div>
+       <div class="section section-detail">
+           <div class="package">
+               <a class="topic-header">
+                  <div class="topic-title">米粉点评团</div>
+                  <div class="comments-title-right">
+                      <i class="right-icon2"></i>
+                  </div>
+              </a>
+              <div class="topic-body">
+                  <a href="" v-for="item in articlelist" :key="item.id">
+                    <div class="topic-item">
+                      <div class="artic-img">
+                          <img :src="item.img" alt="">
+                      </div>
+                    </div>
+                  <div class="article-text">{{item.text}}</div>
+                  <div class="article-addition">
+                      <div class="article-author">
+                          <img :src="item.authorimg" alt="">
+                          <span>{{item.author}}</span>
+                      </div>
+                      <div class="article-info">
+                          <div class="article-num">{{item.num}}</div>
+                      </div>
+                  </div>
+                </a>
+                  
+              </div>
+           </div>
+       </div>
+       <div class="section section-detail">
+           <div class="swipper">
+               <div class="swiper-wrapper1">
+                    <el-carousel height="1.82rem">
+                        <el-carousel-item v-for="item in 2" :key="item"></el-carousel-item>
+                    </el-carousel>
+                </div>
            </div>
        </div>
        <footer>
@@ -217,6 +296,34 @@ export default {
                     name:"四摄像头",
                     value:"6400万+800万+200万+200万像素"
                 }
+            ],
+            photolist:[
+                {
+                    id:1,
+                    img:"https://i1.mifile.cn/a2/1607996115_7905022_s1085_1080wh.jpg",
+                },
+                {
+                    id:2,
+                    img:"https://i1.mifile.cn/a2/1607996114_7468669_s1110_967wh.jpg",
+                }
+            ],
+            articlelist:[
+                {
+                    id:1,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e337f0b9e573fcbde05e04f1aed13379.jpg?w=800&h=800",
+                    text:"谈谈Redmi的极致性...",
+                    author:"卢伟冰",
+                    authorimg:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7ef6dfb615743f2cb81ce3a6b55a5da6.jpg",
+                    num:"3.6万"
+                },
+                {
+                    id:2,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e337f0b9e573fcbde05e04f1aed13379.jpg?w=800&h=800",
+                    text:"谈谈Redmi的极致性...",
+                    authorimg:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7ef6dfb615743f2cb81ce3a6b55a5da6.jpg",
+                    author:"卢伟冰",
+                    num:"3.6万"
+                },
             ]
         }
     },
@@ -224,6 +331,9 @@ export default {
         menu() {
             this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
         },
+        goback(){
+            this.$router.go(-1)
+        }
     },
     mounted() {
         window.addEventListener('scroll', this.menu)
@@ -231,7 +341,7 @@ export default {
     },
     watch:{
         scroll(newVal){
-            if(newVal>250){
+            if(newVal>200){
                 if(this.show.opacity<1){
                     this.show.opacity +=0.1
                 }
@@ -245,7 +355,7 @@ export default {
                     this.showicon.opacity = 0
                 }
             }else{
-                if(newVal<=250){
+                if(newVal<=200){
                     if(this.show.opacity>0)
                         this.show.opacity-=0.1
                     if(this.show.opacity<0){
@@ -264,9 +374,12 @@ export default {
 }
 </script>
 <style scoped>
+.app-view-wrapper{
+    padding-bottom:50px ;
+}
 header{
     height: .9rem;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -633,12 +746,13 @@ footer .footer-btn{
     background: white;
 }
 .card-box-bottom{
-    display: flex;    
+    display: flex;
+    justify-content: space-between;
+    padding: .16rem .32rem;    
 }
 .placeholder{
     display: flex;
     justify-content: center;
-
     line-height: .81rem;
     flex-grow:1 ;
     text-align: center;
@@ -652,6 +766,7 @@ footer .footer-btn{
 }
 .serve-list{
     display: flex;
+    flex-grow: 1;
 }
 .serve-list-item{
     display: flex;
@@ -666,11 +781,215 @@ footer .footer-btn{
     margin-right: .08rem;
 }
 .package{
+    width: 7.2rem;
+    text-align: left;
+    z-index: auto;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+.comments-title{
+    padding: .1rem .36rem;
+    display: flex;
+    height: .72rem;
+    line-height: .72rem;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.comments-title-left{
+    color: #000;
+    font-size: .28rem;
+    font-weight: 700;
+    flex-grow: 1;
+}
+.comments-title-right{
+    color: #7f7f7f;
+    font-size: .24rem;
+    padding-right: .25rem;
+    display: flex;
+}
+.right-icon1{
+    margin-top: .15rem;
+    margin-left: auto;
+    display: block;
+    width: .36rem;
+    height: .36rem;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAYAAACo29JGAAABrklEQVRoQ+2ZyUpEMRBFTzt8gK4UnHUjCOL/f4RLN46tGxf6Ac5cMBKCkLeoSqeLBBqaziOvTu6tVJKeEbjNArMx4JZV3aHcUK7DGRi27FCUSSEN5SZNU4cPDeU6FGVSSNbKrQDbwCbwCjwDH5MicXjIGm4LOIO/PesjcAu8OcReHdIa7hTYyd76BTwB18BnNRrjB6zhZMcLQPbM2z1wAwi2WbOG03h7wCGwXlDMgbuWFrWGE88qsAucZLmn35NFpWCTRcYDLgl28A+g+mRR5eC3tz894RS7APUpLSpAfd49Ab3hZNGUg/qemiyayoSbRb3hBKN3JIvmQsmWyaIuAraAS4EfAfvAWkGiFVSQ5gq2hJMtBScVc4tKwQePHGwJJ8FU3FUDpWLelIMCVJkwW0VbwyWg418VSwUvgRerBFwUnErDObBRgGgferXscCGVC5tzoVfLkHUu7A4l9N4y7KlAOxEt+WUtXerzXNiTeOg7lNC3X6HvLUPfOIf+r8DqtGIyzqLOcybB1wYZcLUZ6rV/KNerMrW4hnK1Geq1fyjXqzK1uIZytRnqtT+0cj91gmA4iskT1QAAAABJRU5ErkJggg==");
+    background-position: 50%;
+    background-size: contain;
+}
+.comments-tags{
+     padding: .1rem .36rem;
+    margin-top: .12rem;
+    margin-bottom: .16rem;
+    min-height: .44rem;
     overflow: hidden;
-    padding-left: .32rem;
+    display: flex;
+    flex-wrap: wrap;
 }
-.tab-header{
-    padding:.32rem 0;
+.comments-tags-text{
+    background-color: #ffeeea;
+    font-size: .2rem;
+    line-height: 1;
+    padding: .09rem .16rem;
+    margin-right: .2rem;
+    margin-bottom: .2rem;
+    display: block;
+    color: #494a4b;
+    border-radius: .5rem;
 }
+.swiper-wrapper1{
+    padding: .1rem .36rem;
+}
+.swiper-box{
+    width: 5.45rem;
+    height: 3.81rem;
+    box-sizing: border-box;
+    padding: .32rem;
+    border: .016rem solid #e5e5e5;
+    border-radius: .16rem;
+}
+.comment-header{
+    display: flex;
+}
+.avatar-img{
+    margin-right: .24rem;
+    width: .64rem;
+    height: .64rem;
+    overflow: hidden;
+    border-radius: 100%;
+}
+.avatar-img>img{
+    display: block;
+    width: 100%;
+}
+.user-info{
+    font-size: .2rem;
+    flex-grow: 1;
+}
+.user-info .user-name{
+    
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 3.2rem;
+    font-weight: 400;
+}
+.user-info .comment-date{
 
+    margin-top: .06rem;
+    color: rgba(0,0,0,.3);
+}
+.comment-content .text{
+    font-size: .24rem;
+    margin: .16rem 0;
+    line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
+    position: relative;
+    color: rgba(0,0,0,.5);
+}
+.photos{
+    margin-bottom: .12rem;
+}
+.photos .img{
+    display: inline-block;
+    width: 1.52rem;
+    height: 1.52rem;
+    margin: 0 .1rem 0 0;
+    border-radius: .16rem;
+    overflow: hidden;
+    position: relative;
+}
+.img>img{
+    width: 100%;
+    height: 100%;
+}
+.topic-header{
+    height: .98rem;
+    line-height: .98rem;
+    font-size: .32rem;
+    padding: 0 .16rem;
+    display: flex;
+    justify-content: space-between;
+}
+.topic-title{
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.right-icon2{
+    margin-top: .25rem;
+    margin-left: auto;
+    display: block;
+    width: .36rem;
+    height: .36rem;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAYAAACo29JGAAABrklEQVRoQ+2ZyUpEMRBFTzt8gK4UnHUjCOL/f4RLN46tGxf6Ac5cMBKCkLeoSqeLBBqaziOvTu6tVJKeEbjNArMx4JZV3aHcUK7DGRi27FCUSSEN5SZNU4cPDeU6FGVSSNbKrQDbwCbwCjwDH5MicXjIGm4LOIO/PesjcAu8OcReHdIa7hTYyd76BTwB18BnNRrjB6zhZMcLQPbM2z1wAwi2WbOG03h7wCGwXlDMgbuWFrWGE88qsAucZLmn35NFpWCTRcYDLgl28A+g+mRR5eC3tz894RS7APUpLSpAfd49Ab3hZNGUg/qemiyayoSbRb3hBKN3JIvmQsmWyaIuAraAS4EfAfvAWkGiFVSQ5gq2hJMtBScVc4tKwQePHGwJJ8FU3FUDpWLelIMCVJkwW0VbwyWg418VSwUvgRerBFwUnErDObBRgGgferXscCGVC5tzoVfLkHUu7A4l9N4y7KlAOxEt+WUtXerzXNiTeOg7lNC3X6HvLUPfOIf+r8DqtGIyzqLOcybB1wYZcLUZ6rV/KNerMrW4hnK1Geq1fyjXqzK1uIZytRnqtT+0cj91gmA4iskT1QAAAABJRU5ErkJggg==");
+    background-position: 50%;
+    background-size: contain;
+}
+.topic-body{
+    padding: 0 .16rem .4rem;
+    display: flex;
+
+}
+.topic-item{
+    margin-right: .16rem;
+    flex-shrink: 0;
+    width: 2.72rem;
+    margin: 0 .16rem 0 0;
+}
+.artic-img{
+    height: 2.72rem;
+    margin: 0;
+}
+.artic-img>img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: .16rem;
+    border-top-right-radius: .16rem;
+}
+.article-text{
+    padding: 0 .16rem;
+    font-size: .24rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: .2rem 0 0;
+    color: black;
+}
+.article-addition{
+    padding: 0 .16rem;
+    width: 2.72rem;
+    height: .84rem;
+    font-size: .2rem;
+    color: rgba(0,0,0,.5);
+    display: flex;
+
+}
+.article-author{
+    width: 50%;
+    display: flex;
+}
+.article-author>img{
+    display: block;
+    flex-shrink: 0;
+    width: .36rem;
+    height: .36rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: .1rem;
+}
+.article-num{
+    background: url("https://m.mi.com/static/img/icon-view.6fec9f2afd.png");
+    height: .36rem;
+    line-height: .36rem;
+    padding-left: .4rem;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: .36rem .36rem;
+}
 </style>

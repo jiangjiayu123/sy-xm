@@ -63,9 +63,10 @@
             <div class="component-list-main">
                 <div class="swipper">
                     <div class="swiper-wrapper">
-                        <el-carousel height="3.6rem">
+                        <!-- <el-carousel height="3.6rem">
                             <el-carousel-item v-for="item in 2" :key="item"></el-carousel-item>
-                        </el-carousel>
+                        </el-carousel> -->
+                        <swiperr></swiperr>
                     </div>
                 </div>
                 <div class="cells">
@@ -546,7 +547,11 @@
 </template>
 
 <script>
+import swipper from "../components/swipper.vue"
 export default {
+    components:{
+        "swiperr":swipper
+    },
     data() {
     return {
         num:1,

@@ -38,8 +38,8 @@
                             <img :src="item.img" alt="" />
                         </div>
                         <div class="goods-info">
-                            <div class="goods-name no-wrap">{{ item.name }}</div>
-                            <div class="goods-price price">{{ item.price }}</div>
+                            <div class="goods-name">{{ item.name }}</div>
+                            <div class="goods-price">{{ item.price }}</div>
                         </div>
                     </a>
                 </div>
@@ -234,12 +234,13 @@ em img {
 }
 .recommend-list {
   display: flex;
+  justify-content: space-between;
   overflow: hidden;
   flex-wrap: wrap;
   flex-direction: row;
 }
 .goods-item {
-  flex: 0 1 50%;
+  flex: 0 1 49.5%;
   overflow: hidden;
 }
 .goods-item a {
