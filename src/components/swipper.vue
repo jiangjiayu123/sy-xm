@@ -1,47 +1,64 @@
 <template>
-  <swiper
-    :slides-per-view="3"
-    :space-between="50"
-    navigation
-    :pagination="{ clickable: true }"
-    :scrollbar="{ draggable: true }"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-  >
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
+  <swiper :options="swiperOption" class="swiper-container swiper-pagination1"  ref="mySwiper">
+                            <!-- 添加的图片,src中存放图片路径 -->
+              <swiper-slide><img class="banner-img" src="../assets/01.jpg" /> </swiper-slide>
+              <swiper-slide><img class="banner-img" src="../assets/02.jpg"/> </swiper-slide>
+                            <!-- 控制选项 -->
+              <div class="swiper-pagination"  slot="pagination"></div>
+              <div class="swiper-button-prev" slot="button-prev"></div>
+              <div class="swiper-button-next" slot="button-next"></div>
   </swiper>
 </template>
 <script>
-  // import Swiper core and required components
-  import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-
-  // Import Swiper Vue.js components
-  import { Swiper, SwiperSlide } from 'swiper/vue';
-
-  // Import Swiper styles
-  import 'swiper/swiper.scss';
-  import 'swiper/components/navigation/navigation.scss';
-  import 'swiper/components/pagination/pagination.scss';
-  import 'swiper/components/scrollbar/scrollbar.scss';
-
-  // install Swiper components
-  SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
-
-  // Import Swiper styles
+  require('swiper/swiper-bundle.css');
+  import { swiper, swiperSlide } from 'vue-awesome-swiper'
+  import 'swiper/swiper-bundle.css'
   export default {
     components: {
-      Swiper,
-      SwiperSlide,
+      swiper,
+      swiperSlide
     },
-    methods: {
-      onSwiper(swiper) {
-        console.log(swiper)
-      },
-      onSlideChange() {
-        console.log('slide change')
-      },
+    data() {
+      return {
+        swiperOption: {
+          pagination: '.swiper-pagination1',
+          slidesPerView: 1,
+          spaceBetween: 30,
+          centeredSlides: false,
+          spaceBetween: 0,
+          onSlideChangeEnd: swiper => {
+            //这个位置放swiper的回调方法
+            this.page = swiper.realIndex+1;
+            this.index = swiper.realIndex;
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          //自动播放的相关设置
+          autoplay:{
+            delay:2000,
+            //设置触碰后是否停止自动播放
+            disableOnInteraction:false
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          //循环
+          loop:true
+        }
+      }
     },
-  };
+    //定义swiper对象
+    computed: {
+      swiper() {
+        return this.$refs.mySwiper.swiper;
+      }
+    },
+    mounted () {
+      this.swiper.slideTo(0, 0, false);
+    }
+ 
+  }
 </script>

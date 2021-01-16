@@ -3,10 +3,12 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import Home from '../components/Home.vue'
 import search from "../components/search.vue"
-import detail from "../components/detail.vue";
-import denglu from "../components/DengLu.vue";
+
+
 // 引入购物车
 import micart from "../components/miCart.vue"
+import detail from "../components/detail.vue"
+import denglu from "../components/DengLu.vue"
 const routes = [
   {
     path: '/',
