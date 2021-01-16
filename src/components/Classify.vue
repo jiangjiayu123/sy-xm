@@ -29,20 +29,16 @@
                                     <p class="list-name">小米11</p>
                                 </div>
                                 <div class="list-product">
-                                    <div class="list-photo"></div>
-                                    <p class="list-name">小米11</p>
+                                    <div class="list-photo-001"></div>
+                                    <p class="list-name">小米10 至尊版</p>
                                 </div>
                                 <div class="list-product">
-                                    <div class="list-photo"></div>
-                                    <p class="list-name">小米11</p>
+                                    <div class="list-photo-002"></div>
+                                    <p class="list-name">小米10 青春</p>
                                 </div>
                                 <div class="list-product">
-                                    <div class="list-photo"></div>
-                                    <p class="list-name">小米11</p>
-                                </div>
-                                <div class="list-product">
-                                    <div class="list-photo"></div>
-                                    <p class="list-name">小米11</p>
+                                    <div class="list-photo-003"></div>
+                                    <p class="list-name">小米10</p>
                                 </div>
                             </div>
 
@@ -658,7 +654,7 @@ export default {
                     img: require("../assets/images/08.png"),
                     name: "小米充电宝",
                 },
-                {
+                 {
                     img: require("../assets/images/09.png"),
                     name: "小米手机保护壳",
                 },
@@ -931,10 +927,20 @@ ul > li {
 .list-photo {
     background-image: url(../assets/images/w手机1.png);
 }
+.list-photo-001 {
+    background-image: url(../assets/images/小米10至尊.png);
+}
+.list-photo-002 {
+    background-image: url(../assets/images/小米10青春.png);
+}
+.list-photo-003 {
+    background-image: url(../assets/images/小米10.png);
+}
+
 .list-photo-mix {
     background-image: url(../assets/images/w小米手机2.png);
 }
-.list-photo,
+.list-photo,.list-photo-003,.list-photo-001,.list-photo-002,
 .list-photo-mix,
 .list-photo-for {
     width: 1rem;

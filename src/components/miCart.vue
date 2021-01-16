@@ -142,11 +142,6 @@ import axios from "axios";
 .app-header-right img{
     width: .7rem;
 }
-.pic1{
-    padding-top: .1rem;
-    padding-right: .1rem;
-}
-
 
 /*购物车样式 */
 .car-body{
@@ -347,6 +342,7 @@ import axios from "axios";
 .jian{
     margin-right: .1rem;
 }
+
 
 
 
