@@ -1,0 +1,166 @@
+<template>
+    <div class="tab-item">
+        <div class="goods-tpl-data">
+            <div class="section">
+                <div class="line"></div>
+            </div>
+            <div class="section" v-for="item in list" :key="item.id">
+                <div class="img">
+                    <img :src="item.img" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+export default {
+    data(){
+        return{
+            list:[
+                {
+                    id:1,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b553b126ea22c96d0fa987a91f4530f6.jpg?w=1080&h=331&bg=0"
+                },
+                {
+                    id:2,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/22c1c7124e7d80049f108e36b7beb6cb.jpg?w=1080&h=1700&bg=20204"
+                },
+                {
+                    id:3,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/da5125cf669159eb2c46eb8728779b0e.jpg?w=1080&h=1453&bg=FFFFFF"
+                },
+                {
+                    id:4,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5769fa549c0e58a4306337c64f35cb3d.jpg?w=1080&h=1297&bg=FFFFFF"
+                },
+                {
+                    id:5,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/006ca0e31eb01237a2d9630f47195dec.jpg?w=1080&h=960&bg=D4B072"
+                },
+                {
+                    id:6,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1da85b58c1a769b6799bf82200f7d1b1.jpg?w=1080&h=738&bg=FECDA5"
+                },
+                {
+                    id:7,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e1f1c3b10eed8e9349be04f791edd34d.jpg?w=1080&h=597&bg=0"
+                },
+                {
+                    id:8,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c20e02f4eab3f0469f2b9b9dd5c4812a.jpg?w=1080&h=1321&bg=DDDDDD"
+                },
+                {
+                    id:9,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/813f928f8cb75af4188928ca737e0f43.jpg?w=1080&h=1301&bg=FFFFFF"
+                },
+                {
+                    id:10,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/45d4f4a4b7b83fff69c0c92b51c17032.jpg?w=1080&h=1986&bg=FFFFFF"
+                },
+                {
+                    id:11,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a34a22f978b8cfebf0b0ce861fe512ab.jpg?w=1080&h=599&bg=0"
+                },
+                {
+                    id:12,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fb767381ad337c098546eabc0898987e.jpg?w=1080&h=595&bg=7C7C7C"
+                },
+                {
+                    id:13,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/590471480e8485eaae1bec05f16de608.jpg?w=1080&h=1385&bg=FFFFFF"
+                },
+                {
+                    id:14,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d13708bf045dae586d2afbc43444e3f2.jpg?w=1080&h=1125&bg=FFFFFF"
+                },
+                {
+                    id:15,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/785631b80702264814bfc017b6039981.jpg?w=1080&h=600&bg=444444"
+                },
+                {
+                    id:16,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/454f778810a5fe69b060f9bfc076b68d.jpg?w=1080&h=654&bg=FFFFFF"
+                },
+                {
+                    id:17,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7f47d035af4aebaaa0b18259a412a148.jpg?w=1080&h=262&bg=FFFFFF"
+                },
+                {
+                    id:18,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6b71acf4d717f341c8745958400d0f06.jpg?w=1080&h=931&bg=FFFFFF"
+                },
+                {
+                    id:19,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fd1ac1a2238dfd113fa67d34ad4bfa47.jpg?w=1080&h=1137&bg=FFFFFF"
+                },
+                {
+                    id:20,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c02a3274123ef4ad644d8802ed9835d5.jpg?w=1080&h=1121&bg=FFFFFF"
+                },
+                {
+                    id:21,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a419e28fb51850cea3f4b92bc41cf4da.jpg?w=1080&h=363&bg=FFFFFF"
+                },
+                {
+                    id:22,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f1618dfd97306906191babaa7e4bcb8d.jpg?w=1080&h=340&bg=FFFFFF"
+                },
+                {
+                    id:23,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2378b5972eb1aaf59830e0dd551b2252.jpg?w=1080&h=740&bg=FFFFFF"
+                },
+                {
+                    id:24,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4f2871d708d8ef7bda06be31e3dbdf2e.jpg?thumb=1&w=1080&h=1765"
+                },
+                {
+                    id:25,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ce9da91534066fc1eafba2e20d81ac42.jpg?w=1080&h=1343&bg=FFFFFF"
+                },
+                {
+                    id:26,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f606c02e46f4e2e5801bef36e6a4de81.jpg?w=1080&h=647&bg=0"
+                },
+                {
+                    id:27,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a491ffa0d81fdcc109243ce01257f729.jpg?w=1080&h=1304&bg=FFFFFF"
+                },
+                {
+                    id:28,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3b2ed88effec3fa271fd23cb922b6d58.jpg?w=1080&h=985&bg=FFFFFF"
+                },
+                {
+                    id:29,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/08fb92900a718be7dc5c78ea5f0810da.jpg?w=1080&h=1115&bg=FFFFFF"
+                },
+                {
+                    id:30,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8db4ee05a3ec8f5adfd45a3cdf3fd6cf.jpg?w=1080&h=992&bg=FFFFFF"
+                },
+                {
+                    id:31,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2eeafe0f8ca4597780d514f80a91e406.jpg?w=1080&h=1370&bg=FFFFFF"
+                },
+                {
+                    id:32,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fc88fd153c1da1138fd621e00137d3e2.png?w=1080&h=427"
+                }
+            ]
+        }
+    }
+}
+</script>
+<style scoped>
+.line{
+    height: 0.16rem;
+    background: rgb(0, 0, 0);
+}
+.img{
+    width: 7.2rem;
+}
+.img>img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+</style>

@@ -62,12 +62,7 @@
         <div class="bodys">
             <div class="component-list-main">
                 <div class="swipper">
-                    <div class="swiper-wrapper">
-                        <!-- <el-carousel height="3.6rem">
-                            <el-carousel-item v-for="item in 2" :key="item"></el-carousel-item>
-                        </el-carousel> -->
                         <swiperr></swiperr>
-                    </div>
                 </div>
                 <div class="cells">
                     <a href=""  v-for="item in picturelist" :key="item.id">
@@ -108,75 +103,25 @@
                     </a>
                 </div>
                 <div class="line1"></div>
-                <div class="product-list">
-                    <a href="javascript:void(0)">
+               <div class="product-list">
+                    <a href="javascript:void(0)" v-for="(item,index) in phonelist" :key="item.id">
                         <div class="img">
-                            <img src="../assets/phone1.jpg" alt="">
-                            <div class="tag">
+                            <img :src="item.img" alt="">
+                            <div class="tag" v-if="index==0">
                                 <img src="../assets/down1.png" alt="">
                             </div>
                         </div>
                         <div class="bgw">
-                                <div class="name">Redmi K30 4G</div>
-                                <div class="brief">120Hz流速屏，全速热爱</div>
+                                <div class="name">{{item.name}}</div>
+                                <div class="brief">{{item.brief}}</div>
                                 <div class="price">
-                                ￥1299<span>起</span>
+                                ￥{{item.price}}<span>起</span>
                                     <span class="price-old">
-                                        <del>￥1699</del>
+                                        <del>￥{{item.priceold}}</del>
                                     </span>
                                 </div>
                                 <div class="buybtn mauto" @click="todetail">立即购买</div>                            
                         </div>                    
-                    </a>
-                    <a href="javascript:void(0)">
-                        <div class="img">
-                            <img src="../assets/phone2.jpg" alt="">
-                        </div>                    
-                        <div class="bgw">
-                            <div class="name">Redmi K30 5G</div>
-                            <div class="brief">双模5G，120Hz流速屏</div>
-                            <div class="price">
-                                ￥1599<span>起</span>
-                                <span class="price-old">
-                                    <del>￥2299</del>
-                                </span>
-                            </div>
-                            <div class="buybtn mauto">立即购买</div>                            
-                        </div>   
-                    </a>
-                </div>
-                <div class="product-list">
-                    <a href="javascript:void(0)">
-                        <div class="img">
-                            <img src="../assets/phone3.jpg" alt="">
-                        </div>
-                        <div class="bgw">
-                                <div class="name">Note 8 Pro</div>
-                                <div class="brief">6400万全场景四摄</div>
-                                <div class="price">
-                                ￥1099<span>起</span>
-                                    <span class="price-old">
-                                        <del>￥1399</del>
-                                    </span>
-                                </div>
-                                <div class="buybtn mauto">立即购买</div>                            
-                        </div>                    
-                    </a>
-                    <a href="javascript:void(0)">
-                        <div class="img">
-                            <img src="../assets/phone4.jpg" alt="">
-                        </div>                    
-                        <div class="bgw">
-                            <div class="name">Redmi Note 8</div>
-                            <div class="brief">千元4800万四摄</div>
-                            <div class="price">
-                                ￥899<span>起</span>
-                                <span class="price-old">
-                                    <del>￥999</del>
-                                </span>
-                            </div>
-                            <div class="buybtn mauto">立即购买</div>                            
-                        </div>   
                     </a>
                 </div>
                 <div class="box-flex">
@@ -194,93 +139,21 @@
                 </div>
                 <div class="line1"></div>
                 <div class="product-list">
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" v-for="(item) in watchlist" :key="item.id">
                         <div class="img">
-                            <img src="https://i8.mifile.cn/v1/a1/82003442-c6b7-3258-cc7a-2a851216ce8a.webp" alt="">
+                            <img :src="item.img" alt="">
                         </div>
                         <div class="bgw">
-                                <div class="name">小米电视4A 65英寸</div>
-                                <div class="brief">4K HDR，人工智能语音系统</div>
+                                <div class="name">{{item.name}}</div>
+                                <div class="brief">{{item.brief}}</div>
                                 <div class="price">
-                                ￥2899<span>起</span>
+                                ￥{{item.price}}<span>起</span>
                                     <span class="price-old">
-                                        <del>￥2999</del>
+                                        <del>{{item.priceold}}</del>
                                     </span>
                                 </div>
-                                <div class="buybtn mauto">立即购买</div>                            
+                                <div class="buybtn mauto" @click="todetail">立即购买</div>                            
                         </div>                    
-                    </a>
-                    <a href="javascript:void(0)">
-                        <div class="img">
-                            <img src="../assets/tv.jpg" alt="">
-                        </div>                    
-                        <div class="bgw">
-                            <div class="name">小米电视4X 43英寸</div>
-                            <div class="brief">FHD全高清屏，人工智能语音</div>
-                            <div class="price">
-                                ￥1299<span>起</span>
-                                <span class="price-old">
-                                    <del>￥1399</del>
-                                </span>
-                            </div>
-                            <div class="buybtn mauto">立即购买</div>                            
-                        </div>   
-                    </a>
-                </div>
-                <div class="product-list">
-                    <a href="javascript:void(0)">
-                        <div class="img">
-                            <img src="../assets/tv1.jpg" alt="">
-                        </div>
-                        <div class="bgw">
-                                <div class="name">小米电视4C 50英寸</div>
-                                <div class="brief">4K HDR，钢琴烤漆</div>
-                                <div class="price">
-                                ￥1999
-                                </div>
-                                <div class="buybtn mauto">立即购买</div>                            
-                        </div>                    
-                    </a>
-                    <a href="javascript:void(0)">
-                        <div class="img">
-                            <img src="../assets/tv2.jpg" alt="">
-                        </div>                    
-                        <div class="bgw">
-                            <div class="name">小米电视4C 55英寸</div>
-                            <div class="brief">4K HDR，人工智能系统</div>
-                            <div class="price">
-                                ￥2299
-                            </div>
-                            <div class="buybtn mauto">立即购买</div>                            
-                        </div>   
-                    </a>
-                </div>
-                <div class="product-list">
-                    <a href="javascript:void(0)">
-                        <div class="img">
-                            <img src="../assets/tv3.jpg" alt="">
-                        </div>
-                        <div class="bgw">
-                                <div class="name">小米电视4A 32英寸</div>
-                                <div class="brief">人工智能系统，高清液晶屏</div>
-                                <div class="price">
-                                ￥999
-                                </div>
-                                <div class="buybtn mauto">立即购买</div>                            
-                        </div>                    
-                    </a>
-                    <a href="javascript:void(0)">
-                        <div class="img">
-                            <img src="../assets/tv.png" alt="">
-                        </div>                    
-                        <div class="bgw">
-                            <div class="name">小米电视4A 50英寸</div>
-                            <div class="brief">4K HDR，人工智能语音系统</div>
-                            <div class="price">
-                                ￥1999
-                            </div>
-                            <div class="buybtn mauto">立即购买</div>                            
-                        </div>   
                     </a>
                 </div>
                 <div class="box-flex">
@@ -304,65 +177,21 @@
                 </div>
                 <div class="line1"></div>
                 <div class="product-list">
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" v-for="item in computerlist" :key="item.id">
                         <div class="img">
-                            <img src="../assets/computer.jpg" alt="">
+                            <img :src="item.img" alt="">
                         </div>
                         <div class="bgw">
-                                <div class="name">Air 13.3" 2019款</div>
-                                <div class="brief">新一代独立显卡</div>
+                                <div class="name">{{item.name}}</div>
+                                <div class="brief">{{item.brief}}</div>
                                 <div class="price">
-                                ￥4799<span>起</span>
+                                ￥{{item.price}}<span>起</span>
                                     <span class="price-old">
-                                        <del>￥5399</del>
+                                        <del>{{item.priceold}}</del>
                                     </span>
                                 </div>
-                                <div class="buybtn mauto">立即购买</div>                            
+                                <div class="buybtn mauto" @click="todetail">立即购买</div>                            
                         </div>                    
-                    </a>
-                    <a href="javascript:void(0)">
-                        <div class="img">
-                            <img src="../assets/computer2.jpg" alt="">
-                        </div>                    
-                        <div class="bgw">
-                            <div class="name">小米笔记本15.6" MX110 独显版</div>
-                            <div class="brief">全面均衡的国民轻薄本</div>
-                            <div class="price">
-                                ￥3899<span>起</span>
-                                <span class="price-old">
-                                    <del>￥4299</del>
-                                </span>
-                            </div>
-                            <div class="buybtn mauto">立即购买</div>                            
-                        </div>   
-                    </a>
-                </div>
-                <div class="product-list">
-                    <a href="javascript:void(0)" >
-                        <div class="img">
-                            <img src="https://i8.mifile.cn/v1/a1/1ed6a607-21e5-8d85-e0e9-dfb07571fc6a.webp" alt="">
-                        </div>
-                        <div class="bgw">
-                                <div class="name">小米游戏本</div>
-                                <div class="brief">冷酷的性能怪兽</div>
-                                <div class="price">
-                                ￥7999起
-                                </div>
-                                <div class="buybtn mauto">立即购买</div>                            
-                        </div>                    
-                    </a>
-                    <a href="javascript:void(0)">
-                        <div class="img">
-                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4f09569618c64e3f6f36d1be6922e3cc.jpg?thumb=1&w=344&h=280" alt="">
-                        </div>                    
-                        <div class="bgw">
-                            <div class="name">Pro 15.6" GTX显卡</div>
-                            <div class="brief">更强悍的专业笔记本</div>
-                            <div class="price">
-                                ￥6299起
-                            </div>
-                            <div class="buybtn mauto">立即购买</div>                            
-                        </div>   
                     </a>
                 </div>
                 <div class="box-flex">
@@ -384,7 +213,7 @@
                         <img src="../assets/picture8.webp" alt="">
                     </a>
                 </div>
-                <div class="product-list-flex" >
+               <div class="product-list-flex" >
                     <a href="javascript:void(0)" v-for="item in productlist" :key="item.id">
                         <div class="img">
                             <img :src="item.img" alt="">
@@ -393,43 +222,9 @@
                                 <div class="name">{{item.name}}</div>
                                 <div class="brief">{{item.brief}}</div>
                                 <div class="price">
-                                {{item.price}}<span>起</span>
+                                ￥{{item.price}}<span>起</span>
                                     <span class="price-old">
-                                        <del>{{item.priceold}}</del>
-                                    </span>
-                                </div>                           
-                        </div>                    
-                    </a>
-                </div>
-                <div class="product-list-flex" >
-                    <a href="javascript:void(0)" v-for="item in productlist" :key="item.id">
-                        <div class="img">
-                            <img :src="item.img" alt="">
-                        </div>
-                        <div class="info">
-                                <div class="name">{{item.name}}</div>
-                                <div class="brief">{{item.brief}}</div>
-                                <div class="price">
-                                {{item.price}}<span>起</span>
-                                    <span class="price-old">
-                                        <del>{{item.priceold}}</del>
-                                    </span>
-                                </div>                           
-                        </div>                    
-                    </a>
-                </div>
-                <div class="product-list-flex" >
-                    <a href="javascript:void(0)" v-for="item in productlist" :key="item.id">
-                        <div class="img">
-                            <img :src="item.img" alt="">
-                        </div>
-                        <div class="info">
-                                <div class="name">{{item.name}}</div>
-                                <div class="brief">{{item.brief}}</div>
-                                <div class="price">
-                                {{item.price}}<span>起</span>
-                                    <span class="price-old">
-                                        <del>{{item.priceold}}</del>
+                                        <del>￥{{item.priceold}}</del>
                                     </span>
                                 </div>                           
                         </div>                    
@@ -555,6 +350,118 @@ export default {
     data() {
     return {
         num:1,
+        watchlist:[
+            {
+                id:1,
+                img:"https://i8.mifile.cn/v1/a1/82003442-c6b7-3258-cc7a-2a851216ce8a.webp",
+                name:"小米电视4A 65英寸",
+                brief:"4K HDR，人工智能语音系统",
+                price:"2899",
+                priceold:"2999"
+            },
+            {
+                id:2,
+                img:require("../assets/tv.jpg"),
+                name:"小米电视4X 43英寸",
+                brief:"FHD全高清屏，人工智能语音",
+                price:"1299",
+                priceold:"1399"
+            },
+            {
+                id:3,
+                img:require("../assets/tv1.jpg"),
+                name:"小米电视4C 50英寸",
+                brief:"4K HDR，钢琴烤漆",
+                price:"1999",
+            },
+            {
+                id:4,
+                img:require("../assets/tv2.jpg"),
+                name:"小米电视4C 55英寸",
+                brief:"4K HDR，人工智能系统",
+                price:"2299",
+            },
+            {
+                id:5,
+                img:require("../assets/tv3.jpg"),
+                name:"小米电视4A 32英寸",
+                brief:"人工智能系统，高清液晶屏",
+                price:"999",
+            },
+            {
+                id:6,
+                img:require("../assets/tv.png"),
+                name:"小米电视4A 50英寸",
+                brief:"4K HDR，人工智能语音系统",
+                price:"1999",
+            },
+        ],
+        phonelist:[
+            {
+                id:1,
+                img:require("../assets/phone1.jpg"),
+                name:"Redmi K30 4G",
+                brief:"120Hz流速屏，全速热爱",
+                price:"1299",
+                priceold:"1699"
+            },
+            {
+                id:2,
+                img:require("../assets/phone2.jpg"),
+                name:"变频 | 米家互联网空调",
+                brief:"变频节能，高效制冷热",
+                price:"2399",
+                priceold:"2699"
+            },
+            {
+                id:3,
+                img:require("../assets/phone3.jpg"),
+                name:"变频 | 米家互联网空调",
+                brief:"变频节能，高效制冷热",
+                price:"2399",
+                priceold:"2699"
+            },
+            {
+                id:4,
+                img:require("../assets/phone4.jpg"),
+                name:"变频 | 米家互联网空调",
+                brief:"变频节能，高效制冷热",
+                price:"2399",
+                priceold:"2699"
+            },
+        ],
+         computerlist:[
+            {
+                id:1,
+                img:require("../assets/computer.jpg"),
+                name:"Air 13.3' 2019款",
+                brief:"新一代独立显卡",
+                price:"4799",
+                priceold:"5399"
+            },
+            {
+                id:2,
+                img:require("../assets/computer2.jpg"),
+                name:"小米笔记本15.6' MX110 独显版",
+                brief:"全面均衡的国民轻薄本",
+                price:"3899",
+                priceold:"4299"
+            },
+            {
+                id:3,
+                img:"https://i8.mifile.cn/v1/a1/1ed6a607-21e5-8d85-e0e9-dfb07571fc6a.webp",
+                name:"小米游戏本",
+                brief:"冷酷的性能怪兽",
+                price:"7299",
+            },
+            {
+                id:4,
+                img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4f09569618c64e3f6f36d1be6922e3cc.jpg?thumb=1&w=344&h=280",
+                name:"Pro 15.6' GTX显卡",
+                brief:"更强悍的专业笔记本",
+                price:"6299",
+            },
+        ],
         imagelist:[
             {
                 id:1,
@@ -576,6 +483,38 @@ export default {
             },
             {
                 id:2,
+                img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
+                name:"变频 | 米家互联网空调",
+                brief:"变频节能，高效制冷热",
+                price:"￥2399",
+                priceold:"￥2699"
+            },
+            {
+                id:3,
+                img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
+                name:"变频 | 米家互联网空调",
+                brief:"变频节能，高效制冷热",
+                price:"￥2399",
+                priceold:"￥2699"
+            },
+            {
+                id:4,
+                img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
+                name:"变频 | 米家互联网空调",
+                brief:"变频节能，高效制冷热",
+                price:"￥2399",
+                priceold:"￥2699"
+            },
+            {
+                id:5,
+                img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
+                name:"变频 | 米家互联网空调",
+                brief:"变频节能，高效制冷热",
+                price:"￥2399",
+                priceold:"￥2699"
+            },
+            {
+                id:6,
                 img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
                 name:"变频 | 米家互联网空调",
                 brief:"变频节能，高效制冷热",
@@ -934,10 +873,11 @@ export default {
     text-align: center;
     background: rgb(255, 255, 255);
     display: flex;
+    flex-wrap: wrap;
 }
 .product-list>a{
     width: 3.4rem;
-    margin-right:0.12rem;
+    margin-right:0.08rem;
 }
 .product-list>a>.img{
     position: relative;
@@ -974,6 +914,9 @@ export default {
     font-size: .22rem;
     line-height: .3rem;
     color: rgba(0,0,0,.54);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .bgw .price{
     font-size: .28rem;
@@ -1014,12 +957,14 @@ export default {
 }
 .product-list-flex{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .product-list-flex a{
-    margin-right: .04rem;
+   width: 49.5%;
 }
 .product-list-flex .img{
-    width: 3.6rem;
+    width: 100%;
     height: 3.6rem;
 }
 .img>img{

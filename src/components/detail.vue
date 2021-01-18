@@ -26,11 +26,7 @@
        </header>
        <div class="section section-detail">
            <div class="swiper">
-               <div class="swiper-wrapper">
-                    <el-carousel height="7.92rem">
-                        <el-carousel-item v-for="item in 2" :key="item"></el-carousel-item>
-                    </el-carousel>
-                </div>
+                   <swipperr></swipperr>
            </div>
        </div>
        <div class="section section-detail">
@@ -239,6 +235,31 @@
                 </div>
            </div>
        </div>
+       <div class="section section-detail">
+           <tuijian></tuijian>
+       </div>
+       <div class="section section-detail">
+           <div class="line"></div>
+       </div>
+       <div class="section section-detail">
+           <xiangqing></xiangqing>
+       </div>
+       <div class="section section-detail">
+           <div class="guess-like">
+               <div class="recommend-box">
+                   <div class="recommend-title">猜你喜欢</div>
+                   <div class="recommend-list">
+                       <div class="goods-item" v-for="item in goodslist" :key="item.id">
+                           <a class="exposure">
+                               <div class="goods-img-box">
+
+                               </div>
+                           </a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
        <footer>
            <div class="bgw">
                <a class="footer-btn router-link-active">
@@ -261,7 +282,15 @@
    </div>
 </template>
 <script>
+import swipper from "../components/swipper2.vue"
+import jian from "../components/tuijian.vue"
+import xiangqing from "../components/xiangqing.vue"
 export default {
+    components:{
+        "swipperr":swipper,
+        "tuijian":jian,
+        "xiangqing":xiangqing
+    },
     data(){
         return {
             show:{
@@ -324,6 +353,11 @@ export default {
                     author:"卢伟冰",
                     num:"3.6万"
                 },
+            ],
+            goodslist:[
+                {
+
+                }
             ]
         }
     },
@@ -383,7 +417,7 @@ header{
     top: 0;
     left: 0;
     right: 0;
-    z-index: 99;
+    z-index: 100;
 }
 header .fill-height{
     height: 100%;
@@ -406,11 +440,11 @@ header .fill-height{
     margin-top: -50px;
 }
 .el-carousel__item:nth-child(2n) {
-     background:url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ce53624682c4fd432deda71daf5b21c5.jpg") center center no-repeat;
+     background:url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/42db5a05a5d5627075e214e842d08f9e.jpg") center center no-repeat;
      background-size:100%;
 }  
 .el-carousel__item:nth-child(2n+1) {
-     background:url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/19566b7da2dffb8ec89ffb937b72e343.jpg") center center no-repeat;
+     background:url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c44676f48c26fc43b06454ac96199728.jpg") center center no-repeat;
      background-size:100%;
 }
 
@@ -991,5 +1025,27 @@ footer .footer-btn{
     background-repeat: no-repeat;
     background-position: 0;
     background-size: .36rem .36rem;
+}
+.recommend-box{
+    background: #fff;
+    text-align: left;
+}
+.recommend-box .recommend-title{
+    line-height: .8rem;
+    padding: 0 .32rem;
+    font-size: .3rem;
+}
+.recommend-box .recommend-list{
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.goods-item{
+    flex: 1 1 49.5%;
+    overflow: hidden;
+}
+.goods-item a{
+    display: block;
 }
 </style>
