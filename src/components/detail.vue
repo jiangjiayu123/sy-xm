@@ -1,5 +1,5 @@
 <template>
-   <div class="app-view-wrapper">
+   <div class="app-view-wrapper" ref="sourcemenu">
        <header>
            <div class="fill-height" :style="showicon">
                <a class="header-btn" @click="goback">
@@ -14,10 +14,10 @@
                    <img src="https://m.mi.com/static/img/icon-back2.2d09ed8aaf.png" alt="">
                </a>
                <div class="placeholder">
-                   <span>商品</span>
-                   <span>评价</span>
-                   <span>详情</span>
-                   <span>推荐</span>
+                   <a href="#1"><span :class="{active1:productName==1}" @click="lian(1)">商品</span></a>
+                   <a href="#2"><span :class="{active1:productName==2}" @click="lian(2)">评价</span></a>
+                   <a href="#3"><span :class="{active1:productName==3}" @click="lian(3)">详情</span></a>
+                   <a href="#4"><span :class="{active1:productName==4}" @click="lian(4)">推荐</span></a>
                </div>
                <a class="header-btn">
                    <img src="https://m.mi.com/static/img/icon-share-black.faaff0b7f0.png" alt="">
@@ -25,7 +25,7 @@
            </div>
        </header>
        <div class="section section-detail">
-           <div class="swiper">
+           <div class="swiper" id="1">
                    <swipperr></swipperr>
            </div>
        </div>
@@ -123,7 +123,7 @@
                            <div class="card-box-top-right-top">
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAABgFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAURmmrAAAAf3RSTlMAAQIDBAUKCwwOEBESExQVFhcYGRobHB0eHyAkJSYoKSotMDE2ODk/Qk5PUlpbXF1eX2FjaWprbG1ydnl6fX6AgYOEhYaHiIuUlZqcnZ6foKKsr7K1t7i5ur2+v8DFxsfIycrLzNLU1dbX2Nna2+Du7/Dx8/T19vf4+fr7/P3+i5i9oQAAAkFJREFUGBntwfs322AABuA3ilRpY2PTDnOpXSmbbXazVS90G6pKu0vZlRnGJpqWNMn7ry9fj+MgbXV+9jy4dCGujqFwdkNVN7LhoasunEfqnvyW55H818luCbU92NJ5gr45hlpa4ySLO6nh/paW/uHUTpFk1IOqWmcPaX6euC6hTOp6+sXkwTsPqpk5ZGk+IOGYFEiWeBBDZdI4WXrTjFOa35bIhxIq6d2mMduMM5rnDG71oILG1yWu+uEQWKX+qhFOHT9YeCxBUEKf9tRcSIEgPSnwewecbhe43QkhmLFoszJBCNd+U7sFpyg5J8GmZE2WmRkFNilJRuD0gbwHYdSiOh3oiqm0QhDuk+/htEnehJAjY01AU5zMQegjf8Fpn3RDUEk/bH5SheAm9+H0h/RAUEk/bF2kCsFD/oXTOjkAIUfGm4CmGLkCYYBch9MyOQIhZFGN+W9Mq7TGIIySy3B6QS42wKZkTJaZWQW2hkXyOZwGVe72QAhmLNqsTBBC7y73BuHUvkL9pQuCEsqpex9HfBBckzpzCpwanhX5sw8O/RssTkiooHONzLTjjCtZcq0TFd09pJVuwyltaYsHd1DFozyNWS9O8M4ZzI+jGjlaoD7vxTHvvM5CVEZV7gRppL044k0bZMKNWhIajaQPZb6kQS2B2txxjfqCDzbfgk4t7sY53DOksaQAypJBzrhxvmmNZkpRUia1adRDjmgspVIlahEZdZGjpGmSURn1imikFkH95Kl8fkrGf5DDYRmXLuwfIPyv3DLCuHAAAAAASUVORK5CYII=" alt="">
                             <span class="mr1x">北京市 东城区</span>
-                            <span class="on">有现货</span>
+                            <span class="on1">有现货</span>
                             <i class="right-icon"></i>
                            </div>
                            <div class="mt2x gray">24点前付款，预计1月18日送达</div>
@@ -152,7 +152,7 @@
        <div class="section section-detail">
            <div class="line"></div>
        </div>
-       <div class="section section-detail">
+       <div class="section section-detail" id="2">
            <div class="package">
               <a class="comments-title">
                   <div class="comments-title-left">用户评价</div>
@@ -235,7 +235,7 @@
                 </div>
            </div>
        </div>
-       <div class="section section-detail">
+       <div class="section section-detail" id="3">
            <tuijian></tuijian>
        </div>
        <div class="section section-detail">
@@ -244,7 +244,7 @@
        <div class="section section-detail">
            <xiangqing></xiangqing>
        </div>
-       <div class="section section-detail">
+       <div class="section section-detail" id="4">
            <div class="guess-like">
                <div class="recommend-box">
                    <div class="recommend-title">猜你喜欢</div>
@@ -252,7 +252,13 @@
                        <div class="goods-item" v-for="item in goodslist" :key="item.id">
                            <a class="exposure">
                                <div class="goods-img-box">
-
+                                   <img :src="item.img" alt="">
+                               </div>
+                               <div class="goods-info">
+                                   <div class="goods-name">{{item.name}}</div>
+                                   <div class="goods-price">
+                                       ￥{{item.price}}
+                                   </div>
                                </div>
                            </a>
                        </div>
@@ -260,6 +266,109 @@
                </div>
            </div>
        </div>
+       <div class="abc">
+            <div class="download-app-bottom-float">
+                <a>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7a858f89fdb2932ae4c3dd04d6f8674a.png" alt="">
+                </a>
+            </div>
+            <div class="fixed-bar">
+                 <a>
+                    <img src="https://m.mi.com/static/img/top.451d650ecd.png" alt="">
+                </a>
+            </div>
+       </div>
+       <transition>
+       <div class="ui-mask" v-show="play">
+            <div class="pop pop-product" >
+                <div class="close">
+                    <i class="icon-close" @click="del"></i>
+                </div>
+                <div class="pro-info">
+                    <div class="product-img">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1587436964.29467594.jpg" alt="">
+                    </div>
+                    <div class="product-desc">
+                        <div class="product-price">
+                            <div class="cur-price">
+                                ￥1999
+                            </div>
+                            <div class="origin-price">
+                                <del>￥2899</del>
+                            </div>
+                        </div>
+                        <div class="name">
+                        <span v-if="itemName==1">Redmi K30 5G 6GB+256GB 时光独白</span>
+                        <span v-if="itemName==2">Redmi K30 5G 8GB+128GB 时光独白</span>
+                        <span v-if="itemName==3">Redmi K30 5G 8GB+256GB 时光独白</span>
+                    </div>
+                    </div>               
+                </div>
+                <div class="max5">
+                    <div class="mt2x">
+                        <div class="option-title">
+                            版本
+                        </div>
+                        <div class="options-group">
+                            <div class="option-item " :class="{on:itemName==1}" @click="toitem(1)">6GB+128GB</div>
+                            <div class="option-item" :class="{on:itemName==2}" @click="toitem(2)">8GB+128GB</div>
+                            <div class="option-item" :class="{on:itemName==3}" @click="toitem(3)">8GB+256GB</div>
+                        </div>
+                    </div>
+                    <div class="mt2x">
+                        <div class="option-title">
+                            颜色
+                        </div>
+                        <div class="options-group">
+                            <div class="option-item " :class="{on:itemName1==4}" @click="toitem1(4)">深海微光</div>
+                            <div class="option-item" :class="{on:itemName1==5}" @click="toitem1(5)">紫玉幻境</div>
+                            <div class="option-item" :class="{on:itemName1==6}" @click="toitem1(6)">时光独白</div>
+                        </div>
+                    </div>
+                    <div class="layout">
+                    <div class="option-title">购买数量</div>
+                    <div class="xm-input-number">
+                        <div class="input-sub"><i class="image-icons icon-line" @click="minus"></i></div>
+                        <div class="input-num"><span>{{num}}</span></div>
+                        <div class="input-add"><i class="image-icons icon-cross" @click="addnum"></i></div>
+                    </div>
+                    </div>
+                    <div class="ywb">
+                        <div class="option-title">
+                            小米服务
+                        </div>
+                        <div class="ywb-row">
+                            <div class="option-title-sub">
+                                <img src="https://m.mi.com/static/img/icon-accident.77f043afba.png" alt="">
+                                <div class="tit">意外保护</div>
+                                <a class="service-url">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA9CAMAAAApvJHbAAACT1BMVEUAAAD///+AgID////////MzMzb29v////f39/Gxsbj4+Pm5ubR0dHV1dXq6urPz8/f39/S0tLh4eHb29vR0dHT09Pe3t7Y2NjQ0NDZ2dnT09Pc3NzV1dXX19ff39/a2trd3d3X19fY2NjS0tLZ2dnV1dXV1dXW1tbX19fU1NTZ2dnV1dXa2trS0tLX19fY2NjU1NTZ2dna2trU1NTY2NjV1dXX19fY2NjV1dXX19fb29vW1tbZ2dnW1tbV1dXX19fV1dXX19fV1dXY2NjW1tbU1NTW1tbU1NTX19fW1tbW1tbU1NTX19fX19fV1dXV1dXW1tbV1dXY2NjW1tbW1tbU1NTV1dXW1tbU1NTV1dXX19fV1dXW1tbY2NjW1tbV1dXV1dXX19fW1tbV1dXW1tbV1dXW1tbW1tbV1dXX19fV1dXW1tbV1dXV1dXX19fW1tbV1dXX19fW1tbV1dXW1tbU1NTV1dXV1dXV1dXW1tbW1tbV1dXW1tbV1dXX19fV1dXV1dXW1tbV1dXV1dXX19fV1dXV1dXU1NTW1tbU1NTV1dXU1NTW1tbU1NTV1dXW1tbV1dXV1dXW1tbV1dXW1tbV1dXV1dXW1tbV1dXU1NTV1dXW1tbW1tbV1dXV1dXW1tbV1dXV1dXU1NTW1tbV1dXW1tbV1dXU1NTV1dXW1tbV1dXV1dXW1tbV1dXV1dXW1tbV1dXW1tbW1tbV1dXU1NTV1dXV1dXW1tbV1dXV1dXW1tbV1dXW1tbU1NTV1dXU1NTV1dXV1dXV1dXW1tbV1dXLxlawAAAAxHRSTlMAAQICAwUHBwgJCQoLDAwQEBERFRYXFxobGx0dHiAgIiUmJygoKissLS8vMDAzMzQ1NTc7Ozw/QkNGRkpKS05SVFpbW11eXl9fY2RlZWZnaGtub3BxcnN1dnl5enx8fX6AgIOEhIaOj5GRk5eYmZ+gpaWnqKirq66ys7S1tbe3uLq6vL29w8TFxcbJy8vMzc3Oz9LT09TV1dbX19jZ2tze4uPk5OXl6Onq6uvu7u/w8PHx8vP19fb29/j4+fn6+vv7/f7+7rfKEAAAA+NJREFUSMelV/lDEkEUHkSsoDLSguwwqdTAMq2korLTTM1M7IQyzTsNtVJMujRNjbBb0xSSpNRAKShWkph1/rDQQhFmN2Hnp9198/GYd3zzPQBwKyo1r7yhpVtv/m7Wd7c0lOelRoFFrXBegiyrsLqp4+3g8JjD6RgbHnzT0VRdmCVL4IXTQ1nsleuTC273WBBCJHQRdpudcEHS82bpqZcnx6xgs2gdHyhpHxixuz373VZjb1dnV6/ROvtmHxloK9lP4z5MkJav0jkgJIZ0GlVZsUKem50rVxSXqTS6IQJCh+5WfpqAwjuHL6saJUhoM/U3FqWLuN5tLK4ovaix/7MNksRolYzPwZ457ozaMAVd1maFNCk2msees7B50bFJUoXG6oJTBnXO5kDvYdyU8w9N06T+UUWGOCLQzoqQZFQ+1pPTpgcFu5aF+Vm5m0pfItJprj0ayaEIC2f18Tqzk0QvSjcu8/vplNLnE2hSq5QKOFRJYXGE+5TaSTShLd21YA8n7vzLid+WVqU4krYeVomVreO/J14UxPn8QRY/5wFC468yhf8tRWHm63GE7ufw570LZGoTOdl6SrT0v+iloswnk6RJLRN4PYenVRmmnVql0A+8fF3K3pR1PD+4UKn9NW2oSgtn/Utn/ugUaVaK/f1sOFxzt+bwBv/P4qvj5NRo/r+CWHlARUB9rTQgYFvPPjM8O7vF/3Pkvjo9JFT7V8x2xvoSHel6dFQQcMbES0ZkvJgYGLljj12k7kbMTMfwktsd0FqBKRIqNCey0godbTtnIpJQMABt905gioQff+TkkXg+pmwymm3wgzze83zwzgg0XRGDYJZE8Rl+qZd5nrJ67ESfNCIo9BJpP2F/d9pDgIUW98dGCa64uWsTdySu5eJKPqlxyG25FgVSqxHSFcXiPKzZc+H6hd1rcKbYIh1CN1NBXhNCmvRo3Jb4c+8t789tw5mi0zUIqfNAeQdCKhEPt4UqYzNpFqkQeloOGt6S7jIuO0g0m1vmJt80gJZBaC3GEwINGrCKrXCwBXQPu4wKEDQaKIyuT91AP0b0ykNAy/uIMT0wO+xduSGgc7t+OMzgm9PWmR0COrvT7vwGvv4M2ffPrwzPzSzmzPLNrNaY1TlNj9GgvT1G0980aG9/03ALNXqOW2h4jRo9x2tAVu/hVIUkKPQ8p87yeXMGhs+p0L58zuwuYXaPMbtDGd7fzLQDM93CVDMx02uL1YoCvFZcnE5ddYxCp/pq5BPbsRpZTKORffT5vctSCUafX2mm1ucLZoO+4GcD37nkY/BzCcOZyDuP3QlxHvs7Cx4KcRYMdg79A7QjbA4wW27VAAAAAElFTkSuQmCC" alt="">
+                                    <span>服务介绍</span>
+                                </a>
+                            </div>
+                            <div class="options-group">
+                                <div class="layout">
+                                    <div class="option-item">
+                                        <span>意外保障服务</span>
+                                        <span>249元</span>
+                                    </div>
+                                    <div class="option-item">
+                                        <span>意外保障服务</span>
+                                        <span>249元</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-bottom">
+                    <div class="action-box">
+                        <a>加入购物车</a>
+                    </div>
+                </div>
+            </div>
+       </div>
+       </transition>
        <footer>
            <div class="bgw">
                <a class="footer-btn router-link-active">
@@ -274,8 +383,8 @@
                    <img src="../assets/08.png" alt="">
                    <span>购物车</span>
                </a>
-               <div class="action-box flex">
-                   <a class="btn buy-btn">加入购物车</a>
+               <div class="action-box flex" >
+                   <a class="btn buy-btn" @click="add">加入购物车</a>
                </div>
            </div>
        </footer>
@@ -293,6 +402,11 @@ export default {
     },
     data(){
         return {
+            productName:1,
+            num:1,
+            play:false,
+            itemName:1,
+            itemName1:4,
             show:{
                 opacity:0
             },
@@ -300,6 +414,7 @@ export default {
                 opacity:1
             },
             scroll:"",
+            screenHeight:"",
             list:[
                 {
                     id:1,
@@ -356,8 +471,41 @@ export default {
             ],
             goodslist:[
                 {
-
-                }
+                    id:1,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1cae0b41b12f847c75e24513a2c432e9.png?thumb=1&w=360&h=360",
+                    name:"黑鲨3，腾讯Solar Core游戏引擎 双模5G",
+                    price:"3499"
+                },
+                {
+                    id:2,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1cae0b41b12f847c75e24513a2c432e9.png?thumb=1&w=360&h=360",
+                    name:"黑鲨3，腾讯Solar Core游戏引擎 双模5G",
+                    price:"3499"
+                },
+                {
+                    id:3,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1cae0b41b12f847c75e24513a2c432e9.png?thumb=1&w=360&h=360",
+                    name:"黑鲨3，腾讯Solar Core游戏引擎 双模5G",
+                    price:"3499"
+                },
+                {
+                    id:4,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1cae0b41b12f847c75e24513a2c432e9.png?thumb=1&w=360&h=360",
+                    name:"黑鲨3，腾讯Solar Core游戏引擎 双模5G",
+                    price:"3499"
+                },
+                {
+                    id:5,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1cae0b41b12f847c75e24513a2c432e9.png?thumb=1&w=360&h=360",
+                    name:"黑鲨3，腾讯Solar Core游戏引擎 双模5G",
+                    price:"3499"
+                },
+                {
+                    id:6,
+                    img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1cae0b41b12f847c75e24513a2c432e9.png?thumb=1&w=360&h=360",
+                    name:"黑鲨3，腾讯Solar Core游戏引擎 双模5G",
+                    price:"3499"
+                },
             ]
         }
     },
@@ -365,15 +513,57 @@ export default {
         menu() {
             this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
         },
+        handleScroll(){
+            this.screenHeight = document.documentElement.scrollTop || document.body.scrollTop;
+        },
         goback(){
             this.$router.go(-1)
+        },
+        toitem(name){
+            this.itemName=name;
+        },
+        toitem1(name){
+            this.itemName1=name;
+        },
+        add(){
+            this.play=true;
+        },
+        del(){
+            this.play=false;
+        },
+        minus(){
+           if(this.num>=2){
+               this.num--
+           }           
+        },
+        addnum(){
+            if(this.num<20){
+                 this.num++
+            }           
+        },
+        lian(name){
+            this.productName=name
         }
     },
     mounted() {
         window.addEventListener('scroll', this.menu)
-        
+        window.addEventListener('scroll', this.handleScroll)       
     },
     watch:{
+        screenHeight(newVal){
+            if(newVal>0&&newVal<950){
+                this.productName=1
+            }
+            else if(newVal>=950&&newVal<2100){
+               this.productName=2
+            }
+            else if(newVal>=2100&&newVal<13123){
+               this.productName=3
+           }
+           else{
+               this.productName=4
+           }
+        },
         scroll(newVal){
             if(newVal>200){
                 if(this.show.opacity<1){
@@ -403,13 +593,15 @@ export default {
                     }
                 }
             }
-        }
+        },
+        
     }
 }
 </script>
 <style scoped>
 .app-view-wrapper{
-    padding-bottom:50px ;
+    padding-bottom:50px;
+    user-select: none;
 }
 header{
     height: .9rem;
@@ -754,7 +946,7 @@ footer .footer-btn{
     font-size: .24rem;
 }
 
-.card-box-top-right-top .on{
+.card-box-top-right-top .on1{
     font-size: .24rem;
     flex-shrink: 0;
     color: #ff5934;
@@ -787,16 +979,24 @@ footer .footer-btn{
 .placeholder{
     display: flex;
     justify-content: center;
+    align-items: center;
     line-height: .81rem;
     flex-grow:1 ;
     text-align: center;
-
 }
-.placeholder span{
+.placeholder a{
+    color: black;
+    text-decoration: none;
     margin: 0 .16rem;
-    font-size: .253rem;
-    padding-bottom: 6px;
+    padding-bottom: 20px;
+}
+.placeholder span{ 
+    font-size: .253rem;  
     position: relative;
+}
+.active1{
+    color: #ff5934;
+    border-bottom: 2px solid #ff5934;
 }
 .serve-list{
     display: flex;
@@ -1047,5 +1247,320 @@ footer .footer-btn{
 }
 .goods-item a{
     display: block;
+}
+.goods-img-box img{
+    display: block;
+    width: 100%;
+    min-height: 3.56rem;
+}
+.goods-info{
+    padding: .18rem .26rem .22rem;
+}
+.goods-info .goods-name{
+    font-size: .28rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.goods-info .goods-price{
+    font-size: .32rem;
+    color: #ff6700;
+    margin-top: .1rem;
+}
+
+.download-app-bottom-float{
+    position: fixed;
+    height: auto;
+    z-index: 99;
+    left: 35%;
+    right: 0;
+    bottom: 1.4rem;
+    width: 2.66rem;
+}
+.download-app-bottom-float img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.fixed-bar{
+    position: fixed;
+    z-index: 997;
+    bottom: 1.4rem;
+    right: .26rem;
+}
+.fixed-bar a{
+    display: block;
+    width: .7rem;
+    height: .7rem;
+    margin: .1rem auto 0;
+}
+.fixed-bar img{
+    display: block;
+    width: 100%;
+}
+.pop{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 7.2rem;
+    background-color: #fff;
+    color: #000;
+    height: 9.92rem;
+    border-top-left-radius: .24rem;
+    border-top-right-radius: .24rem;
+    text-align: left;
+}
+.pop .close{
+    position: absolute;
+    top: .02rem;
+    right: .16rem;
+    width: .6rem;
+    height: .6rem;
+    z-index: 111;
+}
+.pop .icon-close{
+    display: block;
+    width: .4rem;
+    height: .4rem;
+    margin: .14rem 0 0 .14rem;
+    background: url("https://m.mi.com/static/img/popup-close2.773bafd4b8.png") center center no-repeat;
+    background-size:100% ;
+}
+.pop .pro-info{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: .32rem 0 .2rem;
+}
+.pro-info .product-img{
+    position: relative;
+    width: 1.67rem;
+    height: 1.67rem;
+    text-align: center;
+    overflow: hidden;
+    border-radius: .08rem;
+    background: rgba(0,0,0,.04);
+}
+.product-img img{
+    width: 1.41rem;
+    height: 1.41rem;
+    margin: .13rem auto;
+}
+.product-desc{
+    position: relative;
+    width: 4.5rem;
+    height: 1.67rem;
+    margin: 0 0 0 .32rem;
+    text-align: left;
+}
+.product-desc .product-price{
+    display: flex;
+    margin-top: .37rem;
+    align-items: baseline;
+}
+.product-price .cur-price{
+    color: #ff5934;
+    font-size: .36rem;
+    font-weight: 900;
+    padding-left: .23rem;
+}
+.product-price .origin-price{
+    margin-left: .11rem;
+    color: rgba(0,0,0,.3);
+    text-decoration: line-through;
+    padding-left: .17rem;
+}
+.product-desc .name{
+    font-size: .24rem;
+    height: .64rem;
+    line-height: .32rem;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.max5{
+    max-height: 6.6rem;
+    padding-bottom: 0;
+    overflow-x: hidden;
+    padding: 0 .32rem 0;
+}
+.max5 .option-title{
+    display: flex;
+    position: relative;
+    margin-top: .4rem;
+    margin-bottom: .24rem;
+    line-height: .24rem;
+    font-size: .24rem;
+    color: #000;
+    font-weight: 700;
+}
+.options-group{
+    display: flex;
+}
+.option-item{
+    font-size: .24rem;
+    line-height: .24rem;
+    min-width: .64rem;
+    height: .24rem;
+    padding: .15rem .24rem;
+    text-align: center;
+    margin: 0 .24rem .24rem 0;
+    overflow: visible;
+    border-radius: .28rem;
+    border: .02rem solid transparent;
+    background: rgba(0,0,0,.04);
+}
+.on{
+    color: #f56600;
+    border: .02rem solid #ff5934;
+    border-radius: .28rem;
+    background: rgba(255,89,52,.08);
+}
+.ui-mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.8);
+    z-index: 1100;
+}
+.layout{
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.layout .option-title{
+    margin-bottom: .4rem;
+    display: flex;
+    position: relative;
+    margin-top: .4rem;
+    line-height: .24rem;
+    font-size: .24rem;
+    color: #000;
+    font-weight: 700;
+}
+.xm-input-number{
+    display: flex;
+    align-items: center;
+}
+.input-sub{
+    display: inline-block;
+    width: .68rem;
+    height: .68rem;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+}
+.icon-line{
+    display: block;
+   opacity: .6;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEEAAAANCAYAAAD2bQNSAAAAuUlEQVRIS+3Xz2oCMRgE8N9WKW0PWnsqIvgKPYvv/yaCWkvrolL/rnxsru0DbDKXQHKayWTmS6VFH894xwAvaa9K511Ybjiixg82OKEJkr1EfIQhnvCIB3RJhAYX/GKPb2xxCJLhgDEmHST+l4Ov2GGBVYgwxSveOnbz/z3hcMUZS6xDhI/khnBEbvjEV4gwSyEY4ZgbIhO2IcI8hWMEZG6IpqiLE5ITSiaUdmjbocwJZWJsJ8bs/w53m7A2zr9c3PcAAAAASUVORK5CYII=") center center no-repeat;
+    background-size:.21rem .04rem ;
+
+}
+.input-num{
+    display: inline-block;
+    vertical-align: middle;
+    width: .93rem;
+    height: .56rem;
+    background: #f9f9f9;
+    border-radius: .08rem;
+    line-height: .6rem;
+    text-align: center;
+    font-size: .32rem;
+}
+.input-add{
+    display: inline-block;
+    width: .68rem;
+    height: .68rem;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+}
+.icon-cross{
+    display: block;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEEAAABBCAMAAAC5KTl3AAABXFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa7cwIAAAAc3RSTlMAAQIDBQcICwwODxASFxkbHB4fICQoKSsuLzE2Nzg7PT4/RUhJTlBRVVdYWVpkb3N3e31+g4iJk5WXmpucoKKlpqirra6wtbe4u72/wcPEx8jJysvMzdHS09XY2dvd3uHj5OXn6Orr7u/x9Pb3+Pr7/P3+oLZutwAAAcxJREFUWMPt191bwVAcwPHDVmkJIYXykgp5qxXSC1KI3iSEoiy1ChP7/5+nkubiPHXx24WbfW9/2+fmPDtnB6G/I4x0uv52u+dQIViEjc7es51mIerWySAAqQxW+J/iThJCqByZ1lBgIhQBEAyB8hDgudS8AiAsReq/An+5MgsQrEePgnDtmgMI9mNGEPJenSRIgiRIwngEUmVYstqx/OcvglDdcWNzm8WknR5s4YTSEYgcHWOdM21BYPOnJ8OEeSIa9CxMyb9PpmCmXH9ksF7aH4LAsU1s3ni4y8W9eoSMdKXFA+s9J1wziM7y8Prd8CJK3/NiiKQP1VkxAn8RQm8dUULxAJWbooQsjfYLIt7vtQ/X0GpUhMA9bVJItRFnOCDwerO9TCKkc0ZSl9d5rCo7gt9rJfyBq7PYlpH6+i5kJDW/4vJi7eRH61zb9WNzz7pZMyEf/F/JCMXsnA7LnR6tUslvweZatXJSJu1ykiAJkjAmwZZojASPFiBYog+CcLWuBgim4J0gnJmVAEHryfV+z4WYZhIgTC/En/uDo4272ZqA3JqJKW+i+020n7aNctDdX653hZMXxezh5jIFuvt/NbPoCx3QaxT530Ofn9FVQdC3/WoAAAAASUVORK5CYII=") center center no-repeat;
+    background-size:.21rem .21rem ;
+}
+.ywb .option-title{
+    margin-bottom: .48rem;
+    display: flex;
+    position: relative;
+    margin-top: .4rem;
+    line-height: .24rem;
+    font-size: .24rem;
+    color: #000;
+    font-weight: 700;
+}
+.ywb .option-title-sub{
+    margin-top: .24rem;
+    display: flex;
+    position: relative;
+    margin-bottom: .24rem;
+    line-height: .24rem;
+    font-size: .24rem;
+    color: #000;
+    font-weight: 700;
+}
+.option-title-sub img{
+    width: .24rem;
+    height: .24rem;
+    margin-right: .08rem;
+    position: relative;
+    top: -.02rem;
+}
+.tit{
+    font-weight: 400;
+    margin-right: .15rem;
+}
+.service-url{
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: .24rem;
+    justify-content: space-between;
+}
+.option-title-sub span{
+    color: rgba(0,0,0,.3);
+    font-size: .2rem;
+    font-weight: 400;
+}
+.pop .btn-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+}
+.action-box{
+    height: 1.04rem;
+    padding: .12rem .31rem;
+}
+.action-box a{
+    height: .72rem;
+    line-height: .8rem;
+    background: url("https://m.mi.com/static/img/icon-buy-tc.90477c83a6.png") center center no-repeat;
+    background-size: 100% 100%;
+    border-radius: .4rem;
+    color: #fff;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: .28rem;
+}
+.v-enter,.v-leave-to{
+    transform: translateY(9.92rem);
+}
+.v-enter-active,.v-leave-active{
+    transition: all .3s linear;
 }
 </style>

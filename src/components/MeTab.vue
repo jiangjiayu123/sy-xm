@@ -241,8 +241,8 @@ export default {
 }
 .me-icon,.me-icon-s,.me-icon-t{
     background-size: 100% 100%;
-    width: 80%;
-    height:80%;
+    width: .48rem;
+    height:.48rem;
 }
 .me-icon-s{
      background-image: url(../assets/images/物流.png);
