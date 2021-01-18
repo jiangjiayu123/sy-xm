@@ -594,7 +594,6 @@ export default {
                 }
             }
         },
-        
     }
 }
 </script>
