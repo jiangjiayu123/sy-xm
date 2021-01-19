@@ -3,7 +3,7 @@
         <div class="page-02">
             <div class="Classify-top">
                 <div class="Classify-header">
-                    <p class="Classify-01" @click="btnBack"></p>
+                    <p class="Classify-01" @click="bottomBarClick('firsttab')"></p>
                     <p class="Classify-02">分类</p>
                     <p class="Classify-03"></p>
                 </div>
@@ -12,16 +12,16 @@
                 <div class="page-03">
                     <div class="body-left">
                         <ul class="item">
-                            <li v-for="(item,index) in list" :key="item.name">
-                                <a :href="'#'+item.id" class="item-a" :class='{active:isActive==index}' @click="btnColor(index)">
+                            <li v-for="(item,index) in list" :key="item.name" >
+                                <a :href="'#'+item.id" class="item-a"  :class='{active:isActive==index}' @click="btnColor(index)">
                                     <span class="item-name">{{item.name}}</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <div class="body-right" @scroll="handlescroll($event)">
+                    <div class="body-right" @scroll="handleScroll($event)">
                         <div class="body-right-list">
-                            <div class="pic1"></div>
+                            <div class="pic1" id="小米手机11"></div>
                             <div class="list-title">--小米数字系列--</div>
                             <div class="list-menu">
                                 <div class="list-product">
@@ -29,20 +29,16 @@
                                     <p class="list-name">小米11</p>
                                 </div>
                                 <div class="list-product">
-                                    <div class="list-photo"></div>
-                                    <p class="list-name">小米11</p>
+                                    <div class="list-photo-001"></div>
+                                    <p class="list-name">小米10 至尊版</p>
                                 </div>
                                 <div class="list-product">
-                                    <div class="list-photo"></div>
-                                    <p class="list-name">小米11</p>
+                                    <div class="list-photo-002"></div>
+                                    <p class="list-name">小米10 青春</p>
                                 </div>
                                 <div class="list-product">
-                                    <div class="list-photo"></div>
-                                    <p class="list-name">小米11</p>
-                                </div>
-                                <div class="list-product">
-                                    <div class="list-photo"></div>
-                                    <p class="list-name">小米11</p>
+                                    <div class="list-photo-003"></div>
+                                    <p class="list-name">小米10</p>
                                 </div>
                             </div>
 
@@ -117,6 +113,432 @@
                                 </div>
                             </div>
                             <div class="list-photo-two" id="黑鲨手机33"></div>
+
+
+
+
+
+                            <!--！！！！！！！！！！！！！！！ 此部分为重复选项 -->
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                              <!-- <div class="list-photo-two" id="电视44"></div> -->
+
+                              <!-- 电视 -->
+                            <div class="list-title" id="电视44">--电视--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+
+                             <!-- 大家电 -->
+                            <div class="list-title" id="大家电55">--大家电--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+                             <!-- Redmi红米 数字系列 -->
+
+                            <!-- 电脑办公 -->
+                            <div class="list-title" id="电脑办公66">--电脑办公--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+
+                             <!-- Redmi红米 数字系列 -->
+
+                            <!-- 小爱音箱 -->
+                            <div class="list-title" id="小爱音箱77">--小爱音箱--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+                             <!-- Redmi红米 数字系列 -->
+                             <!-- 路由器 -->
+
+
+                            <div class="list-title" id="路由器88">--路由器--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+                             <!-- Redmi红米 数字系列 -->
+                             <!-- 生活电器 -->
+
+
+                            <div class="list-title" id="生活电器99">--生活电器--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+
+                             <!-- Redmi红米 数字系列 -->
+                             <!-- 厨房电器 -->
+                            <div class="list-title" id="厨房电器12">--厨房电器--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+
+                             <!-- Redmi红米 数字系列 -->
+                             <!-- 智能穿戴 -->
+
+
+                            <div class="list-title" id="智能穿戴23">--智能穿戴--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+
+                            <!-- Redmi红米 数字系列 -->
+                             <!-- 智能家居 -->
+
+
+                            <div class="list-title" id="智能家居34">--智能家居--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+
+
+                              <!-- Redmi红米 数字系列 -->
+                             <!-- 智能家居 -->
+
+
+                            <div class="list-title" id="车载出行56">--车载出行--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+
+                            <!-- Redmi红米 数字系列 -->
+                             <!-- 个户健康 -->
+
+
+                            <div class="list-title" id="个户健康78">--个户健康--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+
+                            <!-- Redmi红米 数字系列 -->
+                             <!-- 数码配件 -->
+
+
+                            <div class="list-title" id="数码配件89">--数码配件--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+
+                            <!-- Redmi红米 数字系列 -->
+                             <!-- 日用百货 -->
+
+
+                            <div class="list-title" id="日用百货13">--日用百货--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+
+                             <!-- Redmi红米 数字系列 -->
+                             <!-- 有品精选 -->
+
+
+                            <div class="list-title" id="有品精选14">--有品精选--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+
+                             <!-- Redmi红米 数字系列 -->
+                             <!-- 小米服务 -->
+
+
+                            <div class="list-title" id="小米服务16">--小米服务--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+
+                             <!-- Redmi红米 数字系列 -->
+                             <!-- 零售店 -->
+
+
+                            <div class="list-title" id="零售店17">--零售店--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+                             <!-- Redmi红米 数字系列 -->
+                            <div class="list-title">--Redmi红米 数字系列--</div>
+                            <div class="list-menu">
+                                <div class="list-product" v-for="item in listS" :key="item.name">
+                                    <div class="list-photo-for">
+                                        <img :src="item.img" alt class="pic-product" />
+                                    </div>
+                                    <p class="list-name">{{item.name}}</p>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <!-- ！！！！！！！中间为重复选项 -->
                         </div>
                     </div>
                 </div>
@@ -231,7 +653,7 @@ export default {
                     img: require("../assets/images/08.png"),
                     name: "小米充电宝",
                 },
-                {
+                 {
                     img: require("../assets/images/09.png"),
                     name: "小米手机保护壳",
                 },
@@ -335,13 +757,27 @@ export default {
                 },
             ],
             isActive:0,
-            scroll:"",
+            isActiveed:false,
+            scroll:0
         };
-    },
+    }, 
     methods: {
-        btnBack() {},
-        btnColor(index){                
-            this.isActive = index; 
+         bottomBarClick(name){
+        this.$store.commit("bottomBarClick",name)
+      },
+        btnColor(item){
+                 this.isActive = item; 
+
+        },
+        handleScroll(e) {
+             console.log(e.srcElement.scrollTop);
+             console.log("距离顶端的距离");
+            //  for(let i=0;i<this.list.length;i++){
+            //      if(e.srcElement.scrollTop>=1000)
+            //      this.isActiveed= this.list[i]       
+            // }
+             
+             
         },
        handlescroll(e){
            let a=e.srcElement.scrollTop
@@ -442,6 +878,8 @@ export default {
     width: 75%;
     float: right;
     overflow: auto;
+    overflow: scroll;
+    height: 100vh;
 }
 .item {
     z-index: 90;
@@ -514,10 +952,20 @@ ul > li {
 .list-photo {
     background-image: url(../assets/images/w手机1.png);
 }
+.list-photo-001 {
+    background-image: url(../assets/images/小米10至尊.png);
+}
+.list-photo-002 {
+    background-image: url(../assets/images/小米10青春.png);
+}
+.list-photo-003 {
+    background-image: url(../assets/images/小米10.png);
+}
+
 .list-photo-mix {
     background-image: url(../assets/images/w小米手机2.png);
 }
-.list-photo,
+.list-photo,.list-photo-003,.list-photo-001,.list-photo-002,
 .list-photo-mix,
 .list-photo-for {
     width: 1rem;
@@ -562,9 +1010,10 @@ ul > li {
 .list-photo-two {
     background-image: url(../assets/images/32.webp);
 }
-.active{
+.active,.activeed{
     font-size:0.4rem;
     font-weight: 600px;
     color: #ff6300;
 }
+
 </style>

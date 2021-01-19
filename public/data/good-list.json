@@ -1,0 +1,45 @@
+{
+    "code":200,
+    "status":"成功",
+    "list":[
+        {
+            "id":1,
+            "img":"../images/饮水机.jpg",
+            "name":"小米净水器600G 白色",
+            "price":"1698元" ,
+            "img2":"../images/保.jpg",
+            "name2":" 换新延保1年 99元",
+            "flag":true
+        },
+        {
+            "id":1,
+            "img":"../images/饮水机.jpg",
+            "name":"小米净水器600G 白色ooo ",
+            "price":"1698元" ,
+            "img2":"../images/保.jpg",
+            "name2":" 换新延保1年 99元",
+            "flag":true
+        },
+        {
+            "id":1,
+            "img":"../images/饮水机.jpg",
+            "name":"小米净水器600G 白色oooqqq ",
+            "price":"1698元" ,
+            "img2":"../images/保.jpg",
+            "name2":" 换新延保1年 99元",
+            "flag":false
+        },
+        {
+            "id":1,
+            "img":"../images/饮水机.jpg",
+            "name":"小米净水器600G 白色oooeee ",
+            "price":"1698元" ,
+            "img2":"../images/保.jpg",
+            "name2":" 换新延保1年 99元",
+            "flag":true
+        }
+        
+
+
+    ]
+}

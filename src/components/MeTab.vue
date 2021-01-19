@@ -5,9 +5,9 @@
             <div class="me-top-bar">
                 <div class="me-top-list" @click="btndengLu">
                     <div class="me-center">
-                        <div class="me-top-photo" v-if="show==true"></div>
+                        <div class="me-top-photo" v-if="medenglu"></div>
                         <div class="me-top-photo-denglu" v-else></div>
-                        <div class="me-top-name" v-if="show==true">登录/注册</div>
+                        <div class="me-top-name" v-if="medenglu">登录/注册</div>
                         <div class="me-top-name-denglu" v-else>
                             <p class="denglu-id">742521367</p>
                             <p class="denglu-id deng-name">742521367</p>
@@ -62,6 +62,7 @@
                 </li>
                 <div class="ui-line"></div>
             </ul>
+            <div class="kong"></div>
         </div>
         <!-- 遮罩层 -->
         <div class="xe-popup xe-dialog" v-show="seen">
@@ -98,8 +99,16 @@ export default {
     data(){
         return {
             list:[],
-            show:true,
-            seen:false
+            // medenglu:true,
+            // seen:false,
+        }
+    },
+    computed:{
+        medenglu(){
+                    return this.$store.state.medenglu;
+        },
+        seen(){
+                return this.$store.state.seen;
         }
     },
     created() {
@@ -118,10 +127,13 @@ export default {
     },
     methods:{
         btndengLu(){
-            this.seen = true;
+            // this.seen = true;
+            this.$store.commit("btndengLu")
         },
         btnNoPromise(){
-            this.seen = false;
+            // this.seen = false;
+            this.$store.commit("btnNoPromise")
+
         },
         btnPromise(){
             this.$router.push({ path: "denglu" });
@@ -397,5 +409,9 @@ a {
     text-align: center;
     line-height:1rem;
     color: #ff6300;
+}
+.kong{
+    width: 100%;
+    height: 0.8rem;
 }
 </style>

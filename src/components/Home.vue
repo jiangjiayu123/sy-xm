@@ -23,6 +23,7 @@
                   </a>                  
                 </div>
                 <div class="flex" @click="bottomBarClick('fourthtab')">
+                  <span class="caritem1" v-show="count">{{count}}</span>
                   <img v-if="componentName=='fourthtab'" src="../assets/07.png" alt="">
                   <img v-else src="../assets/08.png" alt="">
                   <div class="bottom-title" :class="{active:componentName=='fourthtab'}">购物车</div>
@@ -34,7 +35,12 @@
                 </div>
             </div>
         </div>
+         <!-- 顶部跑马灯效果 -->
+         <transition >
+              <div class="progress" v-if="showxiantiao"></div>
+        </transition>
     </div>
+      
 </template>
 
 <script>
@@ -43,10 +49,19 @@ import Secondtab from "../components/Classify.vue";
 import FourthTab from "../components/shopping.vue";
 import MeTab from "../components/MeTab.vue";
 export default {
-    data() {
-        return {
-            componentName:"firsttab"
-        };
+    data(){
+      return {
+          showxiantiao:0
+      }
+    },
+    computed: {
+        componentName(){
+            return this.$store.state.componentName;
+        },
+        count(){
+          return this.$store.state.count;
+        }
+      
     },
     components: {
         "firsttab": FirstTab,
@@ -55,13 +70,22 @@ export default {
         "metab":MeTab
     },
     methods:{
-      bottomBarClick(componentName){
-        this.componentName=componentName;
+      bottomBarClick(name){
+        this.showxiantiao =1
+        this.$store.commit("bottomBarClick",name)
       }
     }
 };
 </script>
 <style >
+  .fade-enter-active,
+  .fade-leave-active {
+            transition:width 2.2s,opacity 2.4s;
+  }
+  .fade-enter,.fade-leave-to{
+       
+            opacity: 0;
+  }
   .bottom-bar{
     position: fixed;
     bottom: 0;
@@ -91,5 +115,39 @@ export default {
   }
   .active{
     color: #ff6700;
+  }
+  .caritem1{
+    position: absolute;
+    min-width: .25rem;
+    line-height: .25rem;
+    height: .25rem;
+    box-sizing: border-box;
+    padding: 0 .05rem;
+    font-size: .18rem;
+    overflow: hidden;
+    text-align: center;
+    border-radius: .28rem;
+    background: #ed4d41;
+    color: #fff;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate3d(.1rem,-20%,0);
+    transform: translate3d(.1rem,-20%,0);
+    font-style: normal;
+  }
+  .progress{
+    width: 100%;
+    height: 2px;
+    background-color: rgb(255, 202, 43);
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    
+    opacity: 1;
+    background-color: #efc14e;
+    z-index: 999999;
   }
 </style>
