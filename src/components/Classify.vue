@@ -3,7 +3,7 @@
         <div class="page-02">
             <div class="Classify-top">
                 <div class="Classify-header">
-                    <p class="Classify-01" @click="btnBack"></p>
+                    <p class="Classify-01" @click="bottomBarClick('firsttab')"></p>
                     <p class="Classify-02">分类</p>
                     <p class="Classify-03"></p>
                 </div>
@@ -12,14 +12,14 @@
                 <div class="page-03">
                     <div class="body-left">
                         <ul class="item">
-                            <li v-for="(item,index) in list" :key="item.name">
-                                <a :href="'#'+item.id" class="item-a" :class='{active:isActive==index}' @click="btnColor(index)">
+                            <li v-for="(item,index) in list" :key="item.name" >
+                                <a :href="'#'+item.id" class="item-a"  :class='{active:isActive==index}' @click="btnColor(index)">
                                     <span class="item-name">{{item.name}}</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <div class="body-right">
+                    <div class="body-right" @scroll="handleScroll($event)">
                         <div class="body-right-list">
                             <div class="pic1" id="小米手机11"></div>
                             <div class="list-title">--小米数字系列--</div>
@@ -758,13 +758,27 @@ export default {
                 },
             ],
             isActive:0,
+            isActiveed:false,
+            scroll:0
         };
-    },
+    }, 
     methods: {
-        btnBack() {},
-        btnColor(index){
-                
-                 this.isActive = index; 
+         bottomBarClick(name){
+        this.$store.commit("bottomBarClick",name)
+      },
+        btnColor(item){
+                 this.isActive = item; 
+
+        },
+        handleScroll(e) {
+             console.log(e.srcElement.scrollTop);
+             console.log("距离顶端的距离");
+            //  for(let i=0;i<this.list.length;i++){
+            //      if(e.srcElement.scrollTop>=1000)
+            //      this.isActiveed= this.list[i]       
+            // }
+             
+             
         },
     },
 };
@@ -855,6 +869,8 @@ export default {
     width: 75%;
     float: right;
     overflow: auto;
+    overflow: scroll;
+    height: 100vh;
 }
 .item {
     z-index: 90;
@@ -985,9 +1001,10 @@ ul > li {
 .list-photo-two {
     background-image: url(../assets/images/32.webp);
 }
-.active{
+.active,.activeed{
     font-size:0.4rem;
     font-weight: 600px;
     color: #ff6300;
 }
+
 </style>

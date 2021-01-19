@@ -28,8 +28,8 @@
             "id":4,
             "img1":"../images/me-12.png",
             "name1":"设置",
-            "img2":"",
-            "name2":""
+            "img2":"../images/客服.png",
+            "name2":"客服咨询"
         }
     ]
 }

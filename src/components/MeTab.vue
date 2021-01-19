@@ -62,6 +62,7 @@
                 </li>
                 <div class="ui-line"></div>
             </ul>
+            <div class="kong"></div>
         </div>
         <!-- 遮罩层 -->
         <div class="xe-popup xe-dialog" v-show="seen">
@@ -408,5 +409,9 @@ a {
     text-align: center;
     line-height:1rem;
     color: #ff6300;
+}
+.kong{
+    width: 100%;
+    height: 0.8rem;
 }
 </style>
