@@ -56,7 +56,7 @@ export default {
 
 <style scoped>
 .swiper-slide-video>img{
- width: 7.2rem;
+ width: 100%;
  height:3.6rem;
 }
 

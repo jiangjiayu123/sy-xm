@@ -56,7 +56,7 @@ export default {
     },
     computed: {
         componentName(){
-            return this.$store.state.componentName;
+          return this.$store.state.componentName;
         },
         count(){
           return this.$store.state.count;

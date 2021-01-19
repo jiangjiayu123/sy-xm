@@ -35,13 +35,9 @@
                 </div>
                 <!-- 购物车样式 -->
                 <div class="car-body">
-                    <div
-                        class="car-for"
+                    <div class="car-for"
                         v-for="(item,index) in goodsList"
-                        :key="item.name"
-                        :index="index"
-                        :item="item"
-                    >
+                        :key="item.id">
                         <div class="item">
                             <!-- 商品的选中! -->
                             <div
@@ -87,7 +83,8 @@
                     </div>
                 </div>
                 <!-- 购物车底部 -->
-                <div class="bottom-submit">
+                <transition>
+                <div class="bottom-submit" v-show="play">
                     <div class="total-price">
                         <span>共</span>
                         <span>{{count}}</span>
@@ -102,7 +99,7 @@
                     <p class="conutine-buy">继续购物</p>
                     <p class="pay-goods">去结算</p>
                 </div>
-
+                </transition>
                 <!-- 这是购物车下面的详情页面 -->
                 <div class="recommend-box space-top">
                     <div class="recommend-top-img">
@@ -278,7 +275,8 @@ export default {
             ],
             showChecked: false,
             allPrices: 0,
-            gouwuche: true,
+            gouwuche: false,
+            play:true,
         };
     },
 
@@ -286,9 +284,11 @@ export default {
         goodsList(newVal){
             if(newVal.length == 0){
                 this.gouwuche=true
+                this.play=false
             }
-            if(newVal.length !=0){
+            else{
                 this.gouwuche=false
+                this.play=true
             }
         }
     },
@@ -296,10 +296,9 @@ export default {
     created() {
         this.countNum();
         this.TotalPrice();
-        this.goodsListed();
     },
     computed: {
-         componentName(){
+        componentName(){
           return this.$store.state.componentName;
         },
         appearDe() {
@@ -308,21 +307,21 @@ export default {
         showDengLu(){
             return this.$store.state.showDengLu;
         },
-       count(){
+        count(){
            return this.$store.state.count
-       },
+        },
         goodsList(){
              return this.$store.state.goodsList
         }
     },
     methods: {
-         bottomBarClick(name){
+        bottomBarClick(name){
         this.$store.commit("bottomBarClick",name)
-      },
+        },
         gotodenglu() {
             this.$router.push({ path: "denglu" });
         },
-        // !!!!!测试小米购物车
+        // // !!!!!测试小米购物车
         entrymicar() {
             this.$router.push({ path: "micart" });
         },
@@ -332,21 +331,19 @@ export default {
             this.TotalPrice();
         },
         Goodjian(index) {
-            this.$store.state.goodsList[index].num--;
-            if (this.$store.state.goodsList[index].num <= 1) {
-                this.$store.state.goodsList[index].num = 1;
-                this.$store.state.goodsList[index].showBei = 0;
-            }
+            this.$store.commit("Goodjian",index)
             this.countNum();
             this.TotalPrice();
         },
         Goodjia(index) {
-            this.$store.state.goodsList[index].num++;
-            if (this.$store.state.goodsList[index].num >= 2) {
-                this.$store.state.goodsList[index].showBei = 1;
-                this.countNum();
-                this.TotalPrice();
-            }
+            this.$store.commit("Goodjia",index)
+            this.countNum();
+            this.TotalPrice();
+        },
+        deteleItem(index) {
+            this.$store.commit("deleteItem",index)
+            this.countNum();
+            this.TotalPrice();
         },
         countNum() {
             let sum = 0;
@@ -366,21 +363,7 @@ export default {
                 }
             }
             this.allPrices = toprice;
-        },
-        deteleItem(index) {
-            this.$store.state.goodsList.splice(index, 1);
-            this.countNum();
-            this.TotalPrice();
-        },
-        goodsListed() {
-            console.log("被调用")
-            if (this.$store.state.goodsList.length != 0) {
-                this.gouwuche = false;
-            }
-            else if(this.$store.state.goodsList.length == 0){
-                this.gouwuche = true;
-            } 
-        },
+        },        
         // count(){
         //     this.$commit("showme",count)
         // }
@@ -484,8 +467,7 @@ em img {
 .noitems > a span {
     display: inline-block;
     line-height: 0.8rem;
-    background: url("https://m.mi.com/static/img/cartnull.daaf7926f8.png")
-        no-repeat 0;
+    background: url("https://m.mi.com/static/img/cartnull.daaf7926f8.png") no-repeat 0;
     background-size: auto 100%;
     padding: 0 0.16rem 0 0.96rem;
     color: rgba(0, 0, 0, 0.27);
@@ -510,10 +492,11 @@ em img {
     padding-bottom: 0.9rem;
 }
 .recommend-top-img {
-    width: 7.2rem;
+    width: 100%;
     height: 1.25rem;
 }
 .recommend-top-img > img {
+    width: 100%;
     height: 1.2rem;
 }
 .recommend-list {
@@ -778,5 +761,10 @@ em img {
 .item-check-02 {
     background-image: url(../assets/images/取消商品选中.png);
 }
-
+.v-enter,.v-leave-to{
+    transform: translateY(52px);
+}
+.v-enter-active,.v-leave-active{
+    transition: all .3s linear;
+}
 </style>

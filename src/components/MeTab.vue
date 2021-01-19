@@ -269,7 +269,7 @@ export default {
 }
 .me-last-list{
     width:100%;
-    height: 17%;
+    height: 14%;
     margin:0 auto;
     font-size: 0.22rem;
 }

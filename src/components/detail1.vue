@@ -1,5 +1,5 @@
 <template>
-   <div class="app-view-wrapper">
+   <div class="app-view-wrapper" ref="sourcemenu">
        <header>
            <div class="fill-height" :style="showicon">
                <a class="header-btn" @click="goback">
@@ -272,7 +272,7 @@
                     <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7a858f89fdb2932ae4c3dd04d6f8674a.png" alt="">
                 </a>
             </div>
-            <div class="fixed-bar" >
+            <div class="fixed-bar">
                  <a>
                     <img src="https://m.mi.com/static/img/top.451d650ecd.png" alt="">
                 </a>
@@ -408,8 +408,8 @@ export default {
     data(){
         return{
             item:{
-                img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1587436964.29467594.jpg",
-                name:"Redmi K30 5G 6GB+256GB 时光独白",
+                img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1587436936.34286821.jpg",
+                name:"Redmi K30 5G 6GB+256GB 深海微光",
                 price:1999,
                 num:1,
                 img2: "../images/保.jpg",
@@ -453,7 +453,8 @@ export default {
                     img:"https://i8.mifile.cn/b2c-mimall-media/7692726e7a1dd34a3b1b4ede8aca020d.png",
                     name:"四摄像头",
                     value:"6400万+800万+200万+200万像素"
-                }
+                },
+                
             ],
             photolist:[
                 {
@@ -633,9 +634,6 @@ export default {
 .app-view-wrapper{
     padding-bottom:50px;
     user-select: none;
-    position: relative;
-    max-width: 7.2rem;
-    margin: 0 auto;
 }
 header{
     height: .9rem;

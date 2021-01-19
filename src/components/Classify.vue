@@ -758,35 +758,67 @@ export default {
             ],
             isActive:0,
             isActiveed:false,
-            scroll:0
+            scroll:0,
         };
     }, 
     methods: {
          bottomBarClick(name){
-        this.$store.commit("bottomBarClick",name)
+            this.$store.commit("bottomBarClick",name)
       },
         btnColor(item){
-                 this.isActive = item; 
-
+            this.isActive = item; 
         },
-        handleScroll(e) {
-             console.log(e.srcElement.scrollTop);
-             console.log("距离顶端的距离");
-            //  for(let i=0;i<this.list.length;i++){
-            //      if(e.srcElement.scrollTop>=1000)
-            //      this.isActiveed= this.list[i]       
-            // }
+        // handleScroll(e) {
+        //      console.log(e.srcElement.scrollTop);
+        //      console.log("距离顶端的距离");
+        //     //  for(let i=0;i<this.list.length;i++){
+        //     //      if(e.srcElement.scrollTop>=1000)
+        //     //      this.isActiveed= this.list[i]       
+        //     // }
              
              
-        },
-       handlescroll(e){
+        // },
+       handleScroll(e){
            let a=e.srcElement.scrollTop
            console.log(a)
            if(a>0&&a<1016){
                this.isActive=0
            }
-           else if(a>=1016&&a<1800){
+           else if(a>=1016&&a<2401){
                this.isActive=1
+           }
+           else if(a>=2401&&a<2806){
+               this.isActive=2
+           }
+           else if(a>=2806&&a<3389){
+               this.isActive=3
+           }
+           else if(a>=3389&&a<3972){
+               this.isActive=4
+           }
+           else if(a>=3972&&a<4554){
+               this.isActive=5
+           }
+           else if(a>=4554&&a<5137){
+               this.isActive=6
+           }
+           else if(a>=5137&&a<5720){
+               this.isActive=7
+           }
+           else if(a>=5720&&a<6302){
+               this.isActive=8
+           }
+           else if(a>=6302&&a<6885){
+               this.isActive=9
+           }
+           else if(a>=6885&&a<7467){
+               this.isActive=10
+           }
+           else if(a>=7467&&a<8050){
+               this.isActive=11
+           }
+           else if(a>=8050&&a<8633){
+               this.isActive=12
            }
        }
     }, 
@@ -840,7 +872,7 @@ export default {
     background-size: .5rem .5rem;
     width: 30px;
     height: 30px;
-    flex-grow: 1;
+    
 }
 .Classify-02 {
     text-align: center;
@@ -851,7 +883,6 @@ export default {
 .Classify-03 {
      width: .6rem;
     height: .6rem;
-    flex-grow: 1;
     background-image: url(../assets/images/w搜索.png);
     background-repeat: no-repeat;
     background-position: center center;

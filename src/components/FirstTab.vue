@@ -120,7 +120,7 @@
                                         <del>￥{{item.priceold}}</del>
                                     </span>
                                 </div>
-                                <div class="buybtn mauto" @click="todetail">立即购买</div>                            
+                                <div class="buybtn mauto" @click="todetail(item.id)">立即购买</div>                            
                         </div>                    
                     </a>
                 </div>
@@ -327,11 +327,11 @@
                         <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/bbb5bac8089d890338b5bf8ff742cbbc.png" alt="">
                     </a>
                 </div>
-                <div class="fixed-bar">
+                <div class="fixed-bar" v-show="play">
                     <a href="javascript:void(0)">
                         <img src="../assets/01.gif" alt="">
                     </a>
-                    <a href="#top" class="top">
+                    <a class="top" @click="totop">
                         <img src="../assets/top.png" alt="">
                     </a>
                 </div>
@@ -349,6 +349,8 @@ export default {
     },
     data() {
     return {
+        play:false,
+        scroll:"",
         num:1,
         watchlist:[
             {
@@ -578,7 +580,16 @@ export default {
         ],
     };
   },
+  mounted(){
+      window.addEventListener("scroll",this.menu)
+  },
   methods:{
+      menu(){
+          this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
+      },
+      totop(){
+          document.documentElement.scrollTop=0
+      },
       toplay(){
           if(this.num==1){
             this.num=2
@@ -592,10 +603,36 @@ export default {
               path:"/search"
           })
       },
-      todetail(){
-          this.$router.push({
-              path:"/detail"
-          })
+      todetail(id){
+          if(id==1){
+            this.$router.push({
+              path:"/detail",
+          })}
+          else if(id==2){
+              this.$router.push({
+                  path:"/detail1"
+              })
+          }
+          else if(id==3){
+              this.$router.push({
+                  path:"/detail2"
+              })
+          }
+          else if(id==4){
+              this.$router.push({
+                  path:"/detail3"
+              })
+          }
+      }
+  },
+  watch:{
+      scroll(newVal){
+          if(newVal>700){
+              this.play=true
+          }
+          else{
+              this.play=false
+          }
       }
   }
 };
@@ -633,10 +670,10 @@ export default {
   display:block;
   width: .6rem;
   margin: 0 .2rem;
-  margin-bottom: 0.5rem;
   flex-shrink: 0;
 }
 .img-logo > img {
+    display: block;
   width: 80%;
 }
 .top-bar-middle {
@@ -673,10 +710,10 @@ export default {
    display: block;
     width: .6rem;
     margin: 0 .2rem;
-    margin-bottom: 0.5rem;
     flex-shrink: 0;
 }
 .top-bar-right-item>img {
+    display: block;
     width: 80%; 
 }
 .nav-wrap {
@@ -805,6 +842,7 @@ export default {
     height: 5.08rem;
     display: flex;
     position: relative;
+    margin: 0 auto;
 }
 .cells-dev-left{
     width: 3.58rem;
@@ -877,7 +915,7 @@ export default {
 }
 .product-list>a{
     width: 3.4rem;
-    margin-right:0.08rem;
+    margin:0 auto;
 }
 .product-list>a>.img{
     position: relative;
@@ -1106,6 +1144,6 @@ export default {
     height: 100%;
 }
 .top>img{
-    margin-bottom: .6rem;
+    display: block;
 }
 </style>
