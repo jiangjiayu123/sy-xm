@@ -379,8 +379,9 @@
                    <img src="https://m.mi.com/static/img/icon-service.1ffa47012a.png" alt="">
                    <span>客服</span>
                </a>
-               <a class="footer-btn router-link-active">
+               <a class="footer-btn router-link-active" @click="toshopping('shopping')">
                    <img src="../assets/08.png" alt="">
+                   <span class="bubble" v-show="count">{{count}}</span>
                    <span>购物车</span>
                </a>
                <div class="action-box flex" >
@@ -398,6 +399,9 @@ export default {
     computed:{
         goodsList(){
             return this.$store.state.goodsList
+        },
+        count(){
+            return this.$store.state.count
         }
     },
     components:{
@@ -527,6 +531,9 @@ export default {
         increase(item){
             this.$store.commit("increase",item)
         },
+        toshopping(name){
+           this.$store.commit("bottomBarClick",name)
+        },
         to1(){
             document.documentElement.scrollTop=0
         },
@@ -630,6 +637,23 @@ export default {
 }
 </script>
 <style scoped>
+.footer-btn .bubble{
+    position: absolute;
+    width: .32rem;
+    line-height: .32rem;
+    height: .32rem;
+    box-sizing: border-box;
+    font-size: .13rem;
+    overflow: hidden;
+    text-align: center;
+    border-radius: .32rem;
+    background: linear-gradient(45deg,#ff7d00,#ff5934);
+    color: #fff;
+    top: .09rem;
+    left: 50%;
+    transform: translate3d(.1rem,-20%,0);
+    font-style: normal;
+}
 .app-view-wrapper{
     padding-bottom:50px;
     user-select: none;

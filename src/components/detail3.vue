@@ -409,7 +409,7 @@ export default {
         return{
             item:{
                 img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1567422854.51919656.jpg",
-                name:"Redmi K30 5G 6GB+256GB 曜石黑",
+                name:"Redmi K30 5G 6GB+256GB 深海微光",
                 price:1999,
                 num:1,
                 img2: "../images/保.jpg",
