@@ -19,7 +19,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="body-right">
+                    <div class="body-right" @scroll="handlescroll($event)">
                         <div class="body-right-list">
                             <div class="pic1"></div>
                             <div class="list-title">--小米数字系列--</div>
@@ -126,7 +126,6 @@
 </template>
 <script>
 export default {
-    
     data() {
         return {
             list: [
@@ -336,15 +335,25 @@ export default {
                 },
             ],
             isActive:0,
+            scroll:"",
         };
     },
     methods: {
         btnBack() {},
-        btnColor(index){
-                
-                 this.isActive = index; 
+        btnColor(index){                
+            this.isActive = index; 
         },
-    },
+       handlescroll(e){
+           let a=e.srcElement.scrollTop
+           console.log(a)
+           if(a>0&&a<1016){
+               this.isActive=0
+           }
+           else if(a>=1016&&a<1800){
+               this.isActive=1
+           }
+       }
+    }, 
 };
 </script>
 

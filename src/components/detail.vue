@@ -14,10 +14,10 @@
                    <img src="https://m.mi.com/static/img/icon-back2.2d09ed8aaf.png" alt="">
                </a>
                <div class="placeholder">
-                   <a href="#1"><span :class="{active1:productName==1}" @click="lian(1)">商品</span></a>
-                   <a href="#2"><span :class="{active1:productName==2}" @click="lian(2)">评价</span></a>
-                   <a href="#3"><span :class="{active1:productName==3}" @click="lian(3)">详情</span></a>
-                   <a href="#4"><span :class="{active1:productName==4}" @click="lian(4)">推荐</span></a>
+                   <a @click="to1"><span :class="{active1:productName==1}" @click="lian(1)">商品</span></a>
+                   <a @click="to2"><span :class="{active1:productName==2}" @click="lian(2)">评价</span></a>
+                   <a @click="to3"><span :class="{active1:productName==3}" @click="lian(3)">详情</span></a>
+                   <a @click="to4"><span :class="{active1:productName==4}" @click="lian(4)">推荐</span></a>
                </div>
                <a class="header-btn">
                    <img src="https://m.mi.com/static/img/icon-share-black.faaff0b7f0.png" alt="">
@@ -277,10 +277,10 @@
                     <img src="https://m.mi.com/static/img/top.451d650ecd.png" alt="">
                 </a>
             </div>
-       </div>
-       <transition>
+       </div>       
        <div class="ui-mask" v-show="play">
-            <div class="pop pop-product" >
+           <transition>
+            <div class="pop pop-product" v-show="play">
                 <div class="close">
                     <i class="icon-close" @click="del"></i>
                 </div>
@@ -367,11 +367,11 @@
                     </div>
                 </div>
             </div>
-       </div>
-       </transition>
+            </transition>
+       </div>      
        <footer>
            <div class="bgw">
-               <a class="footer-btn router-link-active">
+               <a class="footer-btn router-link-active" @click="ret">
                    <img src="../assets/02.png" alt="">
                    <span>首页</span>
                </a>
@@ -510,6 +510,18 @@ export default {
         }
     },
     methods:{
+        to1(){
+            document.documentElement.scrollTop=0
+        },
+        to2(){
+            document.documentElement.scrollTop=950
+        },
+        to3(){
+            document.documentElement.scrollTop=2100
+        },
+        to4(){
+            document.documentElement.scrollTop=13123
+        },
         menu() {
             this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
         },
@@ -543,6 +555,9 @@ export default {
         },
         lian(name){
             this.productName=name
+        },
+        ret(){
+            this.$router.go(-1)
         }
     },
     mounted() {
