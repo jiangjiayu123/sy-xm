@@ -25,7 +25,7 @@
            </div>
        </header>
        <div class="section section-detail">
-           <div class="swiper" id="1">
+           <div class="swiper1" id="1">
                    <swipperr></swipperr>
            </div>
        </div>
@@ -241,7 +241,7 @@
        <div class="section section-detail">
            <div class="line"></div>
        </div>
-       <div class="section section-detail">
+       <div class="section section-detail1">
            <xiangqing></xiangqing>
        </div>
        <div class="section section-detail">
@@ -361,14 +361,14 @@
                     <div class="action-box" @click="increase(item)">
                         <a>加入购物车</a>
                     </div>
-                </div>
+                </div>                
             </div>
             </transition>
        </div>      
        <footer>
            <div class="bgw">
                <a class="footer-btn router-link-active" @click="ret">
-                   <img src="../assets/02.png" alt="">
+                   <img src="https://m.mi.com/static/img/icon-home2.10a9b00d72.png" alt="">
                    <span>首页</span>
                </a>
                <a class="footer-btn router-link-active">
@@ -376,7 +376,7 @@
                    <span>客服</span>
                </a>
                <a class="footer-btn router-link-active" @click="bottomBarClick('fourthtab')">
-                   <img src="../assets/08.png" alt="">
+                   <img src="https://m.mi.com/static/img/icon-cart2.f238ec784b.png" alt="">
                    <span class="bubble" v-show="count1">{{count}}</span>
                    <span>购物车</span>
                </a>
@@ -544,6 +544,7 @@ export default {
         increase(item){
             this.$store.commit("increase",item)
             this.countNum();
+            this.play=false
         },
         countNum() {
             let sum = 0;
@@ -559,26 +560,28 @@ export default {
            this.$store.commit("bottomBarClick",name)
         },
         to1(){
-            console.log("dsaa")
+            this.$el.querySelector(".swiper1").scrollIntoView({
+                behavior:'smooth',
+                block:'start'
+            })
+        },
+        to2(){
             this.$el.querySelector(".package").scrollIntoView({
                 behavior:'smooth',
                 block:'start'
             })
-            // console.log(this.$refs)
-            // document.documentElement.scrollTop=0
-        },
-        to2(){
-            this.$el.querySelector(".swipper").scrollIntoView({
-                behavior:'smooth',
-                block:'end'
-            })
-            // document.documentElement.scrollTop=950
         },
         to3(){
-            // document.documentElement.scrollTop=2100
+            this.$el.querySelector(".section-detail1").scrollIntoView({
+                behavior:'smooth',
+                block:'start'
+            })
         },
         to4(){
-            // document.documentElement.scrollTop=13123
+           this.$el.querySelector(".recommend-title").scrollIntoView({
+                behavior:'smooth',
+                block:'start'
+            })
         },
         menu() {
             this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -728,7 +731,7 @@ header .fill-height{
     width: 100%;
     height: 100%;
 }
-.swiper{
+.swiper1{
     margin-top: -50px;
 }
 .el-carousel__item:nth-child(2n) {
@@ -1402,7 +1405,7 @@ footer .footer-btn{
     bottom: 0;
     left: 0;
     right: 0;
-    width: 7.2rem;
+    width:100%;
     background-color: #fff;
     color: #000;
     height: 9.92rem;
