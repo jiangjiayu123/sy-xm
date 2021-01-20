@@ -1,5 +1,5 @@
 <template>
-   <div class="app-view-wrapper">
+   <div class="app-view-wrapper" ref="sourcemenu">
        <header>
            <div class="fill-height" :style="showicon">
                <a class="header-btn" @click="goback">
@@ -272,7 +272,7 @@
                     <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7a858f89fdb2932ae4c3dd04d6f8674a.png" alt="">
                 </a>
             </div>
-            <div class="fixed-bar" >
+            <div class="fixed-bar">
                  <a>
                     <img src="https://m.mi.com/static/img/top.451d650ecd.png" alt="">
                 </a>
@@ -379,9 +379,9 @@
                    <img src="https://m.mi.com/static/img/icon-service.1ffa47012a.png" alt="">
                    <span>客服</span>
                </a>
-               <a class="footer-btn router-link-active" @click="bottomBarClick('fourthtab')">
+               <a class="footer-btn router-link-active"  @click="bottomBarClick('fourthtab')">
                    <img src="../assets/08.png" alt="">
-                   <span class="bubble" v-show="count1">{{count}}</span>
+                    <span class="bubble" v-show="count1">{{count}}</span>
                    <span>购物车</span>
                </a>
                <div class="action-box flex" >
@@ -416,8 +416,8 @@ export default {
         return{
             count1:true,
             item:{
-                img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1587436964.29467594.jpg",
-                name:"Redmi K30 5G 6GB+256GB 时光独白",
+                img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1567422854.51919656.jpg",
+                name:"Redmi K30 5G 6GB+256GB 曜石黑",
                 price:1999,
                 num:1,
                 img2: "../images/保.jpg",
@@ -534,7 +534,7 @@ export default {
     methods:{
         increase(item){
             this.$store.commit("increase",item)
-            this.countNum();
+             this.countNum();
         },
         countNum() {
             let sum = 0;
@@ -545,7 +545,7 @@ export default {
             }
             this.$store.state.count = sum;
         },
-        bottomBarClick(name){
+         bottomBarClick(name){
             this.$router.go(-1)
            this.$store.commit("bottomBarClick",name)
         },
@@ -604,7 +604,7 @@ export default {
         window.addEventListener('scroll', this.handleScroll)       
     },
     watch:{
-        goodsList(newVal){
+         goodsList(newVal){
             if(newVal.length==0){
             this.count1=false
             }
@@ -680,9 +680,6 @@ export default {
 .app-view-wrapper{
     padding-bottom:50px;
     user-select: none;
-    position: relative;
-    max-width: 7.2rem;
-    margin: 0 auto;
 }
 header{
     height: .9rem;

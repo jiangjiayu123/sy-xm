@@ -23,7 +23,7 @@
                   </a>                  
                 </div>
                 <div class="flex" @click="bottomBarClick('fourthtab')">
-                  <span class="caritem1" v-show="count">{{count}}</span>
+                  <span class="caritem1" v-show="count1">{{count}}</span>
                   <img v-if="componentName=='fourthtab'" src="../assets/07.png" alt="">
                   <img v-else src="../assets/08.png" alt="">
                   <div class="bottom-title" :class="{active:componentName=='fourthtab'}">购物车</div>
@@ -51,20 +51,21 @@ import MeTab from "../components/MeTab.vue";
 export default {
     data(){
       return {
-          showchuxian:false
+          showchuxian:true,
+          showxiantiao:0,
+          count1:true
       }
     },
     computed: {
         componentName(){
-            return this.$store.state.componentName;
+          return this.$store.state.componentName;
         },
         count(){
           return this.$store.state.count;
         },
-        // showchuxian(){
-        //   return this.$store.state.showchuxian;
-        // }
-      
+        goodsList(){
+             return this.$store.state.goodsList
+        }
     },
     components: {
         "firsttab": FirstTab,
@@ -87,7 +88,15 @@ export default {
                   that.showchuxian=false
               },2000)
             }
+        },
+      goodsList(newVal){
+        if(newVal.length==0){
+          this.count1=false
         }
+        else{
+          this.count1=true
+        }
+      }
     }
 };
 </script>

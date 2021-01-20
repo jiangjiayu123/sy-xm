@@ -256,8 +256,8 @@ export default {
 }
 .me-icon,.me-icon-s,.me-icon-t{
     background-size: 100% 100%;
-    width: 80%;
-    height:80%;
+    width: .48rem;
+    height:.48rem;
 }
 .me-icon-s{
      background-image: url(../assets/images/物流.png);
@@ -273,7 +273,7 @@ export default {
 }
 .me-last-list{
     width:100%;
-    height: 17%;
+    height: 14%;
     margin:0 auto;
     font-size: 0.22rem;
 }

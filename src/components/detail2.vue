@@ -1,5 +1,5 @@
 <template>
-   <div class="app-view-wrapper">
+   <div class="app-view-wrapper" ref="sourcemenu">
        <header>
            <div class="fill-height" :style="showicon">
                <a class="header-btn" @click="goback">
@@ -272,7 +272,7 @@
                     <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7a858f89fdb2932ae4c3dd04d6f8674a.png" alt="">
                 </a>
             </div>
-            <div class="fixed-bar" >
+            <div class="fixed-bar">
                  <a>
                     <img src="https://m.mi.com/static/img/top.451d650ecd.png" alt="">
                 </a>
@@ -416,8 +416,8 @@ export default {
         return{
             count1:true,
             item:{
-                img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1587436964.29467594.jpg",
-                name:"Redmi K30 5G 6GB+256GB 时光独白",
+                img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1585647770.23532865.jpg",
+                name:"Redmi K30 5G 6GB+256GB 冰翡翠",
                 price:1999,
                 num:1,
                 img2: "../images/保.jpg",
@@ -532,6 +532,10 @@ export default {
         }
     },
     methods:{
+        bottomBarClick(name){
+            this.$router.go(-1)
+           this.$store.commit("bottomBarClick",name)
+        },
         increase(item){
             this.$store.commit("increase",item)
             this.countNum();
@@ -544,10 +548,6 @@ export default {
                 }
             }
             this.$store.state.count = sum;
-        },
-        bottomBarClick(name){
-            this.$router.go(-1)
-           this.$store.commit("bottomBarClick",name)
         },
         to1(){
             document.documentElement.scrollTop=0
@@ -680,9 +680,6 @@ export default {
 .app-view-wrapper{
     padding-bottom:50px;
     user-select: none;
-    position: relative;
-    max-width: 7.2rem;
-    margin: 0 auto;
 }
 header{
     height: .9rem;

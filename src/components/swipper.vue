@@ -7,14 +7,11 @@
         <div class="swiper-slide-video" id="swiper-slide-video">
                   <img :src="item.img" alt="" class="banner-img" />       
         </div>
-            </swiper-slide
-      >
+            </swiper-slide>
           
       <div class="swiper-pagination" slot="pagination"></div>
           <!-- <div class="swiper-scrollar" slot="scrollbar"></div> -->
-        </swiper
-    >
-      
+        </swiper>      
   </div>
 </template>
 
@@ -57,22 +54,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped>
 .swiper-slide-video>img{
- width: 7.2rem;
+ width: 100%;
  height:3.6rem;
 }
-/* .swiper-container  /deep/  .swiper-pagination-bullet {
-  border-radius: 50%;
-    height: .25rem;
-    width: .25rem;
-    background: hsla(0,0%,100%,.6);
-    margin: 0 2px;
-    display: inline-block;
-    opacity: 1;
-}
-.swiper-container  /deep/ .swiper-pagination-bullet-active {
-  background-color: #fa2c19;
-} */
+
 
 </style>

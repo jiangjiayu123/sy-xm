@@ -61,7 +61,6 @@
                     <p>元</p>
                 </div>
             </div>
-
             <p class="conutine-buy">继续购物</p>
             <p class="pay-goods">去结算</p>
         </div>
