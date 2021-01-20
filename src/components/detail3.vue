@@ -299,7 +299,7 @@
                         </div>
                         <div class="name">
                         <span v-if="itemName==1">{{item.name}}</span>
-                        <span v-if="itemName==2">Redmi K30 5G 8GB+128GB 时光独白</span>
+                        <span v-if="itemName==2">Redmi K30 5G 8GB+128GB 紫玉幻境</span>
                         <span v-if="itemName==3">Redmi K30 5G 8GB+256GB 时光独白</span>
                     </div>
                     </div>               
@@ -320,7 +320,7 @@
                             颜色
                         </div>
                         <div class="options-group">
-                            <div class="option-item " :class="{on:itemName1==4}" @click="toitem1(4)">深海微光</div>
+                            <div class="option-item " :class="{on:itemName1==4}" @click="toitem1(4)">曜石黑</div>
                             <div class="option-item" :class="{on:itemName1==5}" @click="toitem1(5)">紫玉幻境</div>
                             <div class="option-item" :class="{on:itemName1==6}" @click="toitem1(6)">时光独白</div>
                         </div>
@@ -417,7 +417,7 @@ export default {
             count1:true,
             item:{
                 img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1567422854.51919656.jpg",
-                name:"Redmi K30 5G 6GB+256GB 曜石黑",
+                name:"Redmi K30 5G 6GB+128GB 曜石黑",
                 price:1999,
                 num:1,
                 img2: "../images/保.jpg",

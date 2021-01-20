@@ -132,7 +132,7 @@ import axios from "axios";
 }
 .app-header-wrapper img{
     width: .5rem;
-    padding-bottom:0.15rem ;
+    display: block;
 }
 .app-header-middle{
     font-size: .3rem;

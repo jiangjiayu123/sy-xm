@@ -65,46 +65,46 @@
                         <swiperr></swiperr>
                 </div>
                 <div class="cells">
-                    <a href=""  v-for="item in picturelist" :key="item.id">
+                    <a href="https://m.mi.com/seckill"  v-for="item in picturelist" :key="item.id">
                         <img :src="item.img">
                     </a>
                 </div>
                 <div class="cells">
-                    <a href="" v-for="item in picture1list" :key="item.id">
+                    <a href="https://m.mi.com/channel/all/14709" v-for="item in picture1list" :key="item.id">
                         <img :src="item.img">
                     </a>
                 </div>
                 <div class="line"></div>
                 <div class="cells-dev">
                     <div class="cells-dev-left">
-                        <a href="">
+                        <a href="https://m.mi.com/channel/all/14501">
                             <img src="../assets/picture1.webp" alt="">
                         </a>
                     </div>
                     <div class="cells-dev-right">
-                        <a href="">
+                        <a href="https://m.mi.com/channel/all/14709">
                             <img src="../assets/picture2.webp" alt="">
                         </a>
-                        <a href="" class="cells-dev-right1">
+                        <a href="https://m.mi.com/channel/all/13249" class="cells-dev-right1">
                             <img src="../assets/picture3.webp" alt="">
                         </a>
                     </div>                    
                 </div>
                 <div class="line"></div>
                 <div class="cells-tool">
-                    <a href="javascript:void(0)">
+                    <a href="https://s1.mi.com/m/app/hd/index.html?id=14413">
                         <img src="../assets/01.webp" alt="">
                     </a>
                 </div>
                 <div class="line"></div>
                 <div class="cells-tool1">
-                    <a href="">
+                    <a href="https://m.mi.com/commodity/detail/10000224">
                         <img src="../assets/02.webp" alt="">
                     </a>
                 </div>
                 <div class="line1"></div>
                <div class="product-list">
-                    <a href="javascript:void(0)" v-for="(item,index) in phonelist" :key="item.id">
+                    <a href="javascript:void(0)" v-for="(item,index) in phonelist" :key="item.id" @click="todetail(item.id)">
                         <div class="img">
                             <img :src="item.img" alt="">
                             <div class="tag" v-if="index==0">
@@ -120,7 +120,7 @@
                                         <del>￥{{item.priceold}}</del>
                                     </span>
                                 </div>
-                                <div class="buybtn mauto" @click="todetail(item.id)">立即购买</div>                            
+                                <div class="buybtn mauto" >立即购买</div>                            
                         </div>                    
                     </a>
                 </div>
@@ -258,7 +258,7 @@
                             <div class="name">米家直流变频落地扇1X</div>
                             <div class="briefwrap">模拟自然风算法 支持AI语音</div>
                             <div class="price">
-                                299
+                                ￥299
                             </div>
                         </div>
                     </a>
@@ -266,27 +266,27 @@
                 <div class="list-on1">
                     <a href="javascript:void(0)">                        
                         <div class="info">
-                            <div class="name">米家直流变频落地扇1X</div>
-                            <div class="briefwrap">模拟自然风算法 支持AI语音</div>
+                            <div class="name">小米AI音箱</div>
+                            <div class="briefwrap">播音乐、讲故事、查路况、设闹钟、控制智能设备</div>
                             <div class="price">
-                                299
+                                ￥199
                             </div>
                         </div>
                         <div class="img">
-                            <img src="../assets/electrical1.jpg" alt="">
+                            <img src="https://i8.mifile.cn/b2c-mimall-media/1e5e065d515ba0a0303d96740ea58494!360x360.jpg" alt="">
                         </div>
                     </a>
                 </div>
                 <div class="list-on">
                     <a href="javascript:void(0)">
                         <div class="img">
-                            <img src="../assets/electrical1.jpg" alt="">
+                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a3593f6ee74115531a529226b64702f9.jpg?thumb=1&w=360&h=360" alt="">
                         </div>
                         <div class="info">
-                            <div class="name">米家直流变频落地扇1X</div>
-                            <div class="briefwrap">模拟自然风算法 支持AI语音</div>
+                            <div class="name">小米小爱触屏音箱</div>
+                            <div class="briefwrap">好听，更好看</div>
                             <div class="price">
-                                299
+                                ￥299
                             </div>
                         </div>
                     </a>
@@ -410,26 +410,26 @@ export default {
             {
                 id:2,
                 img:require("../assets/phone2.jpg"),
-                name:"变频 | 米家互联网空调",
-                brief:"变频节能，高效制冷热",
-                price:"2399",
-                priceold:"2699"
+                name:"Redmi K30 5G",
+                brief:"双模5G，120Hz流速屏",
+                price:"1999",
+                priceold:"2899"
             },
             {
                 id:3,
                 img:require("../assets/phone3.jpg"),
-                name:"变频 | 米家互联网空调",
-                brief:"变频节能，高效制冷热",
-                price:"2399",
-                priceold:"2699"
+                name:"Note 8 Pro",
+                brief:"6400万全场景四摄",
+                price:"1099",
+                priceold:"1399"
             },
             {
                 id:4,
                 img:require("../assets/phone4.jpg"),
-                name:"变频 | 米家互联网空调",
-                brief:"变频节能，高效制冷热",
-                price:"2399",
-                priceold:"2699"
+                name:"Redmi Note 8",
+                brief:"千元4800万四摄",
+                price:"899",
+                priceold:"999"
             },
         ],
          computerlist:[
@@ -480,48 +480,48 @@ export default {
                 img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
                 name:"变频 | 米家互联网空调",
                 brief:"变频节能，高效制冷热",
-                price:"￥2399",
-                priceold:"￥2699"
+                price:"2399",
+                priceold:"2699"
             },
             {
                 id:2,
-                img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
-                name:"变频 | 米家互联网空调",
-                brief:"变频节能，高效制冷热",
-                price:"￥2399",
-                priceold:"￥2699"
+                img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/552e42b8706ee8d0bd3e048d2a5c4316.jpg?thumb=1&w=360&h=360",
+                name:"米家洗烘一体机Pro",
+                brief:"智能洗烘，省心省力",
+                price:"2899",
+                priceold:"3299"
             },
             {
                 id:3,
-                img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
-                name:"变频 | 米家互联网空调",
-                brief:"变频节能，高效制冷热",
-                price:"￥2399",
-                priceold:"￥2699"
+                img:"https://i8.mifile.cn/v1/a1/75f5a1ad-e2c6-36a9-fd56-66d253cc0469.webp",
+                name:"定频 | 米家空调 大1匹",
+                brief:"出众静音，快速制冷热",
+                price:"1699",
+                priceold:"1799"
             },
             {
                 id:4,
-                img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
-                name:"变频 | 米家互联网空调",
-                brief:"变频节能，高效制冷热",
-                price:"￥2399",
-                priceold:"￥2699"
+                img:"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2cbe411838194ad2aee50b85dacc152e.jpg?thumb=1&w=360&h=360",
+                name:"米家互联网洗烘一体机10kg",
+                brief:"烘干除菌率达99.9%",
+                price:"1999",
+                priceold:"2299"
             },
             {
                 id:5,
-                img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
-                name:"变频 | 米家互联网空调",
-                brief:"变频节能，高效制冷热",
-                price:"￥2399",
-                priceold:"￥2699"
+                img:"https://i8.mifile.cn/v1/a1/ce8d4b39-18b3-5b8e-ea74-5a2c86856e20.webp",
+                name:"自清洁 | 米家互联网空调 1.5匹",
+                brief:"变频节能省电，自清洁",
+                price:"2399",
+                priceold:"2699"
             },
             {
                 id:6,
-                img:"https://i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp",
-                name:"变频 | 米家互联网空调",
-                brief:"变频节能，高效制冷热",
-                price:"￥2399",
-                priceold:"￥2699"
+                img:"https://i8.mifile.cn/v1/a1/3bf41b04-1924-d627-ea2e-22e1d42bc2c0.webp",
+                name:"Redmi全自动波轮洗衣机1A 8kg",
+                brief:"一键操作，父母都爱用",
+                price:"799",
+                priceold:"899"
             },
         ],
         list:[
@@ -1042,8 +1042,8 @@ export default {
     color: rgba(0,0,0,.54);
 }
 .list-on{
-    width: 100%;
-    
+    width: 7.2rem;
+    margin: 0 auto;
 }
 .list-on>a{
     width: 100%;
@@ -1075,25 +1075,28 @@ export default {
     color: rgba(0,0,0,.54);
 }
 .list-on1{
-    width: 100%;
+    width: 7.2rem;
+    margin: 0 auto;
 }
 .list-on1>a{
     width: 100%;
     display: flex;
+   
 }
 .list-on1 .info{
     width: 3.6rem;
-    padding: .64rem .12rem 0 .32rem;
+    padding: .64rem 0 0 .12rem;
 }
 .list-on1 .img{
-    width: 3.6rem;
+    width:3.6rem;
     height: 3.6rem;
     position: relative;
     overflow: hidden;
 }
 .cells-auto{
-    width: 100%;
+    width: 7.2rem;
     height: 4.8rem;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }

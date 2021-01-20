@@ -82,24 +82,20 @@ export default {
     align-items: center;
 }
 .app-search .header-btn{
-    display: block;
     margin: .2rem .2rem;
-    height: .8rem;
-    line-height: .5rem;
     color: #666;
 }
 .header-btn>img{
+    display: block;
      width: .5rem;
     height: .5rem;
 }
 .app-search .header-btn1{
-    display: block;
     margin: 0 .2rem;
-    height: .8rem;
-    line-height: .5rem;
     color: #666;
 }
 .header-btn1>img{
+    display: block;
      width: .7rem;
     height: .7rem;
 }

@@ -273,7 +273,7 @@
                 </a>
             </div>
             <div class="fixed-bar" >
-                 <a>
+                 <a @click="top">
                     <img src="https://m.mi.com/static/img/top.451d650ecd.png" alt="">
                 </a>
             </div>
@@ -294,13 +294,12 @@
                                 ￥{{item.price}}
                             </div>
                             <div class="origin-price">
-                                <del>￥2899</del>
+                                <del>￥1899</del>
                             </div>
                         </div>
                         <div class="name">
-                        <span v-if="itemName==1">{{item.name}}</span>
-                        <span v-if="itemName==2">Redmi K30 5G 8GB+128GB 时光独白</span>
-                        <span v-if="itemName==3">Redmi K30 5G 8GB+256GB 时光独白</span>
+                        <span v-if="itemName==1&&itemName1==1">{{item.name}}</span>
+                        <span v-if="itemName==1&&itemName1==2">Redmi K30 5G 8GB+128GB 花影惊鸿</span>
                     </div>
                     </div>               
                 </div>
@@ -310,9 +309,7 @@
                             版本
                         </div>
                         <div class="options-group">
-                            <div class="option-item " :class="{on:itemName==1}" @click="toitem(1)">6GB+128GB</div>
-                            <div class="option-item" :class="{on:itemName==2}" @click="toitem(2)">8GB+128GB</div>
-                            <div class="option-item" :class="{on:itemName==3}" @click="toitem(3)">8GB+256GB</div>
+                            <div class="option-item " :class="{on:itemName==1}" @click="toitem(1)">8GB+128GB</div>                            
                         </div>
                     </div>
                     <div class="mt2x">
@@ -320,9 +317,8 @@
                             颜色
                         </div>
                         <div class="options-group">
-                            <div class="option-item " :class="{on:itemName1==4}" @click="toitem1(4)">深海微光</div>
-                            <div class="option-item" :class="{on:itemName1==5}" @click="toitem1(5)">紫玉幻境</div>
-                            <div class="option-item" :class="{on:itemName1==6}" @click="toitem1(6)">时光独白</div>
+                            <div class="option-item " :class="{on:itemName1==item.id}" @click="toitem1(item.id)" v-for="item in colorlist" :key="item.id">{{item.name}}</div>
+                           
                         </div>
                     </div>
                     <div class="layout">
@@ -414,11 +410,21 @@ export default {
     },
     data(){
         return{
+            colorlist:[
+                {
+                    id:1,
+                    name:"紫玉幻境"
+                },
+                {
+                    id:2,
+                    name:"花影惊鸿"
+                }
+            ],
             count1:true,
             item:{
-                img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1587436964.29467594.jpg",
-                name:"Redmi K30 5G 6GB+256GB 时光独白",
-                price:1999,
+                img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1575881819.47764764.jpg",
+                name:"Redmi K30 5G 8GB+128GB 紫玉幻境",
+                price:1299,
                 num:1,
                 img2: "../images/保.jpg",
                 name2: " 换新延保1年 99元",
@@ -428,7 +434,7 @@ export default {
             productName:1,
             play:false,
             itemName:1,
-            itemName1:4,
+            itemName1:1,
             show:{
                 opacity:0
             },
@@ -532,6 +538,9 @@ export default {
         }
     },
     methods:{
+        top(){
+            document.documentElement.scrollTop=0
+        },
         increase(item){
             this.$store.commit("increase",item)
             this.countNum();
@@ -550,16 +559,26 @@ export default {
            this.$store.commit("bottomBarClick",name)
         },
         to1(){
-            document.documentElement.scrollTop=0
+            console.log("dsaa")
+            this.$el.querySelector(".package").scrollIntoView({
+                behavior:'smooth',
+                block:'start'
+            })
+            // console.log(this.$refs)
+            // document.documentElement.scrollTop=0
         },
         to2(){
-            document.documentElement.scrollTop=950
+            this.$el.querySelector(".swipper").scrollIntoView({
+                behavior:'smooth',
+                block:'end'
+            })
+            // document.documentElement.scrollTop=950
         },
         to3(){
-            document.documentElement.scrollTop=2100
+            // document.documentElement.scrollTop=2100
         },
         to4(){
-            document.documentElement.scrollTop=13123
+            // document.documentElement.scrollTop=13123
         },
         menu() {
             this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -1642,6 +1661,6 @@ footer .footer-btn{
     transform: translateY(9.92rem);
 }
 .v-enter-active,.v-leave-active{
-    transition: all .3s linear;
+    transition:all .3s linear;
 }
 </style>

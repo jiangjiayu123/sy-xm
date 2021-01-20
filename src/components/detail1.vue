@@ -299,7 +299,7 @@
                         </div>
                         <div class="name">
                         <span v-if="itemName==1">{{item.name}}</span>
-                        <span v-if="itemName==2">Redmi K30 5G 8GB+128GB 时光独白</span>
+                        <span v-if="itemName==2">Redmi K30 5G 8GB+128GB 紫玉环境</span>
                         <span v-if="itemName==3">Redmi K30 5G 8GB+256GB 时光独白</span>
                     </div>
                     </div>               
@@ -417,7 +417,7 @@ export default {
             count1:true,
             item:{
                 img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1587436936.34286821.jpg",
-                name:"Redmi K30 5G 6GB+256GB 深海微光",
+                name:"Redmi K30 5G 6GB+128GB 深海微光",
                 price:1999,
                 num:1,
                 img2: "../images/保.jpg",

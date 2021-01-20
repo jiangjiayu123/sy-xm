@@ -30,7 +30,10 @@ export default {
           el: ".swiper-pagination",
           clickable: true,
         },
-
+         autoplay: {
+          disableOnInteraction: false,
+          delay: 3000,
+        },
       },
       lunlist: [
         {

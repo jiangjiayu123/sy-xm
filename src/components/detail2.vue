@@ -299,8 +299,8 @@
                         </div>
                         <div class="name">
                         <span v-if="itemName==1">{{item.name}}</span>
-                        <span v-if="itemName==2">Redmi K30 5G 8GB+128GB 时光独白</span>
-                        <span v-if="itemName==3">Redmi K30 5G 8GB+256GB 时光独白</span>
+                        <span v-if="itemName==2">Redmi K30 5G 8GB+128GB 暮光橙</span>
+                        <span v-if="itemName==3">Redmi K30 5G 8GB+256GB 贝母白</span>
                     </div>
                     </div>               
                 </div>
@@ -320,9 +320,9 @@
                             颜色
                         </div>
                         <div class="options-group">
-                            <div class="option-item " :class="{on:itemName1==4}" @click="toitem1(4)">深海微光</div>
-                            <div class="option-item" :class="{on:itemName1==5}" @click="toitem1(5)">紫玉幻境</div>
-                            <div class="option-item" :class="{on:itemName1==6}" @click="toitem1(6)">时光独白</div>
+                            <div class="option-item " :class="{on:itemName1==4}" @click="toitem1(4)">冰翡翠</div>
+                            <div class="option-item" :class="{on:itemName1==5}" @click="toitem1(5)">暮光橙</div>
+                            <div class="option-item" :class="{on:itemName1==6}" @click="toitem1(6)">贝母白</div>
                         </div>
                     </div>
                     <div class="layout">

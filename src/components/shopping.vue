@@ -544,9 +544,7 @@ em img {
     padding-left: 0.5em;
     line-height: 1em;
 }
-.piccc {
-    padding-top: 0.12rem;
-}
+
 
 .car-body {
     margin-top: 0.24rem;
