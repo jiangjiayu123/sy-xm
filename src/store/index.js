@@ -24,7 +24,7 @@ export default new Vuex.Store({
       },
   ],
       allPrices: 0,
-      count: 0,
+      count: 1,
       gouwuche: true,
 
   },

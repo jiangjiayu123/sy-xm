@@ -379,9 +379,9 @@
                    <img src="https://m.mi.com/static/img/icon-service.1ffa47012a.png" alt="">
                    <span>客服</span>
                </a>
-               <a class="footer-btn router-link-active" @click="toshopping('shopping')">
+               <a class="footer-btn router-link-active" @click="bottomBarClick('fourthtab')">
                    <img src="../assets/08.png" alt="">
-                   <span class="bubble" v-show="count">{{count}}</span>
+                   <span class="bubble" v-show="count1">{{count}}</span>
                    <span>购物车</span>
                </a>
                <div class="action-box flex" >
@@ -400,6 +400,9 @@ export default {
         goodsList(){
             return this.$store.state.goodsList
         },
+        componentName(){
+          return this.$store.state.componentName;
+        },
         count(){
             return this.$store.state.count
         }
@@ -411,6 +414,7 @@ export default {
     },
     data(){
         return{
+            count1:true,
             item:{
                 img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1587436964.29467594.jpg",
                 name:"Redmi K30 5G 6GB+256GB 时光独白",
@@ -530,8 +534,19 @@ export default {
     methods:{
         increase(item){
             this.$store.commit("increase",item)
+            this.countNum();
         },
-        toshopping(name){
+        countNum() {
+            let sum = 0;
+            for (let i = 0; i < this.$store.state.goodsList.length; i++) {
+                if (this.$store.state.goodsList[i].flag == true) {
+                    sum += this.$store.state.goodsList[i].num;
+                }
+            }
+            this.$store.state.count = sum;
+        },
+        bottomBarClick(name){
+            this.$router.go(-1)
            this.$store.commit("bottomBarClick",name)
         },
         to1(){
@@ -589,6 +604,14 @@ export default {
         window.addEventListener('scroll', this.handleScroll)       
     },
     watch:{
+        goodsList(newVal){
+            if(newVal.length==0){
+            this.count1=false
+            }
+            else{
+            this.count1=true
+            }
+        },
         screenHeight(newVal){
             if(newVal>0&&newVal<950){
                 this.productName=1

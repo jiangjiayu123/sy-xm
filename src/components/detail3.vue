@@ -379,8 +379,9 @@
                    <img src="https://m.mi.com/static/img/icon-service.1ffa47012a.png" alt="">
                    <span>客服</span>
                </a>
-               <a class="footer-btn router-link-active">
+               <a class="footer-btn router-link-active"  @click="bottomBarClick('fourthtab')">
                    <img src="../assets/08.png" alt="">
+                    <span class="bubble" v-show="count1">{{count}}</span>
                    <span>购物车</span>
                </a>
                <div class="action-box flex" >
@@ -398,6 +399,12 @@ export default {
     computed:{
         goodsList(){
             return this.$store.state.goodsList
+        },
+        componentName(){
+          return this.$store.state.componentName;
+        },
+        count(){
+            return this.$store.state.count
         }
     },
     components:{
@@ -407,9 +414,10 @@ export default {
     },
     data(){
         return{
+            count1:true,
             item:{
                 img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1567422854.51919656.jpg",
-                name:"Redmi K30 5G 6GB+256GB 深海微光",
+                name:"Redmi K30 5G 6GB+256GB 曜石黑",
                 price:1999,
                 num:1,
                 img2: "../images/保.jpg",
@@ -526,6 +534,20 @@ export default {
     methods:{
         increase(item){
             this.$store.commit("increase",item)
+             this.countNum();
+        },
+        countNum() {
+            let sum = 0;
+            for (let i = 0; i < this.$store.state.goodsList.length; i++) {
+                if (this.$store.state.goodsList[i].flag == true) {
+                    sum += this.$store.state.goodsList[i].num;
+                }
+            }
+            this.$store.state.count = sum;
+        },
+         bottomBarClick(name){
+            this.$router.go(-1)
+           this.$store.commit("bottomBarClick",name)
         },
         to1(){
             document.documentElement.scrollTop=0
@@ -582,6 +604,14 @@ export default {
         window.addEventListener('scroll', this.handleScroll)       
     },
     watch:{
+         goodsList(newVal){
+            if(newVal.length==0){
+            this.count1=false
+            }
+            else{
+            this.count1=true
+            }
+        },
         screenHeight(newVal){
             if(newVal>0&&newVal<950){
                 this.productName=1
@@ -630,6 +660,23 @@ export default {
 }
 </script>
 <style scoped>
+.footer-btn .bubble{
+    position: absolute;
+    width: .32rem;
+    line-height: .32rem;
+    height: .32rem;
+    box-sizing: border-box;
+    font-size: .13rem;
+    overflow: hidden;
+    text-align: center;
+    border-radius: .32rem;
+    background: linear-gradient(45deg,#ff7d00,#ff5934);
+    color: #fff;
+    top: .09rem;
+    left: 50%;
+    transform: translate3d(.1rem,-20%,0);
+    font-style: normal;
+}
 .app-view-wrapper{
     padding-bottom:50px;
     user-select: none;

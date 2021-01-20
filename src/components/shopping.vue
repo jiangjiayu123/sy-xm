@@ -340,7 +340,7 @@ export default {
             this.countNum();
             this.TotalPrice();
         },
-        deteleItem(index) {
+        deteleItem(index){
             this.$store.commit("deleteItem",index)
             this.countNum();
             this.TotalPrice();
