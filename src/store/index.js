@@ -10,6 +10,7 @@ export default new Vuex.Store({
      appearDe:true,
      showDengLu:true,
      componentName:"secondtab",
+    //  showchuxian:false,
      goodsList: [
       {
           id: 1,
@@ -62,7 +63,7 @@ export default new Vuex.Store({
     btndengLu(state){
       if(state.medenglu==true){
           state.seen=true;
-      }
+      } 
      
       if(state.medenglu==false){
           state.seen=false
@@ -72,6 +73,7 @@ export default new Vuex.Store({
        state.seen=false
     },
     bottomBarClick(state,name){
+        // state.showxiantiao = !state.showxiantiao
         state.componentName = name;
     },
     count(state){

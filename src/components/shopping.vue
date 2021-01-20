@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="app-header-middle">
-                <div class="app-header-title" @click="entrymicar">购物车</div>
+                <div class="app-header-title">购物车</div>
             </div>
             <div class="app-header-right piccc">
                 <a>
@@ -323,9 +323,6 @@ export default {
             this.$router.push({ path: "denglu" });
         },
         // !!!!!测试小米购物车
-        entrymicar() {
-            this.$router.push({ path: "micart" });
-        },
         WgoodsCheck(item) {
             item.flag = !item.flag;
             this.countNum();

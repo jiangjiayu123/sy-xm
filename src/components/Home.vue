@@ -36,8 +36,8 @@
             </div>
         </div>
          <!-- 顶部跑马灯效果 -->
-         <transition >
-              <div class="progress" v-if="showxiantiao"></div>
+        <transition name="fade">
+              <div class="progress" v-if="showchuxian"></div>
         </transition>
     </div>
       
@@ -51,7 +51,7 @@ import MeTab from "../components/MeTab.vue";
 export default {
     data(){
       return {
-          showxiantiao:0
+          showchuxian:false
       }
     },
     computed: {
@@ -60,7 +60,10 @@ export default {
         },
         count(){
           return this.$store.state.count;
-        }
+        },
+        // showchuxian(){
+        //   return this.$store.state.showchuxian;
+        // }
       
     },
     components: {
@@ -71,19 +74,29 @@ export default {
     },
     methods:{
       bottomBarClick(name){
-        this.showxiantiao =1
+        this.showchuxian = !this.showchuxian;
         this.$store.commit("bottomBarClick",name)
       }
+    },
+    watch:{
+        showchuxian(newVal){
+          console.log("哈哈哈哈")
+          let that = this;
+            if(newVal ==true){
+              setTimeout(function(){
+                  that.showchuxian=false
+              },2000)
+            }
+        }
     }
 };
 </script>
 <style >
-  .fade-enter-active,
-  .fade-leave-active {
-            transition:width 2.2s,opacity 2.4s;
+  .fade-enter-active{
+            transition:all 2s;
   }
-  .fade-enter,.fade-leave-to{
-       
+  .fade-enter{
+            transform:translateX(-100%);
             opacity: 0;
   }
   .bottom-bar{
@@ -139,15 +152,10 @@ export default {
     width: 100%;
     height: 2px;
     background-color: rgb(255, 202, 43);
-    opacity: 1;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 2px;
-    
-    opacity: 1;
-    background-color: #efc14e;
     z-index: 999999;
   }
 </style>
