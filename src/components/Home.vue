@@ -116,7 +116,7 @@ export default {
     background: #fff;
 }
 .box-flex {
-    height: 52px;
+    height: .9rem;
     display: flex;
     justify-content: space-around;
   }

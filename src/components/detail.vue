@@ -642,7 +642,7 @@ export default {
             else if(newVal>=950&&newVal<2100){
                this.productName=2
             }
-            else if(newVal>=2100&&newVal<13123){
+            else if(newVal>=2100&&newVal<13053){
                this.productName=3
            }
            else{

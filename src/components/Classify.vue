@@ -1,13 +1,13 @@
 <template>
     <div class="page-Classify">
         <div class="page-02">
-            <div class="Classify-top">
-                <div class="Classify-header">
-                    <p class="Classify-01" @click="bottomBarClick('firsttab')"></p>
-                    <p class="Classify-02">分类</p>
-                    <p class="Classify-03"></p>
+                <div class="Classify-top">
+                    <div class="Classify-header">
+                        <p class="Classify-01" @click="bottomBarClick('firsttab')"></p>
+                        <p class="Classify-02">分类</p>
+                        <p class="Classify-03"></p>
+                    </div>
                 </div>
-            </div>
             <div class="Classify-body">
                 <div class="page-03">
                     <div class="body-left" >
@@ -874,12 +874,8 @@
                                 </div>
                             </div>
                           
-
-
                              <!-- Redmi红米 数字系列 -->
                            <!-- 零售店 -->
-
-
                             <div class="list-title" id="零售店17">
                                 <p class="lineleft">——</p>
                                 <p class="linetitle">零售店</p>
@@ -2462,8 +2458,7 @@ export default {
     left: 0;
     right: 0; */
     width: 100%;
-    height: 8%;
-    transition: all linear 2s;
+    height: 50px;
 }
 .Classify-body {
     width: 100%;

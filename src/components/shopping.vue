@@ -410,8 +410,8 @@ export default {
     margin: 0 0.2rem;
 }
 .app-header-wrapper img {
+    display: block;
     width: 0.5rem;
-    padding-bottom: 0.15rem;
 }
 .app-header-middle {
     font-size: 0.3rem;

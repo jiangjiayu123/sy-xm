@@ -243,13 +243,14 @@ export default {
 }
 .dfk{
     display: flex;
+    text-align: center;
     -ms-flex-line-pack: justify;
     align-content: space-between;
     flex-direction: column;
     position: relative;
     padding: .4rem 0;
     width:13%;
-    font-size:0.2rem
+    font-size:0.2rem;
 }
 .me-icon{
     background-image: url(../assets/images/me-03.png);
@@ -258,6 +259,7 @@ export default {
     background-size: 100% 100%;
     width: .48rem;
     height:.48rem;
+    margin: 0 auto ;
 }
 .me-icon-s{
      background-image: url(../assets/images/物流.png);
@@ -392,7 +394,7 @@ a {
     height: 1rem;
     font-size: 0.2rem;
     display: flex;
-    border-top:1px solid #676767;
+    border-top:1px solid #d9d9d9;
 }
 .xe-dialog .xe-dialog-content .xe-dialog-text {
     margin: .4rem;
@@ -403,9 +405,10 @@ a {
 .no-promise{
     height: 100%;
     width:50% ;
-    border-right: 1px solid #676767;;
+    border-right: 1px solid #d9d9d9;
     text-align: center;
     line-height:1rem;
+    font-size: .32rem;
 }
 .ok-promise{
     height: 100%;
@@ -413,6 +416,7 @@ a {
     text-align: center;
     line-height:1rem;
     color: #ff6300;
+    font-size: .32rem;
 }
 .kong{
     width: 100%;

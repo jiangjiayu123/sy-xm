@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="top-bar-right">
-            <div class="top-bar-right-item">
+            <div class="top-bar-right-item" @click="bottomBarClick('metab')">
                 <img src="../assets/10.png" alt="" />
             </div>          
         </div>
@@ -584,6 +584,9 @@ export default {
       window.addEventListener("scroll",this.menu)
   },
   methods:{
+      bottomBarClick(name){
+          this.$store.commit("bottomBarClick",name)
+      },
       menu(){
           this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
       },
