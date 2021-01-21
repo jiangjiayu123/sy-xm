@@ -1349,13 +1349,14 @@ footer .footer-btn{
 }
 .goods-info .goods-name{
     font-size: .28rem;
+    font-weight: normal;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .goods-info .goods-price{
     font-size: .32rem;
     color: #ff6700;
-    margin-top: .1rem;
+    margin:0 .32rem;
 }
 
 .download-app-bottom-float{

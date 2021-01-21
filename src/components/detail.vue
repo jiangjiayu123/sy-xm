@@ -29,7 +29,7 @@
                    <swipperr></swipperr>
            </div>
        </div>
-       <div class="section section-detail">1
+       <div class="section section-detail">
            <div class="product-price">
                <div class="price">
                    <div class="goods-price">
@@ -272,7 +272,7 @@
                     <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7a858f89fdb2932ae4c3dd04d6f8674a.png" alt="">
                 </a>
             </div>
-            <div class="fixed-bar" >
+            <div class="fixed-bar" v-show="player">
                  <a @click="top">
                     <img src="https://m.mi.com/static/img/top.451d650ecd.png" alt="">
                 </a>
@@ -421,6 +421,7 @@ export default {
                 }
             ],
             count1:true,
+            player:false,
             item:{
                 img:"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1575881819.47764764.jpg",
                 name:"Redmi K30 5G 8GB+128GB 紫玉幻境",
@@ -650,6 +651,7 @@ export default {
         },
         scroll(newVal){
             if(newVal>200){
+                this.player=true
                 if(this.show.opacity<1){
                     this.show.opacity +=0.1
                 }
@@ -662,8 +664,9 @@ export default {
                 if(this.showicon.opacity<0){
                     this.showicon.opacity = 0
                 }
-            }else{
-                if(newVal<=200){
+            }else{  
+                this.player=false              
+                if(newVal<=200){                  
                     if(this.show.opacity>0)
                         this.show.opacity-=0.1
                     if(this.show.opacity<0){
@@ -1361,13 +1364,14 @@ footer .footer-btn{
 }
 .goods-info .goods-name{
     font-size: .28rem;
+    font-weight: normal;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .goods-info .goods-price{
     font-size: .32rem;
     color: #ff6700;
-    margin-top: .1rem;
+    margin:0 .32rem;
 }
 
 .download-app-bottom-float{
