@@ -12,9 +12,9 @@
                 <div class="page-03">
                     <div class="body-left" >
                         <ul class="item" >
-                            <li v-for="(item,index) in list" :key="item.name"  :style="objStyleitem()">
+                            <li v-for="(item,index) in list" :key="item.name"  :style="objStyleitem()" >
                                 <!-- :href="'#'+item.id" -->
-                                <a   class="item-a"  :class='{active:isActive==index}' @click="btnColor(index)" target="_self">
+                                <a   class="item-a"  :class='{active:isActive==index}' @click="btnColor(index)"  target="_self">
                                     <span class="item-name">{{item.name}}</span>
                                 </a>
                             </li>
@@ -2266,15 +2266,12 @@ export default {
             this.isActive = index;
             console.log(index);
             this.inst = index;
-            this.objStyle();
-           
+            this.objStyle();           
         },
        handleScroll(e){
            let a=e.srcElement.scrollTop
-           console.log(a);
             this.feilist = this.isActive;
             this.objStyleitem();
-
            if(a>0&&a<1016){
                this.isActive=0
            }
@@ -2334,7 +2331,7 @@ export default {
             // return {
             //     transform:"translateY("+(-1000*this.inst)+"px)"
             // } 
-            if(this.inst == 1){
+            if(this.inst == 1){                              
                return {
                    transform:"translateY("+(-1016*this.inst)+"px)"
                }
@@ -2423,8 +2420,7 @@ export default {
                 return {
                     transform:"translateY("+(-939.8*this.inst)+"px)"
                 }
-            }
-             
+            }             
       },
        objStyleitem(){
             if(this.feilist >= 11){

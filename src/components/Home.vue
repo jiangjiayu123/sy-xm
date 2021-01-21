@@ -132,7 +132,6 @@ export default {
     height: .4rem;
   }
   .bottom-title{
-    font-size: 10px;
     color: #999;
   }
   .active{

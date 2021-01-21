@@ -28,32 +28,32 @@
         <div class="nav-item-layer" v-if="num==2">
             <div class="title">全部</div>
             <div class="btn-wrap">
-                <span class="extra-btn cur mr-interval">推荐</span>
-                <span class="extra-btn mr-interval">手机</span>
-                <span class="extra-btn mr-interval">智能</span>
-                <span class="extra-btn">电视</span>
-                <span class="extra-btn mr-interval">家电</span>
-                <span class="extra-btn mr-interval">笔记本</span>
+                <span class="extra-btn  mr-interval" :class="{cur:navitem==1}" @click="btnclick(1)">推荐</span>
+                <span class="extra-btn mr-interval" :class="{cur:navitem==2}" @click="btnclick(2)">手机</span>
+                <span class="extra-btn mr-interval" :class="{cur:navitem==3}" @click="btnclick(3)">智能</span>
+                <span class="extra-btn" :class="{cur:navitem==4}" @click="btnclick(4)">电视</span>
+                <span class="extra-btn mr-interval" :class="{cur:navitem==5}" @click="btnclick(5)">家电</span>
+                <span class="extra-btn mr-interval" :class="{cur:navitem==6}" @click="btnclick(6)">笔记本</span>
             </div>
         </div>
         <div class="nav" v-if="num==1">
           <div class="nav-item ">
-              <span class="active">推荐</span>      
+              <span :class="{active:navitem==1}" @click="btnclick(1)">推荐</span>      
           </div>
           <div class="nav-item">
-              <span>手机</span>
+              <span :class="{active:navitem==2}" @click="btnclick(2)">手机</span>
           </div>
           <div class="nav-item">
-              <span>智能</span>
+              <span :class="{active:navitem==3}" @click="btnclick(3)">智能</span>
           </div>
           <div class="nav-item">
-              <span>电视</span>
+              <span :class="{active:navitem==4}" @click="btnclick(4)">电视</span>
           </div>
           <div class="nav-item">
-              <span>家电</span>
+              <span :class="{active:navitem==5}" @click="btnclick(5)">家电</span>
             </div>
           <div class="nav-item">
-              <span>笔记本</span>
+              <span :class="{active:navitem==6}" @click="btnclick(6)">笔记本</span>
           </div>
         </div>
       </div>
@@ -349,6 +349,7 @@ export default {
     },
     data() {
     return {
+        navitem:1,
         play:false,
         scroll:"",
         num:1,
@@ -584,6 +585,9 @@ export default {
       window.addEventListener("scroll",this.menu)
   },
   methods:{
+      btnclick(name){
+          this.navitem=name
+      },
       bottomBarClick(name){
           this.$store.commit("bottomBarClick",name)
       },

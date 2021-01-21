@@ -275,7 +275,6 @@ export default {
 }
 .me-last-list{
     width:100%;
-    height: 14%;
     margin:0 auto;
     font-size: 0.22rem;
 }
@@ -284,7 +283,12 @@ export default {
     flex-direction: row;
     justify-content:space-between;
     align-items: center;
-    height: 50%;
+    height: .84rem;
+}
+.item-name{
+    font-size: .28rem;
+    font-style: normal;
+    color: rgba(0,0,0,.87);
 }
 .home-back{
     width: 130%;
