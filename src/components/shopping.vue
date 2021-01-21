@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="app-header-middle">
-                <div class="app-header-title" @click="entrymicar">购物车</div>
+                <div class="app-header-title">购物车</div>
             </div>
             <div class="app-header-right piccc">
                 <a>
@@ -96,7 +96,7 @@
                         </div>
                     </div>
 
-                    <p class="conutine-buy">继续购物</p>
+                    <p class="conutine-buy" @click="buygoon">继续购物</p>
                     <p class="pay-goods">去结算</p>
                 </div>
                 </transition>
@@ -321,10 +321,10 @@ export default {
         gotodenglu() {
             this.$router.push({ path: "denglu" });
         },
-        // // !!!!!测试小米购物车
-        entrymicar() {
-            this.$router.push({ path: "micart" });
+        buygoon(){
+            this.$router.push({path:'detail'});
         },
+        // !!!!!测试小米购物车
         WgoodsCheck(item) {
             item.flag = !item.flag;
             this.countNum();
@@ -742,7 +742,7 @@ em img {
 .price-old {
     display: flex;
     margin: 0 auto;
-    width: 30%;
+    width: 60%;
     margin-bottom: 0.2rem;
     align-items: center;
 }

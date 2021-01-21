@@ -803,6 +803,8 @@ export default {
 .nav-item{
     display: inline-block;
     padding: 0 .25rem;
+    color: #747474;
+    font-weight: 500;
 }
 .nav-item span{
     display: inline-block;

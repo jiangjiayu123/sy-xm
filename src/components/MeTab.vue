@@ -162,6 +162,7 @@ export default {
 .me-top-bar{
     height: 13%;
     width:100%;
+    flex-shrink: 0;
 }
 .me-top-list {
     height: 100%;
@@ -217,6 +218,7 @@ export default {
     padding: 0 0 0 .32rem;
     border-bottom:1px solid rgba(0,0,0,.15);
     align-items: center;
+    flex-shrink: 0;
 }
 .me-order-01{
      font-size: .24rem;
@@ -232,11 +234,12 @@ export default {
     background-size:100% 100%;
 }
 .me-wait-pay{
-    height: 15%;
+    height: 13%;
     width: 100%;
     display: flex;
     justify-content:space-around;
     background-color: #fff;
+    flex-shrink: 0;
 }
 .dfk{
     display: flex;
@@ -266,6 +269,7 @@ export default {
     height: .2rem;
     background: #f5f5f5;
     overflow: hidden;
+    flex-shrink: 0;
 }
 .me-last-list{
     width:100%;

@@ -64,7 +64,7 @@ export default new Vuex.Store({
     btndengLu(state){
       if(state.medenglu==true){
           state.seen=true;
-      }
+      } 
      
       if(state.medenglu==false){
           state.seen=false
@@ -80,8 +80,11 @@ export default new Vuex.Store({
     Goodjia(state,index){
         state.goodsList[index].num++;
         if(state.goodsList[index].num >= 2) {
-            state.goodsList[index].showBei = 1;
-                
+            state.goodsList[index].showBei = 1;    
+        }
+        if(state.goodsList[index].num >10){
+            alert("最大购买商品数量为10！");
+            state.goodsList[index].num=10;
         }
     },
     deleteItem(state,index){
@@ -91,6 +94,7 @@ export default new Vuex.Store({
        state.seen=false
     },
     bottomBarClick(state,name){
+        // state.showxiantiao = !state.showxiantiao
         state.componentName = name;
     },
     count(state){

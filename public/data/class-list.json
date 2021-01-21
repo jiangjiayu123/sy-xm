@@ -1,0 +1,55 @@
+{
+    "code":200,
+    "status":"成功",
+    "listClassIfy":[
+            {
+                "ClassName":"黑鲨游戏手机",
+                "itemed":[
+                    {
+                        "name1":"黑鲨手机3S",
+                        "item1":"../images/黑鲨手机3S.png"
+                    },
+                    {
+                        "name1":"黑鲨手机3",
+                        "item1":"../images/黑鲨手机3.png"
+                    }
+                ],
+                "imged":"../images/进入手机频道.webp"                
+            },
+            {
+                "ClassName":"黑鲨手机配件",
+                "itemed":[
+                    {
+                        "name1":"黑鲨游戏耳机",
+                        "item1":"../images/黑鲨游戏耳机.png"
+                    },
+                    {
+                        "name1":"散热背夹 Pro",
+                        "item1":"../images/散热背夹 Pro.png"
+                    },
+                    {
+                        "name1":"冰封散热背夹",
+                        "item1":"../images/冰封散热背夹.png"
+                    },
+                    {
+                        "name1":"散热背夹 Pro",
+                        "item1":"../images/散热背夹 Pro.png"
+                    },
+                    {
+                        "name1":"黑鲨手游肩键",
+                        "item1":"../images/黑鲨手游肩键.png"
+                    },
+                    {
+                        "name1":"黑鲨移动电源",
+                        "item1":"../images/黑鲨移动电源.png"
+                    },
+                    {
+                        "name1":"黑鲨其它配件",
+                        "item1":"../images/黑鲨其它配件.png"
+                    }
+                ],
+                "imged":"../images/进入手机频道.webp"       
+            }
+
+    ]
+}
