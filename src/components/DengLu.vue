@@ -18,7 +18,7 @@
                    </div>
                    <div class="user-psd user-item">
                        <input type="number" placeholder="短信验证码" class="psd-input" v-model="msg">
-                       <p class="huoqu">获取验证码</p>
+                       <p class="huoqu" @click="counttime($event)">{{timeshow}}</p>
                    </div>
                    <div class="tip-phone" v-show="seen">
                            <p class="tip-phone-01"></p>
@@ -98,7 +98,8 @@
                 see:false,//提示手机号格式不正确
                 seenlook:false,//提示请输入短信
                 chuxian:false, //输入手机号时显示
-                duanxin:false, //提示短信验证
+                duanxin:false, //提示短信验证,
+                timeshow:"获取验证码"
             }
         },
         watch:{
@@ -166,7 +167,22 @@
             },
             delPhoto(){
                 this.message="";
-            }
+            },
+            counttime($event){
+               
+               let that = this;
+               let i = 60;
+               var timer= setInterval(function(){
+                    i--;
+                    console.log(i)
+                    that.timeshow= i + " "+ "秒后重新获取";
+                    if(i<=0){
+                        that.timeshow="请重新获取验证码";
+                         clearInterval(timer);
+                    }
+                   
+             },1000)
+            },
         }
     }
 </script>
@@ -268,7 +284,7 @@ a {
     color: #0d84ff;
     font-size: .3rem;
     line-height: .2rem; 
-    width:3rem
+    width:4rem
 }
 .btnadpt,.btnByname{
     width: 100%;

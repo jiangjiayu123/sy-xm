@@ -10,17 +10,18 @@
             </div>
             <div class="Classify-body">
                 <div class="page-03">
-                    <div class="body-left">
-                        <ul class="item">
-                            <li v-for="(item,index) in list" :key="item.name" >
-                                <a :href="'#'+item.id" class="item-a"  :class='{active:isActive==index}' @click="btnColor(index)" target="_self">
+                    <div class="body-left" >
+                        <ul class="item" >
+                            <li v-for="(item,index) in list" :key="item.name"  :style="objStyleitem()">
+                                <!-- :href="'#'+item.id" -->
+                                <a   class="item-a"  :class='{active:isActive==index}' @click="btnColor(index)" target="_self">
                                     <span class="item-name">{{item.name}}</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div class="body-right" @scroll="handleScroll($event)">
-                        <div class="body-right-list">
+                        <div class="body-right-list" :style="objStyle()">
                             <div class="pic1" id="小米手机11"></div>
                             <div class="list-title">
                                 <p class="lineleft">——</p>
@@ -224,7 +225,7 @@
                              <!-- Redmi红米 数字系列 -->
 
                              <!-- 大家电 -->
-                            <div class="list-title" id="大家电55">
+                            <div class="list-title">
                                 <p class="lineleft">——</p>
                                 <p class="linetitle">电视配件相关</p>
                                 <p class="lineright">——</p>
@@ -241,7 +242,7 @@
                                 </div>
                             </div>
                              <!-- Redmi红米 数字系列 -->
-                            <div class="list-title">
+                            <div class="list-title" id="大家电55">
                                 <p class="lineleft">——</p>
                                 <p class="linetitle">大家电</p>
                                 <p class="lineright">——</p>
@@ -296,7 +297,7 @@
                              <!-- Redmi红米 数字系列 -->
 
                             <!-- 小爱音箱 -->
-                            <div class="list-title" id="小爱音箱77">
+                            <div class="list-title" >
                                 <p class="lineleft">——</p>
                                 <p class="linetitle">显示器</p>
                                 <p class="lineright">——</p>
@@ -310,7 +311,7 @@
                                 </div>
                             </div>
                              <!-- Redmi红米 数字系列 -->
-                            <div class="list-title">
+                            <div class="list-title" id="小爱音箱77">
                                 <p class="lineleft">——</p>
                                 <p class="linetitle">小爱触屏音箱</p>
                                 <p class="lineright">——</p>
@@ -328,7 +329,7 @@
                              <!-- 路由器 -->
 
 
-                            <div class="list-title" id="路由器88">
+                            <div class="list-title" >
                                 <p class="lineleft">——</p>
                                 <p class="linetitle">小爱智能音箱</p>
                                 <p class="lineright">——</p>
@@ -345,7 +346,7 @@
                                 </div>
                             </div>
                              <!-- Redmi红米 数字系列 -->
-                            <div class="list-title">
+                            <div class="list-title" id="路由器88">
                                  <p class="lineleft">——</p>
                                 <p class="linetitle">WiFi 6</p>
                                 <p class="lineright">——</p>
@@ -363,7 +364,7 @@
                              <!-- 生活电器 -->
 
 
-                            <div class="list-title" id="生活电器99">
+                            <div class="list-title" >
                                  <p class="lineleft">——</p>
                                 <p class="linetitle">千兆版</p>
                                 <p class="lineright">——</p>
@@ -410,7 +411,7 @@
 
                              <!-- Redmi红米 数字系列 -->
                              <!-- 厨房电器 -->
-                            <div class="list-title" id="厨房电器12">
+                            <div class="list-title" id="生活电器99">
                                     <p class="lineleft">——</p>
                                 <p class="linetitle">生活电器</p>
                                 <p class="lineright">——</p>
@@ -427,7 +428,7 @@
                                 </div>
                             </div>
                              <!-- Redmi红米 数字系列 -->
-                            <div class="list-title">
+                            <div class="list-title"  id="厨房电器12">
                                   <p class="lineleft">——</p>
                                 <p class="linetitle">厨房大电</p>
                                 <p class="lineright">——</p>
@@ -479,7 +480,7 @@
                                 </div>
                             </div>
                              <!-- Redmi红米 数字系列 -->
-                            <div class="list-title">
+                            <div class="list-title" id="智能家居34">
                                  <p class="lineleft">——</p>
                                 <p class="linetitle">智能家居</p>
                                 <p class="lineright">——</p>
@@ -498,7 +499,7 @@
                              <!-- 智能家居 -->
 
 
-                            <div class="list-title" id="智能家居34">
+                            <div class="list-title" >
                                 <p class="lineleft">——</p>
                                 <p class="linetitle">照明灯具</p>
                                 <p class="lineright">——</p>
@@ -515,7 +516,7 @@
                                 </div>
                             </div>
                              <!-- Redmi红米 数字系列 -->
-                            <div class="list-title">
+                            <div class="list-title" id="车载出行56">
                                      <p class="lineleft">——</p>
                                 <p class="linetitle">出行</p>
                                 <p class="lineright">——</p>
@@ -535,7 +536,7 @@
                              <!-- 智能家居 -->
 
 
-                            <div class="list-title" id="车载出行56">
+                            <div class="list-title" >
                                     <p class="lineleft">——</p>
                                 <p class="linetitle">车载</p>
                                 <p class="lineright">——</p>
@@ -552,7 +553,7 @@
                                 </div>
                             </div>
                              <!-- Redmi红米 数字系列 -->
-                            <div class="list-title">
+                            <div class="list-title" id="个户健康78">
                                    <p class="lineleft">——</p>
                                 <p class="linetitle">防护清洁</p>
                                 <p class="lineright">——</p>
@@ -571,7 +572,7 @@
                              <!-- 个户健康 -->
 
 
-                            <div class="list-title" id="个户健康78">
+                            <div class="list-title" >
                                    <p class="lineleft">——</p>
                                 <p class="linetitle">个户</p>
                                 <p class="lineright">——</p>
@@ -640,7 +641,7 @@
                              <!-- 日用百货 -->
 
 
-                            <div class="list-title" id="日用百货13">
+                            <div class="list-title">
                                    <p class="lineleft">——</p>
                                 <p class="linetitle">音箱</p>
                                 <p class="lineright">——</p>
@@ -654,7 +655,7 @@
                                 </div>
                             </div>
                              <!-- Redmi红米 数字系列 -->
-                            <div class="list-title">
+                            <div class="list-title"  id="日用百货13">
                                     <p class="lineleft">——</p>
                                 <p class="linetitle">家居日常</p>
                                 <p class="lineright">——</p>
@@ -728,7 +729,7 @@
                              <!-- 有品精选 -->
 
 
-                            <div class="list-title" id="有品精选14">
+                            <div class="list-title" >
                                 <p class="lineleft">——</p>
                                 <p class="linetitle">儿童用品</p>
                                 <p class="lineright">——</p>
@@ -761,7 +762,7 @@
                                 </div>
                             </div>
                              <!-- Redmi红米 数字系列 -->
-                            <div class="list-title">
+                            <div class="list-title" id="有品精选14">
                                     <p class="lineleft">——</p>
                                 <p class="linetitle">重磅爆品</p>
                                 <p class="lineright">——</p>
@@ -2256,58 +2257,186 @@ export default {
             isActive:0,
             isActiveed:false,
             scroll:0,
+            inst:0,
+            feilist:0
         };
     }, 
+   
     methods: {
          bottomBarClick(name){
             this.$store.commit("bottomBarClick",name)
       },
-        btnColor(item){
-            this.isActive = item; 
+        btnColor(index){
+            this.isActive = index;
+            console.log(index);
+            this.inst = index;
+            this.objStyle();
+           
         },
        handleScroll(e){
            let a=e.srcElement.scrollTop
-           console.log(a)
+           console.log(a);
+            this.feilist = this.isActive;
+            this.objStyleitem();
+
            if(a>0&&a<1016){
                this.isActive=0
            }
            else if(a>=1016&&a<2401){
                this.isActive=1
            }
-           else if(a>=2401&&a<2806){
+           else if(a>=2401&&a<3032){
                this.isActive=2
            }
-           else if(a>=2806&&a<3389){
+           else if(a>=3032&&a<3922){
                this.isActive=3
            }
-           else if(a>=3389&&a<3972){
+           else if(a>=3922&&a<4256){
                this.isActive=4
            }
-           else if(a>=3972&&a<4554){
+           else if(a>=4256&&a<5172){
                this.isActive=5
            }
-           else if(a>=4554&&a<5137){
+           else if(a>=5172&&a<5796){
                this.isActive=6
            }
-           else if(a>=5137&&a<5720){
+           else if(a>=5796&&a<6786){
                this.isActive=7
            }
-           else if(a>=5720&&a<6302){
+           else if(a>=6786&&a<7554){
                this.isActive=8
            }
-           else if(a>=6302&&a<6885){
+           else if(a>=7554&&a<8288){
                this.isActive=9
            }
-           else if(a>=6885&&a<7467){
+           else if(a>=8288&&a<9463){
                this.isActive=10
            }
-           else if(a>=7467&&a<8050){
+           else if(a>=9463&&a<10086){
                this.isActive=11
            }
-           else if(a>=8050&&a<8633){
+           else if(a>=10086&&a<11329){
                this.isActive=12
            }
-       }
+             else if(a>=11329&&a<12312){
+               this.isActive=13
+           }
+             else if(a>=12312&&a<14477){
+               this.isActive=14
+           }
+              else if(a>=14477&&a<15169){
+               this.isActive=15
+           }
+             else if(a>=15169&&a<16918){
+               this.isActive=16
+           }
+             else if(a>=16918){
+               this.isActive=17
+           }
+       },
+       objStyle(){
+            // return {
+            //     transform:"translateY("+(-1000*this.inst)+"px)"
+            // } 
+            if(this.inst == 1){
+               return {
+                   transform:"translateY("+(-1016*this.inst)+"px)"
+               }
+            }
+            if(this.inst == 2){
+                return {
+                    transform:"translateY("+(-1200.5*this.inst)+"px)"
+                }
+            }
+            if(this.inst == 3){
+                return {
+                    transform:"translateY("+(-1010.5*this.inst)+"px)"
+                }
+            }
+            if(this.inst == 4){
+                return {
+                    transform:"translateY("+(-980.5*this.inst)+"px)"
+                }
+            }
+            if(this.inst == 5){
+                return {
+                    transform:"translateY("+(-851.2*this.inst)+"px)"
+                }
+            }
+            if(this.inst == 6){
+                return {
+                    transform:"translateY("+(-862*this.inst)+"px)"
+                }
+            }
+            if(this.inst == 7){
+                return {
+                    transform:"translateY("+(-828*this.inst)+"px)"
+                }
+            }
+            if(this.inst == 8){
+                return {
+                    transform:"translateY("+(-848*this.inst)+"px)"
+                }
+            }
+            if(this.inst == 9){
+                return {
+                    transform:"translateY("+(-839*this.inst)+"px)"
+                }
+            }
+            if(this.inst == 10){
+                return {
+                    transform:"translateY("+(-828.8*this.inst)+"px)"
+                }
+            }
+            if(this.inst == 11){
+                return {
+                    transform:"translateY("+(-783.6*this.inst)+"px)"
+                }
+            }
+             if(this.inst == 12){
+                return {
+                    transform:"translateY("+(-788.56*this.inst)+"px)"
+                }
+            }
+             if(this.inst == 13){
+                return {
+                    transform:"translateY("+(-783.6*this.inst)+"px)"
+                }
+            }
+             if(this.inst == 14){
+                return {
+                    transform:"translateY("+(-809.2*this.inst)+"px)"
+                }
+            }
+             if(this.inst == 15){
+                return {
+                    transform:"translateY("+(-820.8*this.inst)+"px)"
+                }
+            }
+             if(this.inst == 16){
+                return {
+                    transform:"translateY("+(-904.8*this.inst)+"px)"
+                }
+            }
+             if(this.inst == 17){
+                return {
+                    transform:"translateY("+(-892.2*this.inst)+"px)"
+                }
+            }
+             if(this.inst == 18){
+                return {
+                    transform:"translateY("+(-939.8*this.inst)+"px)"
+                }
+            }
+             
+      },
+       objStyleitem(){
+            if(this.feilist >= 11){
+               return {
+                   transform:"translateY("+(-1*(this.feilist-11))+"rem)"
+               }
+            }
+      }
     }, 
 };
 </script>
@@ -2360,8 +2489,7 @@ export default {
     background-size: .5rem .5rem;
     width: .5rem;
     height: .5rem;
-    flex-grow: 1;
-    margin-left: -.8rem;
+    margin-left: .15rem;
 }
 .Classify-02 {
     text-align: center;
@@ -2376,7 +2504,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: .6rem .6rem;
-    margin-right: -.8rem;
+    margin-right: .15rem;
 }
 
 .page-03 {

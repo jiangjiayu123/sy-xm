@@ -80,8 +80,11 @@ export default new Vuex.Store({
     Goodjia(state,index){
         state.goodsList[index].num++;
         if(state.goodsList[index].num >= 2) {
-            state.goodsList[index].showBei = 1;
-                
+            state.goodsList[index].showBei = 1;    
+        }
+        if(state.goodsList[index].num >10){
+            alert("最大购买商品数量为10！");
+            state.goodsList[index].num=10;
         }
     },
     deleteItem(state,index){

@@ -29,7 +29,7 @@
                    <swipperr></swipperr>
            </div>
        </div>
-       <div class="section section-detail">
+       <div class="section section-detail">1
            <div class="product-price">
                <div class="price">
                    <div class="goods-price">

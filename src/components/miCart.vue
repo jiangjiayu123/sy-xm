@@ -328,7 +328,7 @@ import axios from "axios";
 .price-old{
     display: flex;
     margin: 0 auto;
-    width: 30%;
+    
     margin-bottom: .2rem;
     align-items: center;
 }

@@ -51,7 +51,7 @@ import MeTab from "../components/MeTab.vue";
 export default {
     data(){
       return {
-          showchuxian:true,
+          showchuxian:false,
           showxiantiao:0,
           count1:true
       }
@@ -86,7 +86,7 @@ export default {
             if(newVal ==true){
               setTimeout(function(){
                   that.showchuxian=false
-              },2000)
+              },1500)
             }
         },
       goodsList(newVal){
@@ -133,7 +133,7 @@ export default {
   }
   .bottom-title{
     font-size: 10px;
-    color: #333;
+    color: #999;
   }
   .active{
     color: #ff6700;
